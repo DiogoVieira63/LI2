@@ -28,12 +28,14 @@ return e;
 
 
 // Esta função permite obter o número do jogador atual
-int obter_jogador_atual(ESTADO *estado);
-
+int obter_jogador_atual(ESTADO *estado){
+    return estado->jogador_atual;
+}
 
 //Esta função permite obter quantas jogadas foram efetuadas (cada jogada tem o movimento de dois jogadores)
-int obter_numero_de_jogadas(ESTADO *estado);
-
+int obter_numero_de_jogadas(ESTADO *estado) {
+    return estado->num_jogadas;
+}
 
 //Esta função permite obter o estado atual da casa
 int obter_estado_casa(ESTADO *e, COORDENADA c);
