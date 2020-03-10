@@ -1,5 +1,20 @@
+//Não sei se está certa, falta testar.
 void mostrar_tabuleiro(ESTADO *e) {
-
+int linha = 1;
+while (linha <= 8){
+int coluna = 1;
+while (coluna <= 8)
+{
+CASA atual = e -> tab [coluna][linha];
+if (atual == VAZIO) putchar ('.');
+else if (atual == PRETA) putchar ('#');
+else putchar ('*');
+coluna++;
+putchar (' ');
+}
+putchar ('\n');
+linha++;
+}
 }
 
 
