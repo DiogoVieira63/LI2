@@ -21,7 +21,7 @@ e->jogadas->jogador2.linha = 0;
 e->jogadas->jogador2.coluna = 0;
 */
 tab_inicial (e->tab);
-e->ultima_jogada.linha = 0; // por ser a peça onde começa mas não sei se posso declarar assim
+e->ultima_jogada.linha = 0;
 e->ultima_jogada.coluna = 0;
 return e;
 }
