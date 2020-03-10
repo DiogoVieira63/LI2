@@ -1,16 +1,20 @@
-//Não sei se está certa, falta testar.
 void mostrar_tabuleiro(ESTADO *e) {
 int linha = 1;
-while (linha <= 8){
+while (linha <= 8)
+{
 int coluna = 1;
 while (coluna <= 8)
 {
+if (linha == 1 && coluna == 8) putchar ('2'); // colocar o 2 no canto superior direito
+else if (linha == 8 && coluna == 1) putchar ('1'); //colocar o 1 no canto inferior esquerdo 
+else {
 CASA atual = e -> tab [coluna][linha];
 if (atual == VAZIO) putchar ('.');
 else if (atual == PRETA) putchar ('#');
 else putchar ('*');
+}
 coluna++;
-putchar (' ');
+putchar (' ');//não sei se é necessário.
 }
 putchar ('\n');
 linha++;
