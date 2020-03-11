@@ -3,5 +3,6 @@
 
 
 int interpretador(ESTADO *e);
+void mostrar_tabuleiro(ESTADO *e);
 
 #endif
