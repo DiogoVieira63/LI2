@@ -1,3 +1,8 @@
+#include "c_dados.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+
 void tab_inicial (CASA tab [8][8]){
 int linha = 1;
 while (linha <= 8){
@@ -21,31 +26,11 @@ e->jogadas->jogador2.linha = 0;
 e->jogadas->jogador2.coluna = 0;
 */
 tab_inicial (e->tab);
-e->ultima_jogada.linha = 0;
-e->ultima_jogada.coluna = 0;
+e->ultima_jogada.linha = 4;
+e->ultima_jogada.coluna = 5;
 return e;
 }
 
 
 // Estruturas de dados (devem ser colocadas no módulo correto da camada dos dados
-typedef enum {VAZIO, BRANCA, PRETA} CASA;
-
-typedef struct {
-    int coluna;
-    int linha;
-    } COORDENADA;
-    
-typedef struct {
-    COORDENADA jogador1;
-    COORDENADA jogador2;
-    } JOGADA;
-    
-typedef JOGADA JOGADAS[32];
-
-typedef struct {
-    CASA tab[8][8];
-    JOGADAS jogadas;
-    int num_jogadas;
-    int jogador_atual;
-    } ESTADO;
     
