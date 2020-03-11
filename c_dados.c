@@ -27,34 +27,6 @@ return e;
 }
 
 
-// Esta função permite obter o número do jogador atual
-int obter_jogador_atual(ESTADO *estado){
-    return estado->jogador_atual;
-}
-
-//Esta função permite obter quantas jogadas foram efetuadas (cada jogada tem o movimento de dois jogadores)
-int obter_numero_de_jogadas(ESTADO *estado) {
-    return estado->num_jogadas;
-}
-
-//Esta função permite obter o estado atual da casa
-CASA obter_estado_casa(ESTADO *e, COORDENADA c) {
-    int linha = 1;
-    while (linha <= 8) {
-        int coluna = 1;
-        while (coluna <= 8) {
-            if ((linha == c.linha) && (coluna == c.coluna)) {
-                CASA atual = e->tab [coluna] [linha];
-                return atual;
-            }
-            coluna++;
-        }
-        linha++;
-    }
-}
-
-//Isto é uma proposta para a obter_estado_casa que ainda não foi testada.São necessários os outros módulos.
-
 // Estruturas de dados (devem ser colocadas no módulo correto da camada dos dados
 typedef enum {VAZIO, BRANCA, PRETA} CASA;
 
