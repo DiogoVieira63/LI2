@@ -6,8 +6,16 @@ int jogar(ESTADO *e, COORDENADA c) {
     int m,n;
     m = e->ultima_jogada.coluna;
     n = e->ultima_jogada.linha;
-    if (((abs (m - c.coluna) == 1) && (abs (n - c.linha) == 1)) || ((abs (m - c.coluna) == 0) && (abs (n - c.linha) == 1)) || ((abs (m - c.coluna) == 1) && (abs (n - c.linha) == 0))) {
-        if (c == VAZIO) { //Ainda falta corrigir o erro nesta linha.
+    CASA peca.atual = e->tab [m][n]; 
+    if ((abs (c.linha-n) <= 1) && (abs (c.coluna -m) <= 1) && !(c.linha == n && c.coluna == m)){
+            CASA peca.destino = e->tab [c.coluna][c.linha];
+            if (peca.destino == VAZIA) {
+                peca.destino = BRANCA;
+                peca.atual = PRETA;
+                m = c.coluna;
+                n = c.linha;
+            }
+            else printf ("Jogada Impoossível.");
             printf("jogar %d %d\n", c.coluna, c.linha);
             return 1;
         }
