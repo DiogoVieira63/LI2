@@ -4,4 +4,4 @@ TURNO:PL3
 Nr do Grupo:?
 A93251: José Diogo Martins Vieira
 TÓ 
-TOMÁS
+A93193: Tomás Cardoso Francisco
