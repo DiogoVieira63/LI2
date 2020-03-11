@@ -1,3 +1,7 @@
+#include "c_dados.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 void mostrar_tabuleiro(ESTADO *e) {
     int linha = 1;
     while (linha <= 8) {
