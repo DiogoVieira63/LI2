@@ -13,7 +13,6 @@ linha++;
 tab [5][4]= BRANCA; 
 }
 
-
 //Esta função deverá criar um estado vazio (com o tabuleiro inicializado)
 ESTADO *inicializar_estado() {
 ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
@@ -32,5 +31,5 @@ return e;
 }
 
 
-// Estruturas de dados (devem ser colocadas no módulo correto da camada dos dados
+// Estruturas de dados (devem ser colocadas no módulo correto da camada dos dados)
     
