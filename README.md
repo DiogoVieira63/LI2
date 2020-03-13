@@ -1,5 +1,4 @@
-# LI2
-Laboratórios de Informática II
+# LABORATÓRIOS DE INFORMÁTICA II
 
 TURNO: PL3
 
