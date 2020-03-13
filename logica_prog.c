@@ -20,6 +20,15 @@ else e->jogador_atual--;
 return e;
 }
 
+char converter (int n){
+char letra = 'a';
+while (n > 1){
+letra++;
+n--;
+}
+return letra;
+} 
+
 int jogar(ESTADO *e, COORDENADA c) {
     int m,n;
     m = e->ultima_jogada.coluna;
@@ -35,9 +44,10 @@ int jogar(ESTADO *e, COORDENADA c) {
             e->ultima_jogada =c;
             }
             else printf ("Jogada Impoossível. \n");
-            printf("jogar %d %d\n", c.coluna, c.linha);//rever isto, ajustar conforme o interpretador
+            printf("jogar %c%d\n", converter (c.coluna), 9-(c.linha));
             return 1;
         }
     else (printf ("Jogada Impossível \n"));
     return 0;
 }
+
