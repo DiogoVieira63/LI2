@@ -1,0 +1,5 @@
+Neste Guião,
+Tivemos de criar os módulos, onde não obtivemos grande dificuldade.
+A função para inicializar o estado, que à primeira vista parecia dificil mas à medidade que fomos percebendo como era composto o ESTADO, tornou-se mais fácil.
+Também criamos uma função que imprimia o tabuleiro, na qual não obtivemos grande dificuldade, por já termos feito coisas semelhantes.
+Também criamos a função que coloca a peça branca na casa jogada.
