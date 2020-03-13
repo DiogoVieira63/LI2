@@ -44,7 +44,7 @@ int jogar(ESTADO *e, COORDENADA c) {
             e->ultima_jogada =c;
             }
             else printf ("Jogada Impoossível. \n");
-            printf("jogar %c%d\n", converter (c.coluna), 9-(c.linha));
+            printf("jogar %c%d\n", converter (c.coluna), 9-(c.linha));//ajustado conforme o interpretador, em atualização
             return 1;
         }
     else (printf ("Jogada Impossível \n"));
