@@ -27,17 +27,22 @@ void mostrar_tabuleiro(ESTADO *e) {
             }
 }
 
-/*
 int interpretador(ESTADO *e) {
+printf ("-JOGO RASTROS-\n");
 while (1){
 char linha[BUF_SIZE];
 char col[2], lin[2];
+printf ("JOGADA %d - ",e->num_jogadas+1);
+printf ("Jogador ");
+if (e->jogador_atual == 1) putchar ('1');
+else putchar ('2');
+putchar (':');
 if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
 if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {COORDENADA coord = {*col -'a'+1, 9-(*lin -'1'+1)};
-jogar(e, coord);
-mostrar_tabuleiro(e);
+if (jogar(e, coord)) mostrar_tabuleiro(e);
+if (fim_do_jogo (e)) break;
 }
+else (printf ("Coordenada inválida\n"));
 }
 return 1;
 }
-*/
