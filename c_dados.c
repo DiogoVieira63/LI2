@@ -47,13 +47,3 @@ if (e->jogador_atual == 1)e->jogador_atual++;
 else e->jogador_atual--;
 return e;
 }
-
-char converter (int n){
-char letra = 'a';
-while (n > 1){
-letra++;
-n--;
-}
-return letra;
-} 
-    

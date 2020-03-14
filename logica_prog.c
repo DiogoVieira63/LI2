@@ -1,4 +1,5 @@
 #include "c_dados.h"
+#include "c_interface.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,11 +20,6 @@ int contar_vizinhos (ESTADO *e){
     linha++;
     }
 return 1;
-}
-
-//Função que recebe o nr do jogador que ganhou para imprimir a mensagem de vencedor
-void display_gameover (int n){
-printf ("PARABÉNS, JOGADOR %d! GANHASTE!\n",n);
 }
 
 int fim_do_jogo (ESTADO* e){
@@ -56,7 +52,6 @@ int jogar(ESTADO *e, COORDENADA c) {
     if ((abs (c.linha-n) <= 1) && (abs (c.coluna -m) <= 1) && !(c.linha == n && c.coluna == m)){
             CASA peca_destino = e->tab [c.coluna][c.linha];
             if (peca_destino == VAZIO) {
-            alterar_jogada (e,c);
             alterar_estado_casa (e,c);
             alterar_estado_casa (e,e->ultima_jogada);
             alterar_num_jogadas (e);
@@ -64,11 +59,11 @@ int jogar(ESTADO *e, COORDENADA c) {
             e->ultima_jogada =c;
             }
             else {
-            printf ("Jogada Impoossível. \n");
+            print_erro (2);
             return 0;
             }
             return 1;
         }
-    else (printf ("Jogada Impossível \n"));
+    else print_erro (2);
     return 0;
 }
