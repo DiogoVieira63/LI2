@@ -30,6 +30,30 @@ e->ultima_jogada.coluna = 5;
 return e;
 }
 
+ESTADO* alterar_estado_casa (ESTADO *e,COORDENADA c){
+int li = c.linha,col = c.coluna;
+if (e->tab [col][li] == VAZIO) e->tab [col][li] = BRANCA;
+else e->tab [col][li] = PRETA;
+return e;
+}
 
-// Estruturas de dados (devem ser colocadas no módulo correto da camada dos dados)
+ESTADO* alterar_num_jogadas (ESTADO *e){
+e->num_jogadas++;
+return e;
+}
+
+ESTADO* alterar_jogador_atual (ESTADO *e){
+if (e->jogador_atual == 1)e->jogador_atual++;
+else e->jogador_atual--;
+return e;
+}
+
+char converter (int n){
+char letra = 'a';
+while (n > 1){
+letra++;
+n--;
+}
+return letra;
+} 
     
