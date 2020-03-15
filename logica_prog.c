@@ -54,6 +54,7 @@ int jogar(ESTADO *e, COORDENADA c) {
             if (peca_destino == VAZIO) {
             alterar_estado_casa (e,c);
             alterar_estado_casa (e,e->ultima_jogada);
+            guardar_jogada (e,c);
             alterar_num_jogadas (e);
             alterar_jogador_atual (e);
             e->ultima_jogada =c;

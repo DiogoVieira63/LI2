@@ -47,3 +47,12 @@ if (e->jogador_atual == 1)e->jogador_atual++;
 else e->jogador_atual--;
 return e;
 }
+
+ESTADO* guardar_jogada (ESTADO *e,COORDENADA c){
+int nr = e->num_jogadas;
+JOGADA jog = e->jogadas[nr];
+int atual = e->jogador_atual;
+if (atual == 1) jog.jogador1 = c;
+else  jog.jogador2 = c;
+return e;
+}
