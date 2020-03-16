@@ -17,7 +17,8 @@ void mostrar_tabuleiro(ESTADO *e) {
             if (linha == 1 && coluna == 8) putchar('2'); // colocar o 2 no canto superior direito
             else if (linha == 8 && coluna == 1) putchar('1'); //colocar o 1 no canto inferior esquerdo
                 else {
-                    CASA atual = e->tab[coluna][linha];
+                    COORDENADA c = {coluna,linha};
+                    CASA atual = obter_estado_casa (e,c);
                     if (atual == VAZIO) putchar('.');
                     else if (atual == PRETA) putchar('#');
                          else putchar('*');

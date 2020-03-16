@@ -29,4 +29,5 @@ ESTADO* alterar_jogador_atual (ESTADO *e);
 ESTADO* alterar_num_jogadas (ESTADO *e);
 ESTADO* alterar_estado_casa (ESTADO *e,COORDENADA c);
 ESTADO* guardar_jogada (ESTADO *e,COORDENADA c);
+CASA obter_estado_casa (ESTADO *e, COORDENADA c);
 #endif

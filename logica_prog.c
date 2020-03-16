@@ -48,9 +48,9 @@ int jogar(ESTADO *e, COORDENADA c) {
     int m,n;
     m = e->ultima_jogada.coluna;
     n = e->ultima_jogada.linha; 
-    CASA peca_atual = e->tab [m][n]; 
+    CASA peca_atual = obter_estado_casa (e,e->ultima_jogada); 
     if ((abs (c.linha-n) <= 1) && (abs (c.coluna -m) <= 1) && !(c.linha == n && c.coluna == m)){
-            CASA peca_destino = e->tab [c.coluna][c.linha];
+            CASA peca_destino = obter_estado_casa (e,c);
             if (peca_destino == VAZIO) {
             alterar_estado_casa (e,c);
             alterar_estado_casa (e,e->ultima_jogada);
