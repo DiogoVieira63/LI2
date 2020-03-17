@@ -36,13 +36,13 @@ if (c.coluna == 8 && c.linha == 1) {
 }
 //QUANDO O JOGADOR GANHA POR DEIXAR O OUTRO ENCURRALADO
 int jog;
-if (e->jogador_atual == 1)jog = 2;
-else jog = 1;
-if (ha_nao_casas_livres (e)) {
-    display_gameover (jog);
-    return 1;
-}
-return 0;
+    if (e->jogador_atual == 1)jog = 2;
+    else jog = 1;
+    if (ha_nao_casas_livres (e)) {
+        display_gameover (jog);
+        return 1;
+        }
+    return 0;
 }
 
 int jogar(ESTADO *e, COORDENADA c) {
@@ -53,17 +53,17 @@ int jogar(ESTADO *e, COORDENADA c) {
     if ((abs (c.linha-n) <= 1) && (abs (c.coluna -m) <= 1) && !(c.linha == n && c.coluna == m)){
             CASA peca_destino = obter_estado_casa (e,c);
             if (peca_destino == VAZIO) {
-            alterar_estado_casa (e,c);
-            alterar_estado_casa (e,e->ultima_jogada);
-            guardar_jogada (e,c);
-            alterar_num_jogadas (e);
-            alterar_jogador_atual (e);
-            e->ultima_jogada =c;
+                alterar_estado_casa (e,c);
+                alterar_estado_casa (e,e->ultima_jogada);
+                guardar_jogada (e,c);
+                alterar_num_jogadas (e);
+                alterar_jogador_atual (e);
+                e->ultima_jogada =c;
             }
             else {
-            print_erro (2);
-            return 0;
-            }
+                print_erro (2);
+                return 0;
+                }
             return 1;
         }
     else print_erro (2);
