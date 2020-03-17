@@ -31,7 +31,6 @@ return e;
 }
 
 CASA obter_estado_casa(ESTADO *e, COORDENADA c){
-int lin = c.linha, col = c.coluna;
 return e->tab[c.coluna][c.linha];
 }
 
