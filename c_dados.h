@@ -48,16 +48,38 @@ typedef struct {
     int jogador_atual;
     } ESTADO;
 
+/**
+\brief Inicializa o ESTADO
+@returns o ESTADO devidamente iniciado
+*/
 ESTADO* inicializar_estado();
+/**
+\brief Muda o jogador atual
+@param e Apontador para o ESTADO
+*/
 void alterar_jogador_atual (ESTADO *e);
+/**
+\brief Muda o nr de jogadas
+@param e Apontador para o ESTADO
+*/
 void alterar_num_jogadas (ESTADO *e);
 /**
-\brief Muda o estado de uma casa
-@param e Apontador para o estado
-@param c A coordenada
-@returns o apontador para o estado devidamente alterado
+\brief Muda o estado de uma CASA
+@param e Apontador para o ESTADO
+@param c A COORDENADA
 */
 void alterar_estado_casa (ESTADO *e,COORDENADA c);
+/**
+\brief Guarda a coordenada na jogada
+@param e Apontador para o ESTADO
+@param c A COORDENADA
+*/
 void guardar_jogada (ESTADO *e,COORDENADA c);
+/**
+\brief Obtém o estado da casa
+@param e Apontador para o ESTADO
+@param c A COORDENADA
+@returns A CASA respetiva
+*/
 CASA obter_estado_casa (ESTADO *e, COORDENADA c);
 #endif
