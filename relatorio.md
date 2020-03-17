@@ -1,4 +1,4 @@
-#GUIÃO 5
+# GUIÃO 5
 
 Para este guião, tivemos de criar os módulos para o projeto. Dividimos os módulos em 3 partes:
 
