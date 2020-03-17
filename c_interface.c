@@ -33,19 +33,19 @@ void mostrar_tabuleiro(ESTADO *e) {
 }
 
 void print_linha (){
-printf (" -------------------------------\n");
+    printf (" -------------------------------\n");
 }
 
 //Função que recebe o nr do jogador que ganhou para imprimir a mensagem de vencedor
 void display_gameover (int n){
-printf ("|-------------------------------|\n");
-printf ("|-PARABÉNS, JOGADOR %d!GANHASTE!-|\n",n);
-printf ("|-------------------------------|\n");
+    printf ("|-------------------------------|\n");
+    printf ("|-PARABÉNS, JOGADOR %d!GANHASTE!-|\n",n);
+    printf ("|-------------------------------|\n");
 }
 
 void print_erro (int n){
-if (n == 1) printf ("ERRO: Coordenada inválida\n");
-else printf ("ERRO: Jogada Inválida \n");
+    if (n == 1) printf ("ERRO: Coordenada inválida\n");
+    else printf ("ERRO: Jogada Inválida \n");
 }
 
 int interpretador(ESTADO *e) {
