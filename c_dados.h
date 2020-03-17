@@ -1,5 +1,5 @@
 /**
-@file dados.h
+@file c_dados.h
 Definição do estado e das funções que o manipulam
 */
 
@@ -9,7 +9,11 @@ Definição do estado e das funções que o manipulam
 /**
 Tipo de dados para uma CASA
 */
-typedef enum {VAZIO, BRANCA, PRETA} CASA;
+typedef enum {VAZIO ='.',
+             BRANCA ='*', 
+              PRETA = '#',
+              POS1 = '1',
+              POS2 = '2'} CASA;
 
 /**
 Tipo de dados para uma COORDENADA
@@ -32,6 +36,12 @@ Tipo de dados para JOGADAS
 */
 typedef JOGADA JOGADAS[32];
 
+
+typedef struct {
+    char jogador1 [10];
+    char jogador2 [10];
+    } NOMES;
+
 /**
 Tipo de dados para o ESTADO
 */
@@ -46,6 +56,7 @@ typedef struct {
     int num_jogadas;
     /**Um inteiro (1 ou 2) correspodente ao jogador atual*/
     int jogador_atual;
+    NOMES nomes;
     } ESTADO;
 
 /**

@@ -21,10 +21,11 @@ void mostrar_tabuleiro(ESTADO *e);
 \brief Display da mensagem para o Vencedor
 @param e Apontador para o ESTADO
 */
-void display_gameover (int n);
+void display_gameover (int n,ESTADO *e);
 /**
 \brief Display de mensagens de erro
 @param m Int para selecionar qual mensagem mostrar
 */
 void print_erro (int n);
+char* nomes (int n,char nome []);
 #endif
