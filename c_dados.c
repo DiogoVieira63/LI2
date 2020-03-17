@@ -54,18 +54,18 @@ void alterar_estado_casa (ESTADO *e,COORDENADA c ){
 }
 
 void alterar_num_jogadas (ESTADO *e){
-e->num_jogadas++;
+    e->num_jogadas++;
 }
 
 void alterar_jogador_atual (ESTADO *e){
-if (e->jogador_atual == 1)e->jogador_atual++;
-else e->jogador_atual--;
+    if (e->jogador_atual == 1)e->jogador_atual++;
+    else e->jogador_atual--;
 }
 
 void guardar_jogada (ESTADO *e,COORDENADA c){
 int nr = e->num_jogadas;
 JOGADA jog = e->jogadas[nr];
 int atual = e->jogador_atual;
-if (atual == 1) jog.jogador1 = c;
-else  jog.jogador2 = c;
+    if (atual == 1) jog.jogador1 = c;
+    else  jog.jogador2 = c;
 }

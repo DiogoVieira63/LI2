@@ -47,7 +47,7 @@ void gravar_tabuleiro(ESTADO *e,FILE *fp) {
 }
 
 void print_linha (){
-printf (" -------------------------------\n");
+    printf (" -------------------------------\n");
 }
 
 //Função que recebe o nr do jogador que ganhou para imprimir a mensagem de vencedor
@@ -59,8 +59,8 @@ printf ("|-------------------------------|\n");
 }
 
 void print_erro (int n){
-if (n == 1) printf ("ERRO: Coordenada inválida\n");
-else printf ("ERRO: Jogada Inválida \n");
+    if (n == 1) printf ("ERRO: Coordenada inválida\n");
+    else printf ("ERRO: Jogada Inválida \n");
 }
 
 void print_mensagem (){
