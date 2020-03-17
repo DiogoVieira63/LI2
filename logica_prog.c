@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 //Função auxiliar da (fim_do_jogo) que observa se todas as peças à volta estão ocupadas por PRETAS
-int contar_vizinhos (ESTADO *e){
+int ha_nao_casas_livres (ESTADO *e){
     COORDENADA atual = e->ultima_jogada;
     int contagem = 0;
     int linha = atual.linha-1;
@@ -13,7 +13,8 @@ int contar_vizinhos (ESTADO *e){
     int coluna = atual.coluna-1;
         while (coluna <= atual.coluna+1)
         {
-        if (e->tab [coluna][linha] == PRETA || linha < 1 || linha > 8 || coluna < 1 || coluna > 8 || (linha == atual.linha && coluna == atual.coluna));
+        COORDENADA c = {coluna,linha};
+        if (obter_estado_casa (e,c) == PRETA || linha < 1 || linha > 8 || coluna < 1 || coluna > 8 || (linha == atual.linha && coluna == atual.coluna));
         else return 0;
         coluna++;
         }
@@ -37,7 +38,7 @@ if (c.coluna == 8 && c.linha == 1) {
 int jog;
 if (e->jogador_atual == 1)jog = 2;
 else jog = 1;
-if (contar_vizinhos (e)) {
+if (ha_nao_casas_livres (e)) {
     display_gameover (jog);
     return 1;
 }
