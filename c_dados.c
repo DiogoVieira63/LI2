@@ -15,23 +15,17 @@ void tab_inicial (CASA tab [8][8]){
 
 //Esta função deverá criar um estado vazio (com o tabuleiro inicializado)
 ESTADO *inicializar_estado() {
-ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
-e->jogador_atual = 1;
-e->num_jogadas = 0; 
-/*
-e->jogadas->jogador1.linha = 0;
-e->jogadas->jogador1.coluna = 0;
-e->jogadas->jogador2.linha = 0;
-e->jogadas->jogador2.coluna = 0;
-*/
-tab_inicial (e->tab);
-e->ultima_jogada.linha = 4;
-e->ultima_jogada.coluna = 5;
-return e;
+    ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
+    e->jogador_atual = 1;
+    e->num_jogadas = 0; 
+    tab_inicial (e->tab);
+    e->ultima_jogada.linha = 4;
+    e->ultima_jogada.coluna = 5;
+    return e;
 }
 
 CASA obter_estado_casa(ESTADO *e, COORDENADA c){
-return e->tab[c.coluna][c.linha];
+    return e->tab[c.coluna][c.linha];
 }
 
 void alterar_estado_casa (ESTADO *e,COORDENADA c){
@@ -41,18 +35,18 @@ void alterar_estado_casa (ESTADO *e,COORDENADA c){
 }
 
 void alterar_num_jogadas (ESTADO *e){
-e->num_jogadas++;
+    e->num_jogadas++;
 }
 
 void alterar_jogador_atual (ESTADO *e){
-if (e->jogador_atual == 1)e->jogador_atual++;
-else e->jogador_atual--;
+    if (e->jogador_atual == 1)e->jogador_atual++;
+    else e->jogador_atual--;
 }
 
 void guardar_jogada (ESTADO *e,COORDENADA c){
 int nr = e->num_jogadas;
 JOGADA jog = e->jogadas[nr];
 int atual = e->jogador_atual;
-if (atual == 1) jog.jogador1 = c;
-else  jog.jogador2 = c;
+    if (atual == 1) jog.jogador1 = c;
+    else  jog.jogador2 = c;
 }
