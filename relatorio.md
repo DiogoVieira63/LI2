@@ -12,4 +12,4 @@ Neste módulo está tudo aquilo relacionado com a lógica do jogo faz parte a fu
 
 - #### CAMADA DE INTERFACE
 
-Neste módulo, está tudo aquilo que o utilizador vê no ecrã. Este módulo tem a função de imprimir o que faz parte do jogo, desde o tabuleiro a mensagens de erro. Tem também o interpretador que recebe a infotmação do utilizar e consoante a mesma, chama a função jogar, se o utilizador tiver introduzido uma coordenada válida, ou seja, uma letra entre [a-h] e um número entre [1-8].
+Neste módulo, está tudo aquilo que o utilizador vê no ecrã. Este módulo tem a função de imprimir o que faz parte do jogo, desde o tabuleiro a mensagens de erro, e a mensagem para o final do jogo. Tem também o interpretador que recebe a informação do utilizador e consoante a mesma, chama a função jogar, se o utilizador tiver introduzido uma coordenada válida, ou seja, uma letra entre [a-h] e um número entre [1-8].
