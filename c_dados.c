@@ -4,13 +4,13 @@
 
 
 void tab_inicial (CASA tab [8][8]){
-int linha = 1;
-while (linha <= 8){
-int coluna = 1;
-while (coluna <= 8) tab [linha] [coluna++] = VAZIO;
-linha++;
-}
-tab [5][4]= BRANCA; 
+    int linha = 1;
+    while (linha <= 8){
+    int coluna = 1;
+        while (coluna <= 8) tab [linha] [coluna++] = VAZIO;
+        linha++;
+    }  
+    tab [5][4]= BRANCA; 
 }
 
 //Esta função deverá criar um estado vazio (com o tabuleiro inicializado)
@@ -35,9 +35,9 @@ return e->tab[c.coluna][c.linha];
 }
 
 void alterar_estado_casa (ESTADO *e,COORDENADA c){
-int li = c.linha,col = c.coluna;
-if (e->tab [col][li] == VAZIO) e->tab [col][li] = BRANCA;
-else e->tab [col][li] = PRETA;
+    int li = c.linha,col = c.coluna;
+    if (e->tab [col][li] == VAZIO) e->tab [col][li] = BRANCA;  
+    else e->tab [col][li] = PRETA;
 }
 
 void alterar_num_jogadas (ESTADO *e){

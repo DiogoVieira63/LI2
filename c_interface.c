@@ -49,27 +49,27 @@ else printf ("ERRO: Jogada Inválida \n");
 }
 
 int interpretador(ESTADO *e) {
-printf (" ---------JOGO RASTROS----------\n");
-mostrar_tabuleiro (e);
-while (1){
-char linha[BUF_SIZE];
-char col[2], lin[2];
-print_linha ();
-printf ("->JOGADA %d - ",e->num_jogadas+1);
-printf ("Jogador ");
-if (e->jogador_atual == 1) putchar ('1');
-else putchar ('2');
-putchar (':');
-if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
-if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {COORDENADA coord = {*col -'a'+1, 9-(*lin -'1'+1)};
-print_linha ();
-if (jogar(e, coord)) mostrar_tabuleiro(e);
-if (fim_do_jogo (e)) break;
-}
-else {
-print_linha ();
-print_erro (1);
-}
-}
-return 1;
+    printf (" ---------JOGO RASTROS----------\n");
+    mostrar_tabuleiro (e);
+    while (1){
+        char linha[BUF_SIZE];
+        char col[2], lin[2];
+        print_linha ();
+        printf ("->JOGADA %d - ",e->num_jogadas+1);
+        printf ("Jogador ");
+        if (e->jogador_atual == 1) putchar ('1');
+        else putchar ('2');
+        putchar (':');
+        if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
+        if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {COORDENADA coord = {*col -'a'+1, 9-(*lin -'1'+1)};
+        print_linha ();
+        if (jogar(e, coord)) mostrar_tabuleiro(e);
+        if (fim_do_jogo (e)) break;
+        }
+        else {
+            print_linha ();
+            print_erro (1);
+            }
+        }
+    return 1;
 }
