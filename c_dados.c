@@ -6,8 +6,7 @@
 
 
 void tab_inicial (CASA tab [8][8]){
-    int linha;
-    for (linha = 1;linha <= 8;linha++){
+    for (int linha = 1;linha <= 8;linha++){
     int coluna = 1;
         while (coluna <= 8) {
             tab [linha] [coluna++] = VAZIO;
