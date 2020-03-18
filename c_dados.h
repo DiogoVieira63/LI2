@@ -36,7 +36,9 @@ Tipo de dados para JOGADAS
 */
 typedef JOGADA JOGADAS[32];
 
-
+/**
+Tipo de dados para NOMES
+*/
 typedef struct {
     char jogador1 [11];
     char jogador2 [11];
@@ -56,6 +58,7 @@ typedef struct {
     int num_jogadas;
     /**Um inteiro (1 ou 2) correspodente ao jogador atual*/
     int jogador_atual;
+    /** Guarda os nomes introduzidos pelo utiilizador*/
     NOMES nomes;
     } ESTADO;
 
