@@ -7,18 +7,14 @@
 int ha_nao_casas_livres (ESTADO *e){
     COORDENADA atual = e->ultima_jogada;
     int contagem = 0;
-    int linha = atual.linha-1;
-    while (linha <= atual.linha+1)
+    for (int linha = atual.linha-1;linha <= atual.linha+1;linha++)
     {
-    int coluna = atual.coluna-1;
-        while (coluna <= atual.coluna+1)
+        for (int coluna = atual.coluna-1;coluna <= atual.coluna+1;coluna++)
         {
         COORDENADA c = {coluna,linha};
         if (obter_estado_casa (e,c) == PRETA || linha < 1 || linha > 8 || coluna < 1 || coluna > 8 || (linha == atual.linha && coluna == atual.coluna));
         else return 0;
-        coluna++;
         }
-    linha++;
     }
 return 1;
 }
