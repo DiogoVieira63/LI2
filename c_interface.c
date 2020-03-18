@@ -26,10 +26,11 @@ void mostrar_tabuleiro(ESTADO *e) {
             }
 }
 
-void gravar_tabuleiro(ESTADO *e,FILE *fp) {
+void gravar_tabuleiro(ESTADO *e,char *filename) {
+    FILE *fp;
     char nr = '8'; 
     int linha = 1;
-    fp = fopen ("tab_gr.txt", "w+");
+    fp = fopen (filename, "w+");
     while (linha <= 8) {
         int coluna = 1;
         while (coluna <= 8) {
@@ -65,10 +66,19 @@ CASA char_to_peca (char n){
     }
 }
 
-void ler_tabuleiro (ESTADO *e,FILE *fp){
+
+void print_mensagem (int n,char *filename){
+if (n==1)printf ("Tabuleiro gravado em %s\n",filename);
+else if ( n==2)printf("Tabuleiro lido do ficheiro %s\n",filename);
+else printf ("Ficheiro %s não existe\n",filename);
+}
+
+int ler_tabuleiro (ESTADO *e,char *filename){
+    FILE *fp;
     char str[8]; 
     char peca;
-    fp = fopen ("tab_gr.txt", "r");
+    if ((fopen (filename, "r")) == NULL) return 0;
+    else{
     int linha = 1;
     while (linha <= 8){
         int coluna = 1;
@@ -89,6 +99,8 @@ void ler_tabuleiro (ESTADO *e,FILE *fp){
         linha++;
     }
     fclose(fp);
+    }
+    return 1;
 }
 
 void print_linha (){
@@ -110,10 +122,6 @@ void print_erro (int n){
     else printf ("Jogada Inválida \n");
 }
 
-void print_mensagem (int n){
-if (n==1)printf ("Tabuleiro gravado em tab_gr.txt\n");
-else printf("Tabuleiro lido do ficheiro tab_gr.txt\n");
-}
 
 char* nomes (int n,char nome []){
     if (n==1) printf("Escolha o nome \n(max10 e sem espaços)\n");
@@ -123,10 +131,10 @@ char* nomes (int n,char nome []){
 }
 
 int interpretador(ESTADO *e) {
-    FILE *fp;
     printf (" ---------JOGO RASTROS----------\n");
     mostrar_tabuleiro (e);
-    char linha1[BUF_SIZE];    
+    char linha1[BUF_SIZE]; 
+    char filename [BUF_SIZE];   
     if(fgets(linha1, BUF_SIZE, stdin) == NULL)return 0; // necessário para que o input seja nulo ao entrar no while
     while (1){
         char linha[BUF_SIZE];
@@ -142,17 +150,22 @@ int interpretador(ESTADO *e) {
         if (jogar(e, coord)) mostrar_tabuleiro(e);
         if (fim_do_jogo (e)) break;
         }
-        else { if (sscanf (linha, "%[gr]",linha) ==1) { //comando para gravar o tabuleiro num ficheiro
-            gravar_tabuleiro (e,fp);
+        else { if (sscanf (linha, "gr %s",filename) ==1) {//comando para gravar o tabuleiro num ficheiro
+            gravar_tabuleiro (e,filename);
             print_linha ();
-            print_mensagem (1);
+            print_mensagem (1,filename);
         }
-        else { if (sscanf (linha, "%[ler]",linha) ==1) { //comando para ler o tabuleiro de um ficheiro
-            ler_tabuleiro (e,fp);
+        else { if (sscanf (linha, "ler %s",filename) ==1) {//comando para ler o tabuleiro de um ficheiro
+            if (ler_tabuleiro (e,filename)){
             print_linha ();
-            print_mensagem (2);
+            print_mensagem (2,filename);
             print_linha ();
             mostrar_tabuleiro (e);
+            }
+            else {
+                print_linha ();
+                print_mensagem (3,filename);
+            }
             }
             else {if (sscanf (linha, "%[Q]",linha) ==1) break; // comando para dar QUIT do jogo
             else {

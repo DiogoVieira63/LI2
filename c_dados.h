@@ -75,7 +75,7 @@ void alterar_jogador_atual (ESTADO *e);
 */
 void alterar_num_jogadas (ESTADO *e);
 /**
-\brief Muda o estado de uma CASA
+\brief Muda o estado de uma CASA conforme a lógica do Jogo
 @param e Apontador para o ESTADO
 @param c A COORDENADA
 */
@@ -93,5 +93,11 @@ void guardar_jogada (ESTADO *e,COORDENADA c);
 @returns A CASA respetiva
 */
 CASA obter_estado_casa (ESTADO *e, COORDENADA c);
+/**
+\brief Modifica uma casa para um determinado estado de CASA
+@param e Apontador para o ESTADO
+@param c A COORDENADA
+@param casa O estado da casa que quero na coordenada
+*/
 void modificar_casa (ESTADO *e,COORDENADA c,CASA casa);
 #endif

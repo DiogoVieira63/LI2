@@ -27,5 +27,10 @@ void display_gameover (int n,ESTADO *e);
 @param m Int para selecionar qual mensagem mostrar
 */
 void print_erro (int n);
+/**
+\brief Função que faz corresponder os nomes introduzidos pelo Utilizador ao respetivo Jogador
+@param n Int para selecionar qual jogador se trata
+@param nome Array com o nome introduzido pelo Utilizador
+*/
 char* nomes (int n,char nome []);
 #endif
