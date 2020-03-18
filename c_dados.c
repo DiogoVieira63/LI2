@@ -37,7 +37,7 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c){
     return e->tab[c.coluna][c.linha];
 }
 
-void alterar_estado_casa (ESTADO *e,COORDENADA c ){
+void alterar_estado_casa (ESTADO *e,COORDENADA c){
     int col = c.coluna, lin = c.linha;
     CASA atual = (e->tab[col][lin] );
     switch (atual){
@@ -51,6 +51,11 @@ void alterar_estado_casa (ESTADO *e,COORDENADA c ){
         e->tab[col][lin] = PRETA;
         break;
     }
+}
+
+void modificar_casa (ESTADO *e,COORDENADA c,CASA casa){
+    int col = c.coluna, lin = c.linha;
+    e->tab [col][lin] = casa;
 }
 
 void alterar_num_jogadas (ESTADO *e){

@@ -37,13 +37,57 @@ void gravar_tabuleiro(ESTADO *e,FILE *fp) {
                 CASA atual = obter_estado_casa (e,c);
                 fputc(atual,fp);
                 coluna++;
-                fputc(' ',fp);//não sei se é necessário.
         }
             fprintf (fp,"\n");
             linha++;
             nr--;
         }
         fclose(fp);
+}
+
+CASA char_to_peca (char n){
+    switch (n){
+        case '#': 
+        return PRETA;
+        break;
+        case '*':
+        return BRANCA;
+        break;
+        case '.': 
+        return VAZIO;
+        break;
+        case '1':
+        return POS1;
+        break;
+        case '2':
+        return POS2;
+        break;
+    }
+}
+
+void ler_tabuleiro (ESTADO *e,FILE *fp){
+    char str[8]; 
+    char peca;
+    fp = fopen ("tab_gr.txt", "r");
+    int linha = 1;
+    while (linha <= 8){
+        int coluna = 1;
+        while (coluna <= 8){
+            if(fgets(str,8, fp) == NULL) break;
+            else {
+            int i = 0;
+            while (str[i]){
+            CASA atual = char_to_peca (str[i]);
+            COORDENADA c ={coluna,linha};
+            if (atual == BRANCA) e->ultima_jogada = c;
+            modificar_casa (e,c,atual);
+            i++;
+            coluna ++;
+            }
+            }
+        }
+        linha++;
+    }
 }
 
 void print_linha (){
@@ -99,9 +143,14 @@ int interpretador(ESTADO *e) {
             print_linha ();
             print_mensagem ();
         }
-        else {
+        else { if (sscanf (linha, "%[ler]",linha) ==1) {
+            ler_tabuleiro (e,fp);
+            mostrar_tabuleiro (e);
+            }
+            else {
             print_linha ();
             print_erro (1);
+            }
             }
         }
         }

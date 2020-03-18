@@ -93,4 +93,5 @@ void guardar_jogada (ESTADO *e,COORDENADA c);
 @returns A CASA respetiva
 */
 CASA obter_estado_casa (ESTADO *e, COORDENADA c);
+void modificar_casa (ESTADO *e,COORDENADA c,CASA casa);
 #endif
