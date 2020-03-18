@@ -25,12 +25,13 @@ return 1;
 
 int fim_do_jogo (ESTADO* e){
 COORDENADA c = e->ultima_jogada;
+CASA atual = obter_estado_casa (e,c);
 //QUANDO O JOGADOR GANHA POR CHEGAR À SUA CASA
-if (c.coluna == 1 && c.linha == 8) {
+if (atual == POS1) {
     display_gameover (1,e);
     return 1;
 }
-if (c.coluna == 8 && c.linha == 1) {
+if (atual == POS2) {
     display_gameover (2,e);
     return 1;
 }
@@ -52,7 +53,7 @@ int jogar(ESTADO *e, COORDENADA c) {
     CASA peca_atual = obter_estado_casa (e,e->ultima_jogada); 
     if ((abs (c.linha-n) <= 1) && (abs (c.coluna -m) <= 1) && !(c.linha == n && c.coluna == m)){
             CASA peca_destino = obter_estado_casa (e,c);
-            if (peca_destino == VAZIO) {
+            if (peca_destino == VAZIO || peca_destino == POS1 || peca_destino == POS2) {
                 alterar_estado_casa (e,c);
                 alterar_estado_casa (e,e->ultima_jogada);
                 guardar_jogada (e,c);

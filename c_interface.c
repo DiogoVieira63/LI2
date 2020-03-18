@@ -88,13 +88,14 @@ void ler_tabuleiro (ESTADO *e,FILE *fp){
         }
         linha++;
     }
+    fclose(fp);
 }
 
 void print_linha (){
     printf (" -------------------------------\n");
 }
 
-//Função que recebe o nr do jogador que ganhou para imprimir a mensagem de vencedor
+//Função que recebe o nr do jogador que ganhou  e o estado para imprimir a mensagem de vencedor
 void display_gameover (int n,ESTADO *e){
 printf ("|-------------------------------|\n");
 if (n==1)printf ("  PARABÉNS, %s!GANHASTE!\n",e->nomes.jogador1);
@@ -102,13 +103,16 @@ else printf ("  PARABÉNS, %s!GANHASTE!\n",e->nomes.jogador2);
 printf ("|-------------------------------|\n");
 }
 
+//Função que dado um int, imprime uma mensagem de erro
 void print_erro (int n){
-    if (n == 1) printf ("ERRO: Coordenada inválida\n");
-    else printf ("ERRO: Jogada Inválida \n");
+    printf ("ERRO: ");
+    if (n == 1) printf ("Coordenada inválida\n");
+    else printf ("Jogada Inválida \n");
 }
 
-void print_mensagem (){
- printf ("Tabuleiro gravado em tab_gr.txt\n");
+void print_mensagem (int n){
+if (n==1)printf ("Tabuleiro gravado em tab_gr.txt\n");
+else printf("Tabuleiro lido do ficheiro tab_gr.txt\n");
 }
 
 char* nomes (int n,char nome []){
@@ -129,27 +133,32 @@ int interpretador(ESTADO *e) {
         char col[2], lin[2];
         print_linha ();
         printf ("->JOGADA %d - ",e->num_jogadas+1);
-        if (e->jogador_atual == 1) printf ("%s",e->nomes.jogador1);
-        else printf ("%s",e->nomes.jogador2);
+        if (e->jogador_atual == 1) printf ("(J1)%s",e->nomes.jogador1);
+        else printf ("(J2)%s",e->nomes.jogador2);
         putchar (':');
         if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
-        if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {COORDENADA coord = {*col -'a'+1, 9-(*lin -'1'+1)};
+        if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {COORDENADA coord = {*col -'a'+1, 9-(*lin -'1'+1)}; //comando para efetuar uma jogada
         print_linha ();
         if (jogar(e, coord)) mostrar_tabuleiro(e);
         if (fim_do_jogo (e)) break;
         }
-        else { if (sscanf (linha, "%[gr]",linha) ==1) {
+        else { if (sscanf (linha, "%[gr]",linha) ==1) { //comando para gravar o tabuleiro num ficheiro
             gravar_tabuleiro (e,fp);
             print_linha ();
-            print_mensagem ();
+            print_mensagem (1);
         }
-        else { if (sscanf (linha, "%[ler]",linha) ==1) {
+        else { if (sscanf (linha, "%[ler]",linha) ==1) { //comando para ler o tabuleiro de um ficheiro
             ler_tabuleiro (e,fp);
+            print_linha ();
+            print_mensagem (2);
+            print_linha ();
             mostrar_tabuleiro (e);
             }
+            else {if (sscanf (linha, "%[Q]",linha) ==1) break; // comando para dar QUIT do jogo
             else {
             print_linha ();
             print_erro (1);
+            }
             }
             }
         }
