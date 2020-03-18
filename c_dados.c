@@ -6,11 +6,12 @@
 
 
 void tab_inicial (CASA tab [8][8]){
-    int linha = 1;
-    while (linha <= 8){
-    int coluna = 1;
-        while (coluna <= 8) tab [linha] [coluna++] = VAZIO;
-        linha++;
+    int linha;
+    for (linha = 1;linha <= 8;linha++){
+    int coluna;
+        for (coluna = 1;coluna <= 8;coluna++) {
+            tab [linha] [coluna++] = VAZIO;
+        }
     }  
     tab [5][4]= BRANCA; 
     tab [1][8]= POS1;
