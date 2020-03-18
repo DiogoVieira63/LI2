@@ -173,7 +173,7 @@ int interpretador(ESTADO *e) {
             }
             }
             else {
-                if (sscanf (linha, "%Q") ==1) break; // comando para dar QUIT do jogo
+                if (sscanf (linha, "%[Q]",linha) ==1) break; // comando para dar QUIT do jogo
             else {
             print_linha ();
             print_erro (1);
