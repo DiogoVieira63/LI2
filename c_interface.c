@@ -5,7 +5,7 @@
 #include <string.h>
 
 #define BUF_SIZE 1024
-
+//Imprimir o tabuleiro no ecrã
 void mostrar_tabuleiro(ESTADO *e) {
     char nr = '8'; 
     int linha = 1;
@@ -25,7 +25,7 @@ void mostrar_tabuleiro(ESTADO *e) {
                 nr--;
             }
 }
-
+//Imprime o tabulero num ficheiro
 void gravar_tabuleiro(ESTADO *e,char *filename) {
     FILE *fp;
     char nr = '8'; 
@@ -45,7 +45,7 @@ void gravar_tabuleiro(ESTADO *e,char *filename) {
         }
         fclose(fp);
 }
-
+//Convesor de char em CASA, função auxiliar para a ler_tabuleiro
 CASA char_to_peca (char n){
     switch (n){
         case '#': 
@@ -66,13 +66,15 @@ CASA char_to_peca (char n){
     }
 }
 
-
+//Imprime uma mensagem no ecrã, conforme o int que recebe
 void print_mensagem (int n,char *filename){
 if (n==1)printf ("Tabuleiro gravado em %s\n",filename);
 else if ( n==2)printf("Tabuleiro lido do ficheiro %s\n",filename);
 else printf ("Ficheiro %s não existe\n",filename);
 }
 
+//Função que, caso o ficheiro exista,lê o que está no ficheiro e chama funções para alterar o estado conforme o tabuleiro do ficheiro.
+//Caso não exista, dá return 0
 int ler_tabuleiro (ESTADO *e,char *filename){
     FILE *fp;
     char str[8]; 
@@ -123,7 +125,7 @@ void print_erro (int n){
     else printf ("Jogada Inválida \n");
 }
 
-
+//Função que dado o nr do jogador, e uma string. Faz scanf do nome que o utilzador responder e coloca na string.
 char* nomes (int n,char nome []){
     if (n==1) printf("Escolha o nome \n(max10 e sem espaços)\n");
     printf("Jogador %d:",n);
@@ -151,12 +153,14 @@ int interpretador(ESTADO *e) {
         if (jogar(e, coord)) mostrar_tabuleiro(e);
         if (fim_do_jogo (e)) break;
         }
-        else { if (sscanf (linha, "gr %s",filename) ==1) {//comando para gravar o tabuleiro num ficheiro
+        else { 
+            if (sscanf (linha, "gr %s",filename) ==1) {//comando para gravar o tabuleiro num ficheiro
             gravar_tabuleiro (e,filename);
             print_linha ();
             print_mensagem (1,filename);
         }
-        else { if (sscanf (linha, "ler %s",filename) ==1) {//comando para ler o tabuleiro de um ficheiro
+        else { 
+            if (sscanf (linha, "ler %s",filename) ==1) {//comando para ler o tabuleiro de um ficheiro
             if (ler_tabuleiro (e,filename)){
             print_linha ();
             print_mensagem (2,filename);
@@ -168,7 +172,8 @@ int interpretador(ESTADO *e) {
                 print_mensagem (3,filename);
             }
             }
-            else {if (sscanf (linha, "%[Q]",linha) ==1) break; // comando para dar QUIT do jogo
+            else {
+                if (sscanf (linha, "%Q") ==1) break; // comando para dar QUIT do jogo
             else {
             print_linha ();
             print_erro (1);
