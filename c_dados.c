@@ -19,7 +19,7 @@ void tab_inicial (CASA tab [8][8]){
 
 //Esta função deverá criar um estado vazio (com o tabuleiro inicializado)
 ESTADO *inicializar_estado() {
-char nome1 [10],nome2 [10];
+char nome1 [11],nome2 [11];
 ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
 e->jogador_atual = 1;
 e->num_jogadas = 0;
