@@ -32,7 +32,7 @@ void gravar_tabuleiro(ESTADO *e,char *filename) {
                 CASA atual = obter_estado_casa (e,c);
                 fputc(atual,fp);
         }
-            fprintf (fp,"\n"):
+            fprintf (fp,"\n");
             nr--;
         }
         fclose(fp);
@@ -74,15 +74,17 @@ int ler_tabuleiro (ESTADO *e,char *filename){
     fp = fopen (filename, "r");
     if (fp == NULL) return 0;
     else{
-    for (int linha = 1;linha <= 8;linha++){
-        for (int coluna = 1;coluna <= 8;coluna++){
+    for (int linha = 1; linha <= 8; linha++){
+        int coluna = 1;
+        while (coluna <= 8){
             if(fgets(str,8, fp) == NULL) break;
             else {
-            for (int i = 0;str[i] != '\0';i++){
+            for (int i = 0;str[i];i++){
             CASA atual = char_to_peca (str[i]);
             COORDENADA c ={coluna,linha};
             if (atual == BRANCA) e->ultima_jogada = c;
             modificar_casa (e,c,atual);
+            coluna++;
             }
             }
         }
