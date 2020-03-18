@@ -8,20 +8,16 @@
 //Imprimir o tabuleiro no ecrã
 void mostrar_tabuleiro(ESTADO *e) {
     char nr = '8'; 
-    int linha = 1;
     printf ("| \t  a b c d e f g h\t|\n");
-    while (linha <= 8) {
-        int coluna = 1;
+    for (int linha = 1;linha <= 8;linha++) {
         printf("|\t%c|",nr);
-        while (coluna <= 8) {
+        for (int coluna = 1;coluna <= 8;coluna++) {
                     COORDENADA c = {coluna,linha};
                     CASA atual = obter_estado_casa (e,c);
                     putchar (atual);
-                    coluna++;
                     putchar(' ');//não sei se é necessário.
                 }
                 printf ("\t|\n");
-                linha++;
                 nr--;
             }
 }
@@ -29,18 +25,14 @@ void mostrar_tabuleiro(ESTADO *e) {
 void gravar_tabuleiro(ESTADO *e,char *filename) {
     FILE *fp;
     char nr = '8'; 
-    int linha = 1;
     fp = fopen (filename, "w+");
-    while (linha <= 8) {
-        int coluna = 1;
-        while (coluna <= 8) {
+    for (int linha = 1;linha <= 8;linha++) {
+        for (int coluna = 1;coluna <= 8;coluna++) {
                 COORDENADA c = {coluna,linha};
                 CASA atual = obter_estado_casa (e,c);
                 fputc(atual,fp);
-                coluna++;
         }
-            fprintf (fp,"\n");
-            linha++;
+            fprintf (fp,"\n"):
             nr--;
         }
         fclose(fp);
@@ -82,24 +74,18 @@ int ler_tabuleiro (ESTADO *e,char *filename){
     fp = fopen (filename, "r");
     if (fp == NULL) return 0;
     else{
-    int linha = 1;
-    while (linha <= 8){
-        int coluna = 1;
-        while (coluna <= 8){
+    for (int linha = 1;linha <= 8;linha++){
+        for (int coluna = 1;coluna <= 8;coluna++){
             if(fgets(str,8, fp) == NULL) break;
             else {
-            int i = 0;
-            while (str[i]){
+            for (int i = 0;str[i] != '\0';i++){
             CASA atual = char_to_peca (str[i]);
             COORDENADA c ={coluna,linha};
             if (atual == BRANCA) e->ultima_jogada = c;
             modificar_casa (e,c,atual);
-            i++;
-            coluna ++;
             }
             }
         }
-        linha++;
     }
     fclose(fp);
     }
