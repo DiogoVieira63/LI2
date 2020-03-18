@@ -8,13 +8,15 @@ Neste Guião, foi nos pedido para fazer várias tarefas, relatando, em seguida, 
 
 - ## Comandos adicionados ao interpretador
 
-- #### Comando gr
-- #### Comando ler
-- #### Comando Q
+1. #### Comando gr
+2. #### Comando ler
+3. #### Comando Q
 
-- ### Implementação da jogada
+- ## Jogada
 
-- ### Valição das jogadas
+1. #### Implementação
 
-- ### Deteção do fim do jogo
+2. #### Valição
+
+3. #### Deteção do fim do jogo
 
