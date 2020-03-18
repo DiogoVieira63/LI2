@@ -38,8 +38,8 @@ typedef JOGADA JOGADAS[32];
 
 
 typedef struct {
-    char jogador1 [10];
-    char jogador2 [10];
+    char jogador1 [11];
+    char jogador2 [11];
     } NOMES;
 
 /**
