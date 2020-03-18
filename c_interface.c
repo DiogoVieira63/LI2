@@ -77,7 +77,8 @@ int ler_tabuleiro (ESTADO *e,char *filename){
     FILE *fp;
     char str[8]; 
     char peca;
-    if ((fopen (filename, "r")) == NULL) return 0;
+    fp = fopen (filename, "r");
+    if (fp == NULL) return 0;
     else{
     int linha = 1;
     while (linha <= 8){
