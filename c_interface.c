@@ -110,6 +110,14 @@ char* nomes (int n,char nome []){
     return nome;
 }
 
+void prompt (ESTADO *e){
+    int nr = obter_num_jogadas (e), jog = obter_jogador_atual(e);
+    printf ("#%d-> JOGADA %d - ",nr,nr/2);
+    char * player = obter_nome_jogador (e,jog);
+    printf ("(J%d)%s",jog,player);
+    putchar (':');
+}
+
 int interpretador(ESTADO *e) {
     FILE *fp;
     fp = stdout;
@@ -123,10 +131,7 @@ int interpretador(ESTADO *e) {
         char linha[BUF_SIZE];
         char col[2], lin[2];
         print_linha ();
-        printf ("->JOGADA %d - ",e->num_jogadas+1);
-        if (e->jogador_atual == 1) printf ("(J1)%s",e->nomes.jogador1);
-        else printf ("(J2)%s",e->nomes.jogador2);
-        putchar (':');
+        prompt (e);
         if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
         if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) { //comando para efetuar uma jogada
         COORDENADA coord = {*col -'a'+1, 9-(*lin -'1'+1)}; 

@@ -22,7 +22,7 @@ ESTADO *inicializar_estado() {
 char nome1 [11],nome2 [11];
 ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
 e->jogador_atual = 1;
-e->num_jogadas = 0;
+e->num_jogadas = 1;
 tab_inicial (e->tab);
 e->ultima_jogada.linha = 4;
 e->ultima_jogada.coluna = 5;
@@ -33,9 +33,22 @@ strcpy(e->nomes.jogador2 , nome2);
 return e;
 }
 
+int obter_num_jogadas (ESTADO *e){
+    return e->num_jogadas;
+}
+
+char* obter_nome_jogador (ESTADO *e,int n){
+    if ( n == 1) return e->nomes.jogador1;
+    else return e->nomes.jogador2;
+}
+
 CASA obter_estado_casa(ESTADO *e, COORDENADA c){
     return e->tab[c.coluna][c.linha];
 }
+int obter_jogador_atual (ESTADO *e){
+    return e->jogador_atual;
+}
+
 
 void alterar_estado_casa (ESTADO *e,COORDENADA c){
     int col = c.coluna, lin = c.linha;

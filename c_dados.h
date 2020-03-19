@@ -103,4 +103,7 @@ CASA obter_estado_casa (ESTADO *e, COORDENADA c);
 @param casa O estado da casa que quero na coordenada
 */
 void modificar_casa (ESTADO *e,COORDENADA c,CASA casa);
+int obter_num_jogadas (ESTADO *e);
+char* obter_nome_jogador (ESTADO *e,int n);
+int obter_jogador_atual (ESTADO *e);
 #endif
