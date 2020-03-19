@@ -50,6 +50,7 @@ CASA char_to_peca (char n){
 //Função que, caso o ficheiro exista,lê o que está no ficheiro e chama funções para alterar o estado conforme o tabuleiro do ficheiro.
 //Caso não exista, dá return 0
 int ler_tabuleiro (ESTADO *e,char *filename){
+    int contagem = 0;
     FILE *fp;
     char str[8]; 
     char peca;
@@ -64,13 +65,20 @@ int ler_tabuleiro (ESTADO *e,char *filename){
             for (int i = 0;str[i];i++){
             CASA atual = char_to_peca (str[i]);
             COORDENADA c ={coluna,linha};
-            if (atual == BRANCA) e->ultima_jogada = c;
+            if (atual == BRANCA) {
+                e->ultima_jogada = c;
+                contagem++;
+            }
+            if (atual == PRETA) contagem++;
             modificar_casa (e,c,atual);
             coluna++;
             }
             }
         }
     }
+    if (contagem%2 == 0) modificar_jogador_atual (e,2);
+    else modificar_jogador_atual (e,1);
+    modificar_num_jogadas (e,contagem);
     fclose(fp);
     }
     return 1;

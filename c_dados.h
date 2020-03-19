@@ -103,7 +103,35 @@ CASA obter_estado_casa (ESTADO *e, COORDENADA c);
 @param casa O estado da casa que quero na coordenada
 */
 void modificar_casa (ESTADO *e,COORDENADA c,CASA casa);
+/**
+\brief Obtém o estado da casa
+@param e Apontador para o ESTADO
+@returns O nr de jogadas
+*/
 int obter_num_jogadas (ESTADO *e);
+/**
+\brief Obtém o nome do jogador
+@param e Apontador para o ESTADO
+@param n Nr do jogador pretendido
+@returns Apontador para a string pretendida
+*/
 char* obter_nome_jogador (ESTADO *e,int n);
+/**
+\brief Obtém o nr do jogador atual 
+@param e Apontador para o ESTADO
+@returns Um int com nr do jogador atual
+*/
 int obter_jogador_atual (ESTADO *e);
+/**
+\brief Modifica uma casa para um determinado estado de CASA
+@param e Apontador para o ESTADO
+@param n Int para o qual mudar
+*/
+void modificar_jogador_atual (ESTADO *e,int n);
+/**
+\brief Modifica o nr de jogadas para um determinado nr de jogadas
+@param e Apontador para o ESTADO
+@param n Int para o qual mudar
+*/
+void modificar_num_jogadas (ESTADO *e, int n);
 #endif

@@ -87,3 +87,11 @@ int atual = e->jogador_atual;
     if (atual == 1) jog.jogador1 = c;
     else  jog.jogador2 = c;
 }
+
+void modificar_jogador_atual (ESTADO *e,int n){
+    e->jogador_atual = n;
+}
+
+void modificar_num_jogadas (ESTADO *e, int n){
+    e->num_jogadas = n;
+}
