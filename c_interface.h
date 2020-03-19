@@ -5,7 +5,7 @@ Definição das funções que imrimem no ecrã
 
 #ifndef ___INTERFACE_H___
 #define ___INTERFACE_H___
-
+#include <stdio.h>
 /**
 \brief Interpretador dos inputs do utilizador 
 @param e Apontador para o ESTADO
@@ -13,10 +13,11 @@ Definição das funções que imrimem no ecrã
 */
 int interpretador(ESTADO *e);
 /**
-\brief Imprime o tabuleiro
+\brief Imprime o tabuleiro no ecrã ou num ficheiro
 @param e Apontador para o ESTADO
+@param filename Apontador para p ficheiro
 */
-void mostrar_tabuleiro(ESTADO *e);
+void print_tabuleiro(ESTADO *e,FILE *filename) ;
 /**
 \brief Display da mensagem para o Vencedor
 @param e Apontador para o ESTADO
