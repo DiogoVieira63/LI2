@@ -127,6 +127,7 @@ void prompt (ESTADO *e){
 }
 
 int interpretador(ESTADO *e) {
+    int i = 1;
     FILE *fp;
     fp = stdout;
     printf (" ---------JOGO RASTROS----------\n");
@@ -134,7 +135,7 @@ int interpretador(ESTADO *e) {
     char linha1[BUF_SIZE]; 
     char filename [BUF_SIZE];   
     if(fgets(linha1, BUF_SIZE, stdin) == NULL)return 0; // necessário para que o input seja nulo ao entrar no while
-    while (1){
+    while (i){
         fp = stdout;
         char linha[BUF_SIZE];
         char col[2], lin[2];
@@ -145,7 +146,7 @@ int interpretador(ESTADO *e) {
         COORDENADA coord = {*col -'a'+1, 9-(*lin -'1'+1)}; 
         print_linha ();
         if (jogar(e, coord)) print_tabuleiro(e,fp);
-        if (fim_do_jogo (e)) break;
+        if (fim_do_jogo (e)) i = 0;
         }
         else { 
             if (sscanf (linha, "gr %s",filename) ==1) {//comando para gravar o tabuleiro num ficheiro
@@ -169,7 +170,7 @@ int interpretador(ESTADO *e) {
             }
             }
             else {
-                if (strlen(linha) == 2 && sscanf (linha, "%[Q]",linha) ==1) break; // comando para dar QUIT do jogo
+                if (strlen(linha) == 2 && sscanf (linha, "%[Q]",linha) ==1) i = 0; // comando para dar QUIT do jogo
             else {
             print_linha ();
             print_erro (1);
