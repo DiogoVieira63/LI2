@@ -1,4 +1,4 @@
-# Relatório GUIÃO 6
+# GUIÃO 6
 
 Neste Guião, foi-nos pedido para fazer várias tarefas, relatando, em seguida, detalhadamente, cada uma delas:
 
