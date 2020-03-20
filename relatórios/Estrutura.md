@@ -6,15 +6,14 @@ O ESTADO permite-nos guardar a informação relativamente ao jogo. Guarda inform
 ```c
 CASA tab[8][8]
 ```
+O Tabuleiro é constituído por 8 linhas e 8 colunas.
 
-O Tabueleiro é constituído por 8 linhas e 8 colunas.
-
-Por isso, a informação guardada do mesmo funciona como uma matriz (8x8).
+Por isso, a informação guardada no mesmo funciona como uma matriz (8x8).
 
 E cada unidade corresponde a uma **CASA**, que está definida da seguinte forma:
 ```c
 typedef enum {VAZIO ='.',
-             BRANCA ='*', 
+              BRANCA ='*', 
               PRETA = '#',
               POS1 = '1',
               POS2 = '2'} CASA;
@@ -27,9 +26,11 @@ Quando a casa ainda não foi preenchida e por isso é uma opção válida como d
 Quando a casa já foi preenchida pela peça Branca, o que siginifica que não se pode voltar lá.
 
 ##### 3. BRANCA 
-Só exite uma destas. Pois, é ela que é movimentada pelos dois jogadores. Alterando a CASA para PRETA sempre que é movimentada.
+Só exite uma destas. Pois, esta é movimentada pelos dois jogadores. Alterando a CASA para PRETA sempre que é movimentada.
+
 ##### 4. POS1 
 CASA vencedora para o Jogador 1.
+
 ##### 5. POS2 
 CASA vencedora para o Jogador 2.
 
@@ -62,7 +63,6 @@ typedef struct {
     int linha;
     } COORDENADA;
 ```
-
 ### 4. O número de jogadas
 ```c
 int num_jogadas;
@@ -73,7 +73,7 @@ O número total de jogadas até ao momento.
 ```c
 int jogador_atual;
 ```
-Varia entre 1 e 2, para saber qual o jogador atual a jogar.
+Varia entre 1 e 2, para saber qual dos jogadores está a jogar no momento.
 
 ### 6. Os nomes
 ```c
