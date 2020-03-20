@@ -1,6 +1,4 @@
-# Estrutura
-
-## O ESTADO
+# Estrutura do ESTADO
 
 O ESTADO permite-nos guardar a informação relativamente ao jogo. Guarda informação dos seus constituintes:
 
