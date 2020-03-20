@@ -13,21 +13,24 @@ Para este processo, nós começamos por definir uma auxilar (que se apresenta na
 - ## Comandos adicionados ao interpretador
 
 1. ### Comando gr
-Este comando tem como objetvo, imprimir o tabuleiro no ficheiro com o nome que o utilizador escrever após o gr.
-Para tal acontecer, definimos um sscanf devidamente para detetar quando o utilizador escrever o comando. 
-Fizemos uma função similar à que imprimia o Tabuleiro no ecrã, que dado um ESTADO e um FILENAME, imprimia o tabuleiro num ficheiro com esse FILENAME.
-Mais tarde, percebemos que não eram necessárias duas funções diferentes para imprimir no ecrã e no ficheiro, por isso, implementamos tudo na mesma.
+
+Este comando tem como objetivo, imprimir o tabuleiro num ficheiro associado ao nome que o utilizador escrever após o gr.
+Para tal fim, fizemos uma função idêntica à que anteriormente tinhamos feito que imprimia o Tabuleiro no ecrã, que dado um ESTADO e um FILENAME, imprime o tabuleiro num ficheiro com o respetivo FILENAME. Como estas duas funções são muito semelhantes, decidimos fundir as duas numa só função, que imprime quer o tabuleiro no ecrã quer no ficheiro. 
+Quando o jogador pretender utilizar este comando definimos devidamente um scanf para detetar tal uso.
 
 2. ### Comando ler
-Este comando tem como objetvo, ler o tabuleiro num ficheiro com o nome que o utilizador escrever após o ler.
-Para tal acontecer, definimos um sscanf devidamente para detetar quando o utilizador escrever o comando.
-Caso o ficheiro não exista, aparece uma mensagem no ecrã que diz isso mesmo.
-Caso contrário, lê a informação do ficheiro e chama funções para alterar o ESTADO, conforme o tabuleiro lido.
+
+Este comando tem como objetivo, ler o tabuleiro num ficheiro associado ao nome que o utilizador escrever após o ler.
+Caso o ficheiro não exista, aparecerá uma mensagem no ecrã a dizer o mesmo.
+Caso contrário, analisa a informação do ficheiro e chama funções para alterar o ESTADO, conforme o tabuleiro lido.
+Quando o jogador pretender utilizar este comando definimos devidamente um scanf para detetar tal uso.
 
 3. ### Comando Q
-Este comando é muito simples. Tem apenas como função, sair do jogo.
-Para tal acontecer, definimos um sscanf devidamente para detetar quando o utilizador escrever o comando.
-Apenas, quebramos o ciclo que faz com que o jogo continue.
+
+Este comando tem apenas a finalidade de sair do jogo.
+Para a concretização do mesmo, apenas é feita a quebra do ciclo que possibilita o jogo desenrolar.
+Quando o jogador pretender utilizar este comando definimos devidamente um scanf para detetar tal uso.
+
 - ## Jogada
 
 1. ### Implementação e Validação
@@ -46,10 +49,6 @@ Existe duas maneiras para a deteção do fim do jogo:
 Caso a casa POS1, ou a casa POS2, sejam alcançadas, o jogo acaba e aparece uma mensagem de parabéns para o jogador vencedor.
 
 2. #### Quando o jogador não tem mais movimentos possíveis:
-Para esta maneira, usamos uma função auxiliar:
-```c 
-int ha_nao_casas_livres (ESTADO *e)
-```
-que verifica se à volta da peça atual, se encontra alguma casa livre:
+Para esta maneira, usamos uma função auxiliar (ha_nao_casas_livres), que verifica se à volta da peça atual, se encontra alguma casa livre:
 - Caso se encontre, então o jogo continua normalmente.
 - Caso contrário, o jogo termina, e aparece uma mensagem de parabéns para o jogador que efetuou a última jogada.
