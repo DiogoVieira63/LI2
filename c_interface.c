@@ -76,7 +76,7 @@ int ler_tabuleiro (ESTADO *e,char *filename){
             }
         }
     }
-    if (contagem%2 == 0) modificar_jogador_atual (e,2);
+    if (contagem%2 == 0) modificar_jogador_atual (e,2); 
     else modificar_jogador_atual (e,1);
     modificar_num_jogadas (e,contagem);
     fclose(fp);
@@ -90,9 +90,9 @@ void print_linha (){
 
 //Função que recebe o nr do jogador que ganhou  e o estado para imprimir a mensagem de vencedor
 void display_gameover (int n,ESTADO *e){
+char * jogador = obter_nome_jogador (e,n);
 printf ("|-------------------------------|\n");
-if (n==1)printf ("  PARABÉNS, %s!GANHASTE!\n",e->nomes.jogador1);
-else printf ("  PARABÉNS, %s!GANHASTE!\n",e->nomes.jogador2);
+printf ("  PARABÉNS, %s!GANHASTE!\n",jogador);
 printf ("|-------------------------------|\n");
 }
 
