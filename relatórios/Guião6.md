@@ -8,7 +8,7 @@ Inicialmente começamos por documentar os vários protótipos das diferentes cam
 
 - ### Criação de um prompt
 
-Para este processo, nós começamos por definir uma auxilar (que se apresenta na camada interface) que lê (através do scanf) o nome dos dois jogadores. De seguida, após cada jogada o prompt fica encarregue de ler o ESTADO de cada jogador após cada jogada, nomeadamente o número da jogada correspondente a cada jogador e o número total de jogadas efetauadas no jogo. 
+Para este processo, nós começamos por definir uma auxilar (que se apresenta na camada interface) que lê (através do scanf) o nome dos dois jogadores. De seguida, após cada jogada o prompt fica encarregue de ler o ESTADO de cada jogador após cada jogada, nomeadamente o número da jogada correspondente a cada jogador e o número total de jogadas efetuadas no jogo. 
 
 - ## Comandos adicionados ao interpretador
 
