@@ -134,6 +134,16 @@ void modificar_jogador_atual (ESTADO *e,int n);
 @param n Int para o qual mudar
 */
 void modificar_num_jogadas (ESTADO *e, int n);
+/**
+\brief Obtém a COORDENADA da última jogada
+@param e Apontador para o ESTADO
+@returns A COORDENADA 
+*/
 COORDENADA obter_ultima_jogada (ESTADO *e);
-void alterar_ultima_jogada (ESTADO *e,COORDENADA c);
+/**
+\brief Modifica a última jogada para uma determinada COORDENADA
+@param e Apontador para o ESTADO
+@param c A COOORDENADA para a qual modificar
+*/
+void modificar_ultima_jogada (ESTADO *e,COORDENADA c);
 #endif
