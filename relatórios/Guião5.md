@@ -8,7 +8,7 @@ Este módulo contém a função que inicializa o estado:
 ```c
 ESTADO *inicializar_estado()
 ```
-como também toda a infomação relativamente à organização do ESTADO e os seus constituintes.
+como também toda a infomação relativamente à [ESTRUTURA do ESTADO](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Estrutura.md) e os seus constituintes.
 
 Colocamos também neste módulo as funções que obtém e alteram os constituintes do ESTADO.
 
