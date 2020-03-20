@@ -66,7 +66,7 @@ int ler_tabuleiro (ESTADO *e,char *filename){
             CASA atual = char_to_peca (str[i]);
             COORDENADA c ={coluna,linha};
             if (atual == BRANCA) {
-                e->ultima_jogada = c;
+                alterar_ultima_jogada (e,c);
                 contagem++;
             }
             if (atual == PRETA) contagem++;

@@ -134,4 +134,6 @@ void modificar_jogador_atual (ESTADO *e,int n);
 @param n Int para o qual mudar
 */
 void modificar_num_jogadas (ESTADO *e, int n);
+COORDENADA obter_ultima_jogada (ESTADO *e);
+void alterar_ultima_jogada (ESTADO *e,COORDENADA c);
 #endif

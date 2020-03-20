@@ -95,3 +95,11 @@ void modificar_jogador_atual (ESTADO *e,int n){
 void modificar_num_jogadas (ESTADO *e, int n){
     e->num_jogadas = n;
 }
+
+COORDENADA obter_ultima_jogada (ESTADO *e){
+    return e->ultima_jogada;
+}
+
+void alterar_ultima_jogada (ESTADO *e,COORDENADA c){
+    e->ultima_jogada = c;
+}
