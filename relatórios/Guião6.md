@@ -46,6 +46,10 @@ Existe duas maneiras para a deteção do fim do jogo:
 Caso a casa POS1, ou a casa POS2, sejam alcançadas, o jogo acaba e aparece uma mensagem de parabéns para o jogador vencedor.
 
 2. #### Quando o jogador não tem mais movimentos possíveis:
-Para esta maneira, usamos uma função auxiliar ```int ha_nao_casas_livres (ESTADO *e)```, que verifica se à volta da peça atual, se encontra alguma casa livre:
+Para esta maneira, usamos uma função auxiliar:
+```c 
+int ha_nao_casas_livres (ESTADO *e)
+```
+que verifica se à volta da peça atual, se encontra alguma casa livre:
 - Caso se encontre, então o jogo continua normalmente.
 - Caso contrário, o jogo termina, e aparece uma mensagem de parabéns para o jogador que efetuou a última jogada.
