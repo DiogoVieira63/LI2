@@ -1,6 +1,6 @@
 # Relatório GUIÃO 6
 
-Neste Guião, foi nos pedido para fazer várias tarefas, relatando, em seguida, detalhadamente, cada uma delas:
+Neste Guião, foi-nos pedido para fazer várias tarefas, relatando, em seguida, detalhadamente, cada uma delas:
 
 - ## Documentação do código
 
@@ -38,7 +38,6 @@ Caso contrário, analisa a informação do ficheiro e chama funções para alter
 
 Este comando tem apenas a finalidade de sair do jogo.
 Para a concretização do mesmo, apenas é feita a quebra do ciclo que possibilita o jogo desenrolar.
-
 
 **Para todos este comandos, foram definfidos sscanf's para detetar quando o utilizador escreve cada um deles**
 
