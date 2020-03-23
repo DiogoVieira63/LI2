@@ -1,6 +1,6 @@
 /**
 @file c_interface.h
-Definição das funções que imrimem no ecrã
+Definição das funções que imprimem no ecrã
 */
 
 #ifndef ___INTERFACE_H___
@@ -15,7 +15,7 @@ int interpretador(ESTADO *e);
 /**
 \brief Imprime o tabuleiro no ecrã ou num ficheiro
 @param e Apontador para o ESTADO
-@param filename Apontador para p ficheiro
+@param filename Apontador para o ficheiro
 */
 void print_tabuleiro(ESTADO *e,FILE *filename) ;
 /**

@@ -105,9 +105,16 @@ void print_erro (int n){
 
 //Imprime uma mensagem no ecrã, conforme o int que recebe
 void print_mensagem (int n,char *filename){
-if (n==1)printf ("Tabuleiro gravado em %s\n",filename);
-else if ( n==2)printf("Tabuleiro lido do ficheiro %s\n",filename);
-else printf ("Ficheiro %s não existe\n",filename);
+        switch (n){
+        case 1: printf ("Tabuleiro gravado em %s\n",filename);
+        break;
+        case 2: printf("Tabuleiro lido do ficheiro %s\n",filename);
+        break;
+        case 3: printf ("Ficheiro %s não existe\n",filename);
+        break;
+        case 4: printf ("\tJOGO TERMINADO\n");
+        break;
+        }
 }
 
 //Função que dado o nr do jogador, e uma string. Faz scanf do nome que o utilzador responder e coloca na string.
@@ -120,7 +127,7 @@ char* nomes (int n,char nome []){
 
 void prompt (ESTADO *e){
     int nr = obter_num_jogadas (e), jog = obter_jogador_atual(e);
-    printf ("#%d-> JOGADA %d - ",nr,nr/2);
+    printf (" #%d-> JOGADA %d - ",nr,nr/2);
     char * player = obter_nome_jogador (e,jog);
     printf ("(J%d)%s",jog,player);
     putchar (':');
@@ -170,7 +177,12 @@ int interpretador(ESTADO *e) {
             }
             }
             else {
-                if (strlen(linha) == 2 && sscanf (linha, "%[Q]",linha) ==1) i = 0; // comando para dar QUIT do jogo
+                if (strlen(linha) == 2 && sscanf (linha, "%[Q]",linha) ==1) {// comando para dar QUIT do jogo
+                    i = 0; 
+                    print_linha ();
+                    print_mensagem (4,filename);
+                    print_linha();
+                }
             else {
             print_linha ();
             print_erro (1);

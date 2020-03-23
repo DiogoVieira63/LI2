@@ -100,6 +100,6 @@ COORDENADA obter_ultima_jogada (ESTADO *e){
     return e->ultima_jogada;
 }
 
-void alterar_ultima_jogada (ESTADO *e,COORDENADA c){
+void modificar_ultima_jogada (ESTADO *e,COORDENADA c){
     e->ultima_jogada = c;
 }

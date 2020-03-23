@@ -56,7 +56,7 @@ int jogar(ESTADO *e, COORDENADA c) {
                 guardar_jogada (e,c);
                 alterar_num_jogadas (e);
                 alterar_jogador_atual (e);
-                alterar_ultima_jogada (e,c);
+                modificar_ultima_jogada (e,c);
             }
             else {
                 print_erro (2);
