@@ -51,7 +51,8 @@ void ler_jogadas (FILE *fp, ESTADO *e,int n){
     int nr = (n+1)/2; //nr de linhas 
     int i = 0; //para percorrer o nr de jogadas
     char str [11];
-    init_jogadas (e); //para dar reset nas jogadas
+    init_jogadas (e);//para dar reset nas jogadas
+    modificar_num_jogadas (e,0);
     while (fgets(str,11, fp)!= NULL){ // para percorrer o ficheiro linha por linha até chegar a uma linha vazia
         int k =4; //posição da coordenada na string
         int f; // para saber quantas coordenadas tem na linha, 1 ou 2
@@ -186,14 +187,14 @@ void prompt (ESTADO *e){
 }
 // COMANDOS DAS FUNÇÕES
 
-void do_movs (ESTADO *e,FILE *fp){
+void do_movs (ESTADO *e){
     int nr = obter_num_jogadas(e);
     print_linha ();
     printf (" Lista de Movimentos (%d):\n",nr);
     print_linha ();
     printf ("    J1 J2\n");
     print_linha ();
-    print_movs (e,fp); // imprime os movimentos no ecrã
+    print_movs (e,stdout); // imprime os movimentos no ecrã
 }
 
 void do_quit (){
@@ -262,7 +263,7 @@ int interpretador(ESTADO *e) {
                     do_quit ();
                 }
             else {
-                 if (strlen(linha) == 5 && sscanf (linha, "movs%s",filename) != 0) do_movs (e,fp); //comando para mostar os movimentos
+                 if (strlen(linha) == 5 && sscanf (linha, "movs%s",filename) != 0) do_movs (e); //comando para mostar os movimentos
             else {
             print_linha ();
             print_erro (1);
