@@ -45,31 +45,29 @@ CASA char_to_peca (char n){
         break;
     }
 }
-void print_coordenada (COORDENADA c,FILE *filename);
 
-// NOT WORKING
-/*
+// ler as jogadas do ficheiro
 void ler_jogadas (FILE *fp, ESTADO *e,int n){
-    int nr = (n+1)/2, i = 0;
-    char str [10];
-    init_jogadas (e);
-    while (nr){
-        modificar_num_jogadas (e,i);
-        if ((n - i) > 1)fgets(str,10, fp);
-        else fgets(str,7, fp);
-        int k =4;
-        printf("str = %s\n",str);
-        printf("str[4]=%c  str[5]=%c str[7]=%c str[8]=%c \n",str[4],str[5],str[7],str[8]);
-        while (n-i){
+    int nr = (n+1)/2; //nr de linhas 
+    int i = 0; //para percorrer o nr de jogadas
+    char str [11];
+    init_jogadas (e); //para dar reset nas jogadas
+    while (fgets(str,11, fp)!= NULL){ // para percorrer o ficheiro linha por linha até chegar a uma linha vazia
+        int k =4; //posição da coordenada na string
+        int f; // para saber quantas coordenadas tem na linha, 1 ou 2
+        if (n - i> 1) f = 2;
+        else f = 1;
+        while (f){
         COORDENADA c = {str[k]- 'a'+1,9-(str[k+1]-'1'+1)};
-        guardar_jogada (e,c);
+        guardar_jogada (e,c); // para guardar a jogada no ESTADO
         k+=3;
         i++;
+        modificar_num_jogadas (e,i); // para modificar o nr de jogadas
+        f--;
         }
         nr--;
     }
 }
-*/
 
 //Função que, caso o ficheiro exista,lê o que está no ficheiro e chama funções para alterar o estado conforme o tabuleiro do ficheiro.
 //Caso não exista, dá return 0
@@ -99,7 +97,7 @@ int ler_tabuleiro (ESTADO *e,char *filename){
             }
         }
     }
-//    ler_jogadas (fp,e,contagem);
+    ler_jogadas (fp,e,contagem); // para ler as jogadas do ficheiro, que se encontram após o tabuleiro
     if (contagem%2 == 0) modificar_jogador_atual (e,2); 
     else modificar_jogador_atual (e,1);
     modificar_num_jogadas (e,contagem);
@@ -195,7 +193,7 @@ void do_movs (ESTADO *e,FILE *fp){
     print_linha ();
     printf ("    J1 J2\n");
     print_linha ();
-    print_movs (e,fp);
+    print_movs (e,fp); // imprime os movimentos no ecrã
 }
 
 void do_quit (){
@@ -208,17 +206,24 @@ void do_ler (char *filename,ESTADO *e){
     print_linha ();
     print_mensagem (2,filename);
     print_linha ();
-    print_tabuleiro (e,stdout);
+    print_tabuleiro (e,stdout); //imprime o tabuleiro lido no ecrã
 
 }
 
 void do_gravar (FILE *fp,char*filename, ESTADO *e){
     fp = fopen (filename, "w+");
-    print_tabuleiro (e,fp);
-    print_movs (e,fp);
+    print_tabuleiro (e,fp); // imprimir o tabuleiro no ficheiro
+    print_movs (e,fp); // imprimir os movimentos no tabuleiro
     fclose (fp);
     print_linha ();
     print_mensagem (1,filename);
+}
+
+int do_jogada (ESTADO *e, COORDENADA c){
+    print_linha ();
+    if (jogar(e, c)) print_tabuleiro(e,stdout);// imprime o tabuleiro no ecrã, se a jogada for válida
+    if (fim_do_jogo (e)) return 0;   
+    else return 1;
 }
 
 int interpretador(ESTADO *e) {
@@ -239,9 +244,7 @@ int interpretador(ESTADO *e) {
         if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
         if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) { //comando para efetuar uma jogada
         COORDENADA coord = {*col -'a'+1, 9-(*lin -'1'+1)}; 
-        print_linha ();
-        if (jogar(e, coord)) print_tabuleiro(e,fp);
-        if (fim_do_jogo (e)) i = 0;
+        i = do_jogada (e,coord);
         }
         else { 
             if (sscanf (linha, "gr %s",filename) ==1) do_gravar (fp,filename, e); //comando para gravar o tabuleiro num ficheiro 
