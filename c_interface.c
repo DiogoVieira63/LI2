@@ -45,7 +45,31 @@ CASA char_to_peca (char n){
         break;
     }
 }
+void print_coordenada (COORDENADA c,FILE *filename);
 
+// NOT WORKING
+/*
+void ler_jogadas (FILE *fp, ESTADO *e,int n){
+    int nr = (n+1)/2, i = 0;
+    char str [10];
+    init_jogadas (e);
+    while (nr){
+        modificar_num_jogadas (e,i);
+        if ((n - i) > 1)fgets(str,10, fp);
+        else fgets(str,7, fp);
+        int k =4;
+        printf("str = %s\n",str);
+        printf("str[4]=%c  str[5]=%c str[7]=%c str[8]=%c \n",str[4],str[5],str[7],str[8]);
+        while (n-i){
+        COORDENADA c = {str[k]- 'a'+1,9-(str[k+1]-'1'+1)};
+        guardar_jogada (e,c);
+        k+=3;
+        i++;
+        }
+        nr--;
+    }
+}
+*/
 
 //Função que, caso o ficheiro exista,lê o que está no ficheiro e chama funções para alterar o estado conforme o tabuleiro do ficheiro.
 //Caso não exista, dá return 0
@@ -67,7 +91,6 @@ int ler_tabuleiro (ESTADO *e,char *filename){
             COORDENADA c ={coluna,linha};
             if (atual == BRANCA) {
                 modificar_ultima_jogada (e,c);
-                contagem++;
             }
             if (atual == PRETA) contagem++;
             modificar_casa (e,c,atual);
@@ -76,12 +99,43 @@ int ler_tabuleiro (ESTADO *e,char *filename){
             }
         }
     }
+//    ler_jogadas (fp,e,contagem);
     if (contagem%2 == 0) modificar_jogador_atual (e,2); 
     else modificar_jogador_atual (e,1);
     modificar_num_jogadas (e,contagem);
     fclose(fp);
     }
     return 1;
+}
+
+char int_to_char (int n){
+    char letra = 'a';
+    while (n > 1){
+        letra++;
+        n--;
+    }
+    return letra;
+}
+
+void print_coordenada (COORDENADA c,FILE *filename){
+    int linha = c.linha;
+    char letra = int_to_char (c.coluna);
+    fprintf(filename,"%c%d",letra,9-linha);
+}
+
+void print_movs (ESTADO *e,FILE *filename){
+    int i = 1, n = 0, k = 1;
+    while (k){
+        COORDENADA c = obter_jogada (e,n++);
+        if ( c.linha == 0 && c.coluna == 0) k = 0;
+        else{
+        if (n%2 != 0)fprintf (filename,"%02d: ",i++);
+        print_coordenada (c,filename);
+        if (n%2 != 0) fputc (' ',filename);
+        else fputc ('\n',filename);
+        }
+    }
+    if (!k && n%2 == 0) fputc ('\n',filename);
 }
 
 void print_linha (){
@@ -132,6 +186,40 @@ void prompt (ESTADO *e){
     printf ("(J%d)%s",jog,player);
     putchar (':');
 }
+// COMANDOS DAS FUNÇÕES
+
+void do_movs (ESTADO *e,FILE *fp){
+    int nr = obter_num_jogadas(e);
+    print_linha ();
+    printf (" Lista de Movimentos (%d):\n",nr);
+    print_linha ();
+    printf ("    J1 J2\n");
+    print_linha ();
+    print_movs (e,fp);
+}
+
+void do_quit (){
+    print_linha ();
+    print_mensagem (4,"");
+    print_linha();
+}
+
+void do_ler (char *filename,ESTADO *e){
+    print_linha ();
+    print_mensagem (2,filename);
+    print_linha ();
+    print_tabuleiro (e,stdout);
+
+}
+
+void do_gravar (FILE *fp,char*filename, ESTADO *e){
+    fp = fopen (filename, "w+");
+    print_tabuleiro (e,fp);
+    print_movs (e,fp);
+    fclose (fp);
+    print_linha ();
+    print_mensagem (1,filename);
+}
 
 int interpretador(ESTADO *e) {
     int i = 1;
@@ -156,21 +244,10 @@ int interpretador(ESTADO *e) {
         if (fim_do_jogo (e)) i = 0;
         }
         else { 
-            if (sscanf (linha, "gr %s",filename) ==1) {//comando para gravar o tabuleiro num ficheiro
-            fp = fopen (filename, "w+");
-            print_tabuleiro (e,fp);
-            fclose (fp);
-            print_linha ();
-            print_mensagem (1,filename);
-        }
+            if (sscanf (linha, "gr %s",filename) ==1) do_gravar (fp,filename, e); //comando para gravar o tabuleiro num ficheiro 
         else { 
-            if (sscanf (linha, "ler %s",filename) ==1) {//comando para ler o tabuleiro de um ficheiro
-            if (ler_tabuleiro (e,filename)){
-            print_linha ();
-            print_mensagem (2,filename);
-            print_linha ();
-            print_tabuleiro (e,stdout);
-            }
+            if (sscanf (linha, "ler %s",filename) ==1) { //comando para ler o tabuleiro de um ficheiro
+            if (ler_tabuleiro (e,filename)) do_ler (filename,e);
             else {
                 print_linha ();
                 print_mensagem (3,filename);
@@ -179,13 +256,14 @@ int interpretador(ESTADO *e) {
             else {
                 if (strlen(linha) == 2 && sscanf (linha, "%[Q]",linha) ==1) {// comando para dar QUIT do jogo
                     i = 0; 
-                    print_linha ();
-                    print_mensagem (4,filename);
-                    print_linha();
+                    do_quit ();
                 }
+            else {
+                 if (strlen(linha) == 5 && sscanf (linha, "movs%s",filename) != 0) do_movs (e,fp); //comando para mostar os movimentos
             else {
             print_linha ();
             print_erro (1);
+            }
             }
             }
             }

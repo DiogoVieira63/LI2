@@ -23,18 +23,11 @@ typedef struct {
     int linha;
     } COORDENADA;
 
-/**
-Tipo de dados para uma JOGADA
-*/
-typedef struct {
-    COORDENADA jogador1;
-    COORDENADA jogador2;
-    } JOGADA;
 
 /**
 Tipo de dados para JOGADAS
 */
-typedef JOGADA JOGADAS[32];
+typedef COORDENADA JOGADAS[64];
 
 /**
 Tipo de dados para NOMES
@@ -51,6 +44,7 @@ typedef struct {
     /**Tabuleiro*/
     CASA tab[8][8];
     /**as jogadas*/
+    JOGADAS ignore;
     JOGADAS jogadas;
     /**a coordenada da ultima jogada*/
     COORDENADA ultima_jogada;
@@ -146,4 +140,11 @@ COORDENADA obter_ultima_jogada (ESTADO *e);
 @param c A COOORDENADA para a qual modificar
 */
 void modificar_ultima_jogada (ESTADO *e,COORDENADA c);
+/**
+\brief Obtém a COORDENADA da jogada guardada num certo número
+@param e Apontador para o ESTADO
+@returns A COORDENADA 
+*/
+COORDENADA obter_jogada (ESTADO *e,int n);
+void init_jogadas (ESTADO *e);
 #endif

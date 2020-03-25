@@ -17,13 +17,23 @@ void tab_inicial (CASA tab [8][8]){
     tab [8][1]= POS2;
 }
 
+void init_jogadas (ESTADO *e){
+    int i = 0;
+    COORDENADA c = {0,0};
+    while (i < 64 ){
+        e->jogadas [i] = c;
+        i++;
+    }
+}
+
 //Esta função deverá criar um estado vazio (com o tabuleiro inicializado)
 ESTADO *inicializar_estado() {
 char nome1 [11],nome2 [11];
 ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
 e->jogador_atual = 1;
-e->num_jogadas = 1;
+e->num_jogadas = 0;
 tab_inicial (e->tab);
+init_jogadas (e);
 e->ultima_jogada.linha = 4;
 e->ultima_jogada.coluna = 5;
 nomes (1,nome1);
@@ -82,10 +92,7 @@ void alterar_jogador_atual (ESTADO *e){
 
 void guardar_jogada (ESTADO *e,COORDENADA c){
 int nr = e->num_jogadas;
-JOGADA jog = e->jogadas[nr];
-int atual = e->jogador_atual;
-    if (atual == 1) jog.jogador1 = c;
-    else  jog.jogador2 = c;
+e->jogadas[nr] = c;
 }
 
 void modificar_jogador_atual (ESTADO *e,int n){
@@ -102,4 +109,8 @@ COORDENADA obter_ultima_jogada (ESTADO *e){
 
 void modificar_ultima_jogada (ESTADO *e,COORDENADA c){
     e->ultima_jogada = c;
+}
+
+COORDENADA obter_jogada (ESTADO *e,int n){
+    return e->jogadas[n];
 }
