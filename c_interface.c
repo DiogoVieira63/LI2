@@ -107,6 +107,7 @@ int ler_tabuleiro (ESTADO *e,char *filename){
     return 1;
 }
 
+// FUNÇÕES DE IMPRIMIR
 
 void print_coordenada (COORDENADA c,FILE *filename){
     int linha = c.linha;
@@ -163,13 +164,18 @@ void print_mensagem (int n,char *filename){
 }
 
 void print_resultado (ESTADO *e, int n){
+    char * nome1 = obter_nome_jogador (e,1);
+    char * nome2 = obter_nome_jogador (e,2);
+    int nr1= strlen(nome1), nr2 = strlen (nome2), total = 31- nr1- nr2;
     if (n) printf ("\n\t ");
     else printf ("\t   ");
     printf ("RESULTADO ");
     if (n) printf("FINAL\n");
     putchar ('\n');
     print_linha();
-    printf(" %s\t\t\t%s\n",obter_nome_jogador (e,1),obter_nome_jogador (e,2));
+    printf(" %s",nome1);
+    printf("%*c", total, ' '); //nr de espaços entre cada nome
+    printf("%s\n",nome2);
     printf(" J1----->   %d   X   %d   <-----J2\n",obter_vitoria (e,1),obter_vitoria (e,2));
     print_linha ();
 }
@@ -260,9 +266,14 @@ int do_final (ESTADO *e){
 }
 
 void do_inicio (ESTADO *e, int n){
+    char * nome1 = obter_nome_jogador (e,1);
+    char * nome2 = obter_nome_jogador (e,2);
+    int nr1= strlen(nome1), nr2 = strlen (nome2), total = 31- nr1- nr2;
     printf ("|-------RASTROS: JOGO Nº%d-------|\n",n);
     print_linha();
-    printf(" %s\t\t\t%s\n",obter_nome_jogador (e,1),obter_nome_jogador (e,2));
+    printf(" %s",nome1);
+    printf("%*c", total, ' '); //nr de espaços entre cada nome
+    printf("%s\n",nome2);
     printf(" J1----->   %d   X   %d   <-----J2\n",obter_vitoria (e,1),obter_vitoria (e,2));
     print_linha ();
 
