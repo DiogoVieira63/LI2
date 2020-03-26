@@ -7,7 +7,7 @@
 Logo no início do jogo, o utilizador é confrontado com uma decisão de decidir o nome para o **Jogador 1** e o **Jogador 2**.
 
 Ex: Utilizamos os nomes dos melhores do mundo, respetivamente ordenados :smile:
-![nomes](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/nomes.png?token=AOY53AL4IZY7FE4BAXBDFZ26PTRKG)
+![nomes](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/nomes.png?token=AOY53APAVTC56MP36R5XF2C6PTR76)
 
 Os **nomes** vão seguir os dois jogadores durante o jogo todo.
 
