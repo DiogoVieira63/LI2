@@ -121,6 +121,7 @@ void init_estado (ESTADO *e){
     tab_inicial(e->tab);
     modificar_num_jogadas (e,0);
     modificar_ultima_jogada (e,c);
+    modificar_jogador_atual (e,1);
 }
 
 int obter_vitoria (ESTADO *e, int n){
