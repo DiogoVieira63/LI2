@@ -107,18 +107,10 @@ int ler_tabuleiro (ESTADO *e,char *filename){
     return 1;
 }
 
-char int_to_char (int n){
-    char letra = 'a';
-    while (n > 1){
-        letra++;
-        n--;
-    }
-    return letra;
-}
 
 void print_coordenada (COORDENADA c,FILE *filename){
     int linha = c.linha;
-    char letra = int_to_char (c.coluna);
+    char letra = c.coluna+96; //ascii code
     fprintf(filename,"%c%d",letra,9-linha);
 }
 
@@ -165,21 +157,35 @@ void print_mensagem (int n,char *filename){
         break;
         case 3: printf ("Ficheiro %s não existe\n",filename);
         break;
-        case 4: printf ("\tJOGO TERMINADO\n");
+        case 4: printf ("\t JOGO TERMINADO\n");
         break;
         }
 }
 
+void print_resultado (ESTADO *e, int n){
+    if (n) printf ("\n\t ");
+    else printf ("\t   ");
+    printf ("RESULTADO ");
+    if (n) printf("FINAL\n");
+    putchar ('\n');
+    print_linha();
+    printf(" %s\t\t\t%s\n",obter_nome_jogador (e,1),obter_nome_jogador (e,2));
+    printf(" J1----->   %d   X   %d   <-----J2\n",obter_vitoria (e,1),obter_vitoria (e,2));
+    print_linha ();
+}
+
 //Função que dado o nr do jogador, e uma string. Faz scanf do nome que o utilzador responder e coloca na string.
 char* nomes (int n,char nome []){
-    if (n==1) printf("Escolha o nome \n(max10 e sem espaços)\n");
-    printf("Jogador %d:",n);
+    if (n==1) printf(" Escolha o nome \n(max10 e sem espaços)\n");
+    printf(" Jogador %d:",n);
     scanf("%10s",nome);
+    print_linha ();
     return nome;
 }
 
 void prompt (ESTADO *e){
     int nr = obter_num_jogadas (e), jog = obter_jogador_atual(e);
+    print_linha ();
     printf (" #%d-> JOGADA %d - ",nr,nr/2);
     char * player = obter_nome_jogador (e,jog);
     printf ("(J%d)%s",jog,player);
@@ -197,9 +203,12 @@ void do_movs (ESTADO *e){
     print_movs (e,stdout); // imprime os movimentos no ecrã
 }
 
-void do_quit (){
+void do_quit (ESTADO *e){
     print_linha ();
+    print_resultado (e,1);
+    putchar ('\n');
     print_mensagem (4,"");
+    putchar ('\n');
     print_linha();
 }
 
@@ -227,22 +236,53 @@ int do_jogada (ESTADO *e, COORDENADA c){
     else return 1;
 }
 
-int interpretador(ESTADO *e) {
+int do_final (ESTADO *e){
+    char linha1 [BUF_SIZE];
+    print_resultado (e,0);
+     while (1){
+        printf(" DESFORRA \t  SAIR DO JOGO\n     |\t\t\t|\n DIGITE N\t    DIGITE Q\n");
+        printf("->");
+        if(fgets(linha1, BUF_SIZE, stdin) == NULL)return 0;
+        if(strlen(linha1) == 2 && sscanf(linha1, "%[Q]", linha1) == 1) {
+            do_quit (e);
+            return 0;
+        }
+        else if(strlen(linha1) == 2 && sscanf(linha1, "%[N]", linha1) == 1){
+            print_linha ();
+            return 1;
+        }
+        else {
+            print_linha ();
+            printf("Comando inválido\n");
+            print_linha ();
+        }
+        }
+}
+
+void do_inicio (ESTADO *e, int n){
+    printf ("|-------RASTROS: JOGO Nº%d-------|\n",n);
+    print_linha();
+    printf(" %s\t\t\t%s\n",obter_nome_jogador (e,1),obter_nome_jogador (e,2));
+    printf(" J1----->   %d   X   %d   <-----J2\n",obter_vitoria (e,1),obter_vitoria (e,2));
+    print_linha ();
+
+}
+
+int interpretador(ESTADO *e, int n) {
     int i = 1;
     FILE *fp;
     fp = stdout;
-    printf (" ---------JOGO RASTROS----------\n");
+    do_inicio (e,n);
     print_tabuleiro (e,fp);
     char linha1[BUF_SIZE]; 
     char filename [BUF_SIZE];   
-    if(fgets(linha1, BUF_SIZE, stdin) == NULL)return 0; // necessário para que o input seja nulo ao entrar no while
+    if (n==1)if(fgets(linha1, BUF_SIZE, stdin) == NULL)return 0; // necessário para que o input seja nulo ao entrar no while no 1º Jogo
     while (i){
-        fp = stdout;
+        fp = stdout; // ecrã
         char linha[BUF_SIZE];
         char col[2], lin[2];
-        print_linha ();
         prompt (e);
-        if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
+        if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0; // Dar scan do input do utilizador
         if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) { //comando para efetuar uma jogada
         COORDENADA coord = {*col -'a'+1, 9-(*lin -'1'+1)}; 
         i = do_jogada (e,coord);
@@ -258,9 +298,9 @@ int interpretador(ESTADO *e) {
             }
             }
             else {
-                if (strlen(linha) == 2 && sscanf (linha, "%[Q]",linha) ==1) {// comando para dar QUIT do jogo
-                    i = 0; 
-                    do_quit ();
+                if (strlen(linha) == 2 && sscanf (linha, "%[Q]",linha) ==1) {// comando para dar QUIT do jogo 
+                    do_quit (e);
+                    return 0;
                 }
             else {
                  if (strlen(linha) == 5 && sscanf (linha, "movs%s",filename) != 0) do_movs (e); //comando para mostar os movimentos
@@ -273,5 +313,6 @@ int interpretador(ESTADO *e) {
             }
         }
         }
+        return (do_final (e));
     return 1;
 }

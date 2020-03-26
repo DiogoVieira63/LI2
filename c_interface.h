@@ -11,7 +11,7 @@ Definição das funções que imprimem no ecrã
 @param e Apontador para o ESTADO
 @returns Um int caso seja executado devidamente ou não 
 */
-int interpretador(ESTADO *e);
+int interpretador(ESTADO *e,int n);
 /**
 \brief Imprime o tabuleiro no ecrã ou num ficheiro
 @param e Apontador para o ESTADO

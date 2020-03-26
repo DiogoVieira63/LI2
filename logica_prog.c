@@ -25,10 +25,12 @@ CASA atual = obter_estado_casa (e,c);
 //QUANDO O JOGADOR GANHA POR CHEGAR À SUA CASA
 if (atual == POS1) {
     display_gameover (1,e);
+    muda_vitorias(e,1);
     return 1;
 }
 if (atual == POS2) {
     display_gameover (2,e);
+    muda_vitorias(e,2);
     return 1;
 }
 //QUANDO O JOGADOR GANHA POR DEIXAR O OUTRO ENCURRALADO
@@ -37,6 +39,7 @@ if (e->jogador_atual == 1)jog = 2;
 else jog = 1;
 if (ha_nao_casas_livres (e)) {
     display_gameover (jog,e);
+    muda_vitorias(e,jog);
     return 1;
 }
 return 0;

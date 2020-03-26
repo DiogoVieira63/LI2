@@ -23,6 +23,10 @@ typedef struct {
     int linha;
     } COORDENADA;
 
+typedef struct {
+    int j1;
+    int j2;
+    } VITORIAS;
 
 /**
 Tipo de dados para JOGADAS
@@ -54,6 +58,7 @@ typedef struct {
     int jogador_atual;
     /** Guarda os nomes introduzidos pelo utiilizador*/
     NOMES nomes;
+    VITORIAS vitorias;
     } ESTADO;
 
 /**
@@ -147,4 +152,7 @@ void modificar_ultima_jogada (ESTADO *e,COORDENADA c);
 */
 COORDENADA obter_jogada (ESTADO *e,int n);
 void init_jogadas (ESTADO *e);
+void muda_vitorias (ESTADO *e, int n);
+void init_estado (ESTADO *e);
+int obter_vitoria (ESTADO *e, int n);
 #endif
