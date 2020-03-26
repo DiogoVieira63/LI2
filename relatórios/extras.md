@@ -7,21 +7,21 @@
 Logo no início do jogo, o utilizador é confrontado com uma decisão de decidir o nome para o **Jogador 1** e o **Jogador 2**.
 
 Ex: Utilizamos os nomes dos melhores do mundo, respetivamente ordenados :smile:
-![nomes](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/nomes.png?token=AOY53APZEZT3SWO4YO7XEWK6PTOQS)
+![nomes](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/nomes.png?token=AOY53AL4IZY7FE4BAXBDFZ26PTRKG)
 
 Os **nomes** vão seguir os dois jogadores durante o jogo todo.
 
 Exemplo do **prompt** numa jogada efetuada por cada um dos jogadores:
 
-![messi](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/prompt_messi.png?token=AOY53AKCKBXCABLIXV7R2HK6PTPG6)
+![messi](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/prompt_messi.png?token=AOY53AKNU2DIOC5LFNBG3L26PTRS2)
 
-![ronaldo](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/prompt_ron.png?token=AOY53ALN7YA7VCDR7JNRE2C6PTPII)
+![ronaldo](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/prompt_ron.png?token=AOY53ANARJ4EUWQ6JN5XSI26PTRUM)
 
 - ## DESFORRA
 
 Quando o jogo acaba, o utlizador tem a opção de **Desforra** ou **Sair do Jogo**.
 
-![desforra](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/option.png?token=AOY53AOGSYMZPIXV72KY2AC6PTPXA)
+![desforra](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/option.png?token=AOY53ANF57IFFC6JGB5E6WC6PTRWK)
 
 - ## RESULTADO
 
@@ -31,12 +31,12 @@ O **resultado** é mostrado em 3 fases distintas do jogo:
 
 ### 1. No início de cada jogo
 
-![inicio](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/inicio.png?token=AOY53AOMBEGIM6ZBWMJSJ3S6PTQI6)
+![inicio](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/inicio.png?token=AOY53AIMP5IBWDHHN3YLWGS6PTRYW)
 
 ### 2. No fim de cada jogo
 
-![fim](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/res.png?token=AOY53AINYBOYPUWATJE2NX26PTQMW)
+![fim](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/res.png?token=AOY53APWD75LQTMU4PI7VKK6PTR2C)
 
 ### 3. Quando o utilizador sai do jogo
 
-![sair do jogo ](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/final.png?token=AOY53AKFQ4HCA2AM4C54ZJ26PTQMK)
+![sair do jogo ](https://raw.githubusercontent.com/JoseDiogoMartinsVieira/LI2PL3G2/master/relat%C3%B3rios/imagens/final.png?token=AOY53AKO7KSSF3RHFP6SFHC6PTR34)
