@@ -276,8 +276,12 @@ void do_inicio (ESTADO *e, int n){
     printf("%s\n",nome2);
     printf(" J1----->   %d   X   %d   <-----J2\n",obter_vitoria (e,1),obter_vitoria (e,2));
     print_linha ();
-
 }
+/*
+void do_pos (ESTADO *e){
+    int jogada_antes = e->
+}
+*/
 
 int interpretador(ESTADO *e, int n) {
     int i = 1;
@@ -318,6 +322,11 @@ int interpretador(ESTADO *e, int n) {
             else {
             print_linha ();
             print_erro (1);
+            /*
+            else {
+                if (_____________________________________________) do_pos (e); // comando para visualizar uma posição anterior através do seu número.
+            }
+            */
             }
             }
             }
