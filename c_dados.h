@@ -155,4 +155,5 @@ void init_jogadas (ESTADO *e);
 void muda_vitorias (ESTADO *e, int n);
 void init_estado (ESTADO *e);
 int obter_vitoria (ESTADO *e, int n);
+void delete_jogada (ESTADO *e, int n);
 #endif

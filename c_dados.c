@@ -128,3 +128,8 @@ int obter_vitoria (ESTADO *e, int n){
     if (n==1)return e->vitorias.j1;
     else return e->vitorias.j2;
 }
+
+void delete_jogada (ESTADO *e, int n){
+    COORDENADA c = {0,0};
+    e->jogadas[n] = c;
+}

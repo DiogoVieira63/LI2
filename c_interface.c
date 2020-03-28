@@ -45,6 +45,12 @@ CASA char_to_peca (char n){
         break;
     }
 }
+int str_to_int (char* str ){
+    int length = strlen (str), nr;
+    if (length == 1) nr = str[0]- '1' + 1;
+    else nr = (str[0] - '1' + 1) * 10 + str[1] - '1' +1;
+    return nr;
+}
 
 // ler as jogadas do ficheiro
 void ler_jogadas (FILE *fp, ESTADO *e,int n){
@@ -146,21 +152,16 @@ printf ("|-------------------------------|\n");
 void print_erro (int n){
     printf ("ERRO: ");
     if (n == 1) printf ("Coordenada inválida\n");
-    else printf ("Jogada Inválida \n");
+    if (n == 2) printf ("Jogada Inválida \n");
+    if (n == 3) printf ("Comando inválido\n"); 
+    if (n == 4) printf ("Posição desconhecida\n");
 }
 
 //Imprime uma mensagem no ecrã, conforme o int que recebe
 void print_mensagem (int n,char *filename){
-        switch (n){
-        case 1: printf ("Tabuleiro gravado em %s\n",filename);
-        break;
-        case 2: printf("Tabuleiro lido do ficheiro %s\n",filename);
-        break;
-        case 3: printf ("Ficheiro %s não existe\n",filename);
-        break;
-        case 4: printf ("\t JOGO TERMINADO\n");
-        break;
-        }
+    if (n == 1) printf ("Tabuleiro gravado em %s\n",filename);
+    if (n == 2) printf("Tabuleiro lido do ficheiro %s\n",filename);
+    if (n == 3) printf ("Ficheiro %s não existe\n",filename);
 }
 
 void print_resultado (ESTADO *e, int n){
@@ -213,7 +214,7 @@ void do_quit (ESTADO *e){
     print_linha ();
     print_resultado (e,1);
     putchar ('\n');
-    print_mensagem (4,"");
+    printf ("\t JOGO TERMINADO\n");
     putchar ('\n');
     print_linha();
 }
@@ -259,7 +260,7 @@ int do_final (ESTADO *e){
         }
         else {
             print_linha ();
-            printf("Comando inválido\n");
+            print_erro (3);
             print_linha ();
         }
         }
@@ -277,11 +278,35 @@ void do_inicio (ESTADO *e, int n){
     printf(" J1----->   %d   X   %d   <-----J2\n",obter_vitoria (e,1),obter_vitoria (e,2));
     print_linha ();
 }
-/*
-void do_pos (ESTADO *e){
-    int jogada_antes = e->
+
+
+int do_pos (ESTADO *e,char *s){
+    int nr = str_to_int (s) * 2;
+    int n = obter_num_jogadas (e);
+    if (nr > n || nr < 0) {
+        print_linha ();
+        print_erro (4);
+        return 0;
+    }
+    else {
+    while (n >= nr && nr) {
+            COORDENADA c = obter_jogada (e,n);
+            delete_jogada (e,n);
+            modificar_casa (e,c,VAZIO);
+            n--;
+    }
+    if (nr == 0) init_estado (e);
+    else {
+        modificar_num_jogadas (e, nr);
+        COORDENADA c = obter_jogada (e,n);
+        modificar_casa (e,c,BRANCA);
+        modificar_ultima_jogada (e,c);
+        modificar_jogador_atual (e,1);
+    }
+    }
+    return 1;
 }
-*/
+
 
 int interpretador(ESTADO *e, int n) {
     int i = 1;
@@ -320,13 +345,13 @@ int interpretador(ESTADO *e, int n) {
             else {
                  if (strlen(linha) == 5 && sscanf (linha, "movs%s",filename) != 0) do_movs (e); //comando para mostar os movimentos
             else {
+                if (sscanf (linha, "pos %s",filename) ==1){
+                    if (do_pos (e,filename)) print_tabuleiro (e,stdout);
+                }
+            else {
             print_linha ();
             print_erro (1);
-            /*
-            else {
-                if (_____________________________________________) do_pos (e); // comando para visualizar uma posição anterior através do seu número.
             }
-            */
             }
             }
             }
