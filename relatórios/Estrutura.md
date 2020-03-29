@@ -1,6 +1,6 @@
 # Estrutura do ESTADO
 
-O ESTADO permite-nos guardar a informação relativamente ao jogo. Guarda informação dos seus constituintes:
+O ESTADO permite-nos guardar a informação do jogo, nomeadamente dos seguintes constituintes:
 
 ### 1. O Tabuleiro 
 ```c
@@ -26,7 +26,7 @@ Quando a casa ainda não foi preenchida e por isso é uma opção válida como d
 Quando a casa já foi preenchida pela peça Branca, o que siginifica que não se pode voltar lá.
 
 ##### 3. BRANCA 
-Só exite uma destas. Pois, esta é movimentada pelos dois jogadores. Alterando a CASA para PRETA sempre que é movimentada.
+Esta peça é única e é movimentada pelos dois jogadores. Alterando a CASA para PRETA sempre que é movimentada.
 
 ##### 4. POS1 
 CASA vencedora para o Jogador 1.
