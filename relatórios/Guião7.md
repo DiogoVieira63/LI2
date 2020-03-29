@@ -13,7 +13,7 @@ void guardar_jogada (ESTADO *e,COORDENADA c)
 
 Para guardar as jogadas efetuadas de modo cronológico.
 
-De seguida, defimos devidamente um sscanf, para quando o utlizador digite **movs**, imprima no ecrã a lista de movimentos,como se vê em baixo:
+De seguida, defimos devidamente um sscanf, para quando o utlizador digitar **movs**, imprima no ecrã a lista de movimentos,como se vê na imagem em baixo:
 
 ![terminal](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/imagens/movs.png?raw=true)
 
@@ -21,16 +21,17 @@ De seguida, defimos devidamente um sscanf, para quando o utlizador digite **movs
 
 - ### Comando gr
 
-Agora o comando **gr**, grava não só o tabuleiro, mas também a lista de movimentos. 
+Agora o comando **gr**, não só grava o tabuleiro, mas também a lista de movimentos. 
 
-Para isso, basta utilizar a função que imprime os movimentos num ficheiro:
+Para isso, utilizámos a seguinte função:
 ```c
 void print_movs (ESTADO *e,FILE *filename)
 ```
-onde o nome do ficheiro é o que utilizador escreve no terminal após o **gr**.
+que imprime os movimentos num ficheiro, onde o nome deste é o que o utilizador escrever no terminal após o **gr**.
+
 - ### Comando ler
 
-Para o comand **ler**,implementamos a função:
+Para o comando **ler**, implementámos a função:
 ```c
 void ler_jogadas (FILE *fp, ESTADO *e,int n)
 ```
