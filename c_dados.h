@@ -151,9 +151,32 @@ void modificar_ultima_jogada (ESTADO *e,COORDENADA c);
 @returns A COORDENADA 
 */
 COORDENADA obter_jogada (ESTADO *e,int n);
+/**
+\brief Dá reset nas jogadas
+@param e Apontador para o ESTADO
+*/
 void init_jogadas (ESTADO *e);
+/**
+\brief Muda o nº de vitórias
+@param e Apontador para o ESTADO
+@param n Int para indicar o jogador que ganhou
+*/
 void muda_vitorias (ESTADO *e, int n);
+/**
+\brief Dá reset no ESTADO
+@param e Apontador para o ESTADO
+*/
 void init_estado (ESTADO *e);
+/**
+\brief Obtém o nr de vitõrias de um jogador
+@param e Apontador para o ESTADO
+@param n Int para indicar o jogador que se pretende: 1 / 2
+*/
 int obter_vitoria (ESTADO *e, int n);
+/**
+\brief Apaga uma determinada jogada
+@param e Apontador para o ESTADO
+@param n Int para indicar o nr da jogada que se pretende
+*/
 void delete_jogada (ESTADO *e, int n);
 #endif
