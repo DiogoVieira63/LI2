@@ -1,15 +1,15 @@
 # EXTRAS
 
-À medida que iamos desenvolvendo um jogo fomos tendo ideias de pequenos pormenores que podiam ser implementados.
+À medida que iamos desenvolvendo o jogo fomos tendo ideias de pequenos pormenores que podiam ser implementados.
 
 - ## NOMES
 
-Logo no início do jogo, o utilizador é confrontado com uma decisão de decidir o nome para o **Jogador 1** e o **Jogador 2**.
+Logo no início do jogo, o utilizador é confrontado com a decisão para o nome do **Jogador 1** e do **Jogador 2**.
 
-Ex: Utilizamos os nomes dos melhores do mundo, respetivamente ordenados :smile:
+Ex: Utilizámos os nomes dos melhores do mundo, respetivamente ordenados :smile:
 ![nomes](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/imagens/nomes.png)
 
-Os **nomes** vão seguir os dois jogadores durante o jogo todo.
+Os **nomes** vão seguir os respetivos jogadores durante o jogo todo.
 
 Exemplo do **prompt** numa jogada efetuada por cada um dos jogadores:
 
