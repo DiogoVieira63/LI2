@@ -105,8 +105,8 @@ int ler_tabuleiro (ESTADO *e,char *filename){
         }
     }
     ler_jogadas (fp,e,contagem); // para ler as jogadas do ficheiro, que se encontram após o tabuleiro
-    if (contagem%2 == 0) modificar_jogador_atual (e,2); 
-    else modificar_jogador_atual (e,1);
+    if (contagem%2 == 0) modificar_jogador_atual (e,1); 
+    else modificar_jogador_atual (e,2);
     modificar_num_jogadas (e,contagem);
     fclose(fp);
     }
