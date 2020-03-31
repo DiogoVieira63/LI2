@@ -375,7 +375,7 @@ int interpretador(ESTADO *e, int n) {
             }
             }
             }
-            }
+//            }
             }
             }
         }
