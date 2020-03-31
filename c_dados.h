@@ -54,6 +54,7 @@ typedef struct {
     COORDENADA ultima_jogada;
     /**o nr de jogadas*/
     int num_jogadas;
+    int max_jogadas;
     /**Um inteiro (1 ou 2) correspodente ao jogador atual*/
     int jogador_atual;
     /** Guarda os nomes introduzidos pelo utiilizador*/
@@ -179,4 +180,7 @@ int obter_vitoria (ESTADO *e, int n);
 @param n Int para indicar o nr da jogada que se pretende
 */
 void delete_jogada (ESTADO *e, int n);
+int obter_max_jogadas (ESTADO *e);
+void modificar_max_jogadas (ESTADO *e, int n);
+void tab_inicial (ESTADO *e);
 #endif

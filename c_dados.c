@@ -5,16 +5,16 @@
 #include <string.h>
 
 
-void tab_inicial (CASA tab [8][8]){
+void tab_inicial (ESTADO *e){
     for (int linha = 1;linha <= 8;linha++){
     int coluna = 1;
         while (coluna <= 8) {
-            tab [linha] [coluna++] = VAZIO;
+            e->tab [linha] [coluna++] = VAZIO;
         }
     }  
-    tab [5][4]= BRANCA; 
-    tab [1][8]= POS1;
-    tab [8][1]= POS2;
+    e->tab [5][4]= BRANCA; 
+    e->tab [1][8]= POS1;
+    e->tab [8][1]= POS2;
 }
 
 void init_jogadas (ESTADO *e){
@@ -31,7 +31,8 @@ ESTADO *inicializar_estado() {
 ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
 e->jogador_atual = 1;
 e->num_jogadas = 0;
-tab_inicial (e->tab);
+e->max_jogadas = 0;
+tab_inicial (e);
 init_jogadas (e);
 e->ultima_jogada.linha = 4;
 e->ultima_jogada.coluna = 5;
@@ -117,11 +118,11 @@ void muda_vitorias (ESTADO *e, int n){
 
 void init_estado (ESTADO *e){
     COORDENADA c = {5,4};
-    init_jogadas (e);
-    tab_inicial(e->tab);
+    tab_inicial(e);
     modificar_num_jogadas (e,0);
     modificar_ultima_jogada (e,c);
     modificar_jogador_atual (e,1);
+    modificar_max_jogadas (e,0);
 }
 
 int obter_vitoria (ESTADO *e, int n){
@@ -129,7 +130,10 @@ int obter_vitoria (ESTADO *e, int n){
     else return e->vitorias.j2;
 }
 
-void delete_jogada (ESTADO *e, int n){
-    COORDENADA c = {0,0};
-    e->jogadas[n] = c;
+int obter_max_jogadas (ESTADO *e){
+    return e->max_jogadas;
+}
+
+void modificar_max_jogadas (ESTADO *e, int n){
+    e->max_jogadas = n;
 }

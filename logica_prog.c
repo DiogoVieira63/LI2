@@ -44,6 +44,60 @@ if (ha_nao_casas_livres (e)) {
 }
 return 0;
 }
+/*
+int isValid (ESTADO *e,COORDENADA c){
+    CASA casa = obter_estado_casa (e,c);
+    if (casa != VAZIO && casa != POS1 && casa != POS2) return 0;
+    if (c.coluna > 8 || c.coluna < 1) return 0;
+    if (c.linha > 8 || c.linha < 1) return 0;
+    return 1;
+}
+
+int distancia (COORDENADA c, int n){
+    int distancia = 0;
+    if (n == 1){
+        distancia = abs (c.coluna-1) + abs (c.linha-8);
+    }
+    if (n == 2){
+        distancia = abs (c.coluna-8) + abs (c.linha-1);
+    }
+}
+
+int conta_casas_livres (ESTADO *e, COORDENADA atual){
+    int contagem = 0;
+    if (obter_estado_casa (e,atual)!= VAZIO || atual.linha < 1 || atual.linha > 8 || atual.coluna > 8 || atual.coluna < 1) return 10;
+    for (int linha = atual.linha-1;linha <= atual.linha+1;linha++)
+    {
+        for (int coluna = atual.coluna-1;coluna <= atual.coluna+1;coluna++)
+        {
+        COORDENADA c = {coluna,linha};
+        CASA casa = obter_estado_casa (e,c);
+        if (isValid (e,c) && !(linha == atual.linha && coluna == atual.coluna))contagem++;
+        }
+    }
+return contagem;
+}
+
+COORDENADA melhor_casa (ESTADO *e, COORDENADA atual){
+    COORDENADA c_menor = {atual.coluna -1,atual.linha-1};
+    COORDENADA c;
+    int jog = obter_jogador_atual (e);
+    int menor = distancia (c,jog);
+    for (int linha = atual.linha-1;linha <= atual.linha+1;linha++)
+    {
+        for (int coluna = atual.coluna-1;coluna <= atual.coluna+1;coluna++)
+        {
+        COORDENADA c = {coluna,linha};
+        jog = obter_jogador_atual (e);
+        if (distancia(c,jog) < menor && isValid (e,c)){
+            c_menor = c;
+            menor= distancia (c,1);
+           } 
+    }
+    }
+return c_menor;
+}
+*/
 
 int jogar(ESTADO *e, COORDENADA c) {
     int m,n;
@@ -60,6 +114,8 @@ int jogar(ESTADO *e, COORDENADA c) {
                 alterar_num_jogadas (e);
                 alterar_jogador_atual (e);
                 modificar_ultima_jogada (e,c);
+                int nr = obter_num_jogadas (e);
+                modificar_max_jogadas (e,nr);
             }
             else {
                 print_erro (2);

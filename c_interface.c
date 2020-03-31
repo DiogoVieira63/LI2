@@ -59,6 +59,7 @@ void ler_jogadas (FILE *fp, ESTADO *e,int n){
     char str [11];
     init_jogadas (e);//para dar reset nas jogadas
     modificar_num_jogadas (e,0);
+    if (fgets(str,11, fp)== NULL);//para ignorar a primeira linha 
     while (fgets(str,11, fp)!= NULL){ // para percorrer o ficheiro linha por linha até chegar a uma linha vazia
         int k =4; //posição da coordenada na string
         int f; // para saber quantas coordenadas tem na linha, 1 ou 2
@@ -108,6 +109,7 @@ int ler_tabuleiro (ESTADO *e,char *filename){
     if (contagem%2 == 0) modificar_jogador_atual (e,1); 
     else modificar_jogador_atual (e,2);
     modificar_num_jogadas (e,contagem);
+    modificar_max_jogadas (e,contagem);
     fclose(fp);
     }
     return 1;
@@ -122,10 +124,10 @@ void print_coordenada (COORDENADA c,FILE *filename){
 }
 
 void print_movs (ESTADO *e,FILE *filename){
-    int i = 1, n = 0, k = 1;
+    int i = 1, n = 0, k = 1, jogadas = obter_num_jogadas (e);
     while (k){
-        COORDENADA c = obter_jogada (e,n++);
-        if ( c.linha == 0 && c.coluna == 0) k = 0;
+        COORDENADA c = obter_jogada (e,n);
+        if (jogadas == n++) k = 0;
         else{
         if (n%2 != 0)fprintf (filename,"%02d: ",i++);
         print_coordenada (c,filename);
@@ -230,6 +232,7 @@ void do_ler (char *filename,ESTADO *e){
 void do_gravar (FILE *fp,char*filename, ESTADO *e){
     fp = fopen (filename, "w+");
     print_tabuleiro (e,fp); // imprimir o tabuleiro no ficheiro
+    fputc ('\n',fp);
     print_movs (e,fp); // imprimir os movimentos no tabuleiro
     fclose (fp);
     print_linha ();
@@ -282,23 +285,32 @@ void do_inicio (ESTADO *e, int n){
 
 int do_pos (ESTADO *e,char *s){
     int nr = str_to_int (s) * 2;
-    int n = obter_num_jogadas (e);
-    if (nr > n || nr < 0) {
+    int i = 0;
+    int max = obter_max_jogadas (e);
+    if (nr > max || nr < 0) {
         print_linha ();
         print_erro (4);
         return 0;
     }
     else {
-    while (n >= nr && nr) {
-            COORDENADA c = obter_jogada (e,n);
-            delete_jogada (e,n);
-            modificar_casa (e,c,VAZIO);
-            n--;
+    tab_inicial (e);
+    COORDENADA inicial = {5,4}; 
+    modificar_casa (e,inicial,PRETA);
+    while (i < nr) {
+        COORDENADA c = obter_jogada (e,i);
+        modificar_casa (e,c,PRETA);
+        i++;
     }
-    if (nr == 0) init_estado (e);
+    if (nr == 0) {
+    COORDENADA c = {5,4};
+    tab_inicial(e);
+    modificar_num_jogadas (e,0);
+    modificar_ultima_jogada (e,c);
+    modificar_jogador_atual (e,1);
+    }
     else {
-        modificar_num_jogadas (e, nr);
-        COORDENADA c = obter_jogada (e,n);
+        modificar_num_jogadas (e,nr);
+        COORDENADA c = obter_jogada (e,nr-1);
         modificar_casa (e,c,BRANCA);
         modificar_ultima_jogada (e,c);
         modificar_jogador_atual (e,1);
@@ -306,7 +318,14 @@ int do_pos (ESTADO *e,char *s){
     }
     return 1;
 }
-
+/*
+int do_jog (ESTADO *e){
+    COORDENADA c = obter_ultima_jogada (e);
+    COORDENADA j = melhor_casa (e,c);
+    int i = do_jogada (e,j);
+    return i;
+}
+*/
 
 int interpretador(ESTADO *e, int n) {
     int i = 1;
@@ -348,9 +367,12 @@ int interpretador(ESTADO *e, int n) {
                 if (sscanf (linha, "pos %s",filename) ==1){
                     if (do_pos (e,filename)) print_tabuleiro (e,stdout);
                 }
-            else {
+            /*else {
+                if (strlen(linha) == 4 && sscanf (linha, "jog%s",filename) != 0) i = do_jog (e);*/
+            else  {
             print_linha ();
             print_erro (1);
+            }
             }
             }
             }

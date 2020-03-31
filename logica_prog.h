@@ -20,4 +20,5 @@ int jogar(ESTADO *e, COORDENADA c);
 @returns Devolve 1, caso o jogo tenha chegado ao fim, caso contrário, devolve 0.
 */
 int fim_do_jogo (ESTADO* e);
+//COORDENADA melhor_casa (ESTADO *e, COORDENADA c);
 #endif
