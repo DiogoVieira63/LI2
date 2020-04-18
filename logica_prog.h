@@ -21,4 +21,7 @@ int jogar(ESTADO *e, COORDENADA c);
 */
 int fim_do_jogo (ESTADO* e);
 //COORDENADA melhor_casa (ESTADO *e, COORDENADA c);
+int isValid (ESTADO *e,COORDENADA c);
+int distancia (COORDENADA c, int n);
+int conta_casas_livres (ESTADO *e, COORDENADA atual);
 #endif

@@ -1,8 +1,9 @@
 #include "c_dados.h"
 #include "logica_prog.h"
 #include "c_interface.h"
+#include "lista.h"
 #include <string.h>
-
+#include <math.h>
 //FUNÇÃO MAIN
 int main(){
 char nome1 [11],nome2 [11];

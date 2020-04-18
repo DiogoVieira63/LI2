@@ -3,7 +3,7 @@
 
 typedef struct {
    COORDENADA coord;
-   int dist;
+   float dist;
    int casas_livres;
 }DADOS;
 

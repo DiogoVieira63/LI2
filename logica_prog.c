@@ -2,6 +2,7 @@
 #include "c_interface.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 //Função auxiliar da (fim_do_jogo) que observa se todas as peças à volta estão ocupadas por PRETAS
 int ha_nao_casas_livres (ESTADO *e){
@@ -44,7 +45,7 @@ if (ha_nao_casas_livres (e)) {
 }
 return 0;
 }
-/*
+
 int isValid (ESTADO *e,COORDENADA c){
     CASA casa = obter_estado_casa (e,c);
     if (casa != VAZIO && casa != POS1 && casa != POS2) return 0;
@@ -53,14 +54,15 @@ int isValid (ESTADO *e,COORDENADA c){
     return 1;
 }
 
-int distancia (COORDENADA c, int n){
+float distancia (COORDENADA c, int n){
     int distancia = 0;
     if (n == 1){
-        distancia = abs (c.coluna-1) + abs (c.linha-8);
+        distancia = sqrt(pow(c.coluna-1,2)+pow(c.linha-8,2));
     }
     if (n == 2){
-        distancia = abs (c.coluna-8) + abs (c.linha-1);
+        distancia = sqrt(pow(c.coluna-8,2)+pow(c.linha-1,2));
     }
+    return distancia;
 }
 
 int conta_casas_livres (ESTADO *e, COORDENADA atual){
@@ -78,6 +80,7 @@ int conta_casas_livres (ESTADO *e, COORDENADA atual){
 return contagem;
 }
 
+/*
 COORDENADA melhor_casa (ESTADO *e, COORDENADA atual){
     COORDENADA c_menor = {atual.coluna -1,atual.linha-1};
     COORDENADA c;

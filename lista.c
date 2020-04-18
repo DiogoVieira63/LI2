@@ -9,6 +9,9 @@
 #define BUF_SIZE 1024
 
 
+//FAZER FUNÇÃO PARA REMOVER LISTA
+
+
 DADOS criar_dados (COORDENADA c, int n,ESTADO *e){
 	DADOS d;
 	d.coord = c;
@@ -20,7 +23,7 @@ DADOS criar_dados (COORDENADA c, int n,ESTADO *e){
 LISTA criar_lista(){
   LISTA l;
   COORDENADA c = {0,0};
-  l = malloc (sizeof(NODO));
+  l = (NODO *)malloc (sizeof(NODO));
   l->valor.coord = c;
   l->proximo = NULL;
   return l; 
@@ -29,7 +32,7 @@ LISTA criar_lista(){
 void print_lista (LISTA l){
 	LISTA l1 = criar_lista ();
 	for (l1 = l; l1; l1= l1->proximo){
-		printf ("COORDENADA %d%d = dist: %d e casas livres = %d\n",l1->valor.coord.coluna, l1->valor.coord.linha,l1->valor.dist,l1->valor.casas_livres);
+		printf ("COORDENADA %d%d = dist: %f e casas livres = %d\n",l1->valor.coord.coluna, l1->valor.coord.linha,l1->valor.dist,l1->valor.casas_livres);
 	}
 }
 
@@ -69,6 +72,21 @@ LISTA posicoes_possiveis (ESTADO *e){
 return l;
 }
 
+//VER_PARIDADE
+
+// VERIFICAR SE O ADVERSÁRIO GANHA NA JOGADA A SEGUIR
+int can_he_win  (ESTADO *e){ //estado correspondente à coordenada que decidimos jogar
+	int res = 0;
+	LISTA l = criar_lista ();
+	l = posicoes_possiveis (e);
+	LISTA l1 = criar_lista ();
+	for (l1 = l;l1;l1 = proximo (l1)){
+		DADOS atual = devolve_cabeca (l1);
+		if (atual.casas_livres == 0) res = 1;
+	}
+	return res;
+}
+
 //mudar para o módulo certo
 int can_I_win (DADOS dados,ESTADO *e){// n corresponde ao jogador atual
 	int i = 0;
@@ -82,8 +100,8 @@ int can_I_win (DADOS dados,ESTADO *e){// n corresponde ao jogador atual
 
 
 
-/*
-void * devolve_cabeca(LISTA l){
+
+DADOS devolve_cabeca(LISTA l){
   return l->valor;
 }
 
@@ -98,26 +116,56 @@ LISTA remove_cabeca(LISTA l){
   free (l);
   return l1;
 }
-*/
+
+void remover_lista (LISTA l){
+	LISTA l1;
+	while (l) l = remove_cabeca (l);	
+}
+
 
 COORDENADA melhor_jogada (LISTA l, ESTADO *e){
-	COORDENADA melhor = l->valor.coord;
-	int menor_dist = l->valor.dist;
+	ESTADO *teste = (ESTADO *) malloc (sizeof (ESTADO));
+	DADOS atual = devolve_cabeca (l);
+	COORDENADA melhor = atual.coord;
+	int menor_dist = atual.dist;
 	LISTA l1 = criar_lista();
-	for (l1 = l;l1;l1 = l1->proximo){
-		COORDENADA c = l1->valor.coord;
-		if (can_I_win(l1->valor,e)) return c;
-		if (l1->valor.casas_livres > 1 && l1->valor.dist < menor_dist) {
-			melhor = c;
-			menor_dist = l1->valor.dist;
+	for (l1 = l;l1;l1 = proximo (l1)){
+		memcpy (teste,e,sizeof (ESTADO));
+		atual = devolve_cabeca (l1);
+		COORDENADA c = atual.coord;
+		if (can_I_win(atual,teste)) return c;
+		if (atual.dist <= menor_dist) {
+			jogar (teste,c);
+			if (can_he_win(teste) != 1) melhor = c;
+			menor_dist = atual.dist;
 		}
 	}
+	remover_lista (l);
+	free (teste);
 	return melhor;
 }
+
+
+
 /*
 int main() {
 	LISTA l = criar_lista(); // Criar uma lista vazia
 	ESTADO *e = inicializar_estado ();
+
+
+
+IMPORTANTE 
+
+
+	ESTADO *guardado = (ESTADO *) malloc(sizeof(ESTADO));
+	memcpy (guardado,e,sizeof(ESTADO));
+
+
+
+	COORDENADA c = {5,5};
+	jogar (e,c);
+	print_tabuleiro (guardado,stdout);
+	print_tabuleiro (e,stdout);
 	/*
 	COORDENADA c = {4,5};
 	jogar (e,c);
