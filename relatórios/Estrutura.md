@@ -67,15 +67,19 @@ typedef struct {
 ```c
 int num_jogadas;
 ```
-O número total de jogadas até ao momento.
-
-### 5. O jogador atual
+O número atual de jogadas.
+### 5. O número máximo de jogadas
+```c
+int max_jogadas;
+```
+O número máximo de jogadas até ao momento.
+### 6. O jogador atual
 ```c
 int jogador_atual;
 ```
 Varia entre 1 e 2, para saber qual dos jogadores está a jogar no momento.
 
-### 6. Os nomes
+### 7. Os nomes
 ```c
 NOMES nomes;
 ```
@@ -88,3 +92,16 @@ typedef struct {
     } NOMES;
 ```
 Permite um máximo de 10 letras para cada nome.
+
+### 8. As viórias
+```c
+VITORIAS vitorias;
+```
+As vitórias de cada jogador ao longo dos jogos que vão efetuando.
+Sendo que, **VITORIAS** está definido da seguinte forma:
+```c
+typedef struct {
+    int j1;
+    int j2;
+    } VITORIAS;
+```
