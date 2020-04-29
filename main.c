@@ -22,6 +22,7 @@ e->vitorias.j2= 0;
 if (interpretador(e,i))i++;
 else i = 0;
 }
+
 return 0;
 }
 

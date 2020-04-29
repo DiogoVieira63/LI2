@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "lista.h"
 
 #define BUF_SIZE 1024
 //Imprimir o tabuleiro no ecrã ou num ficheiro
@@ -318,14 +319,22 @@ int do_pos (ESTADO *e,char *s){
     }
     return 1;
 }
-/*
-int do_jog (ESTADO *e){
-    COORDENADA c = obter_ultima_jogada (e);
-    COORDENADA j = melhor_casa (e,c);
-    int i = do_jogada (e,j);
+
+int do_jog (ESTADO *e,int n){
+    LISTA l = criar_lista ();
+    l = posicoes_possiveis (e);
+    COORDENADA c;
+    if (n == 1){
+        c = melhor_jogada (l,e);
+    }
+    else {
+        c = melhor_jogada2 (l,e);
+    }
+    int i = do_jogada (e,c);
+
     return i;
 }
-*/
+
 
 int interpretador(ESTADO *e, int n) {
     int i = 1;
@@ -367,15 +376,18 @@ int interpretador(ESTADO *e, int n) {
                 if (sscanf (linha, "pos %s",filename) ==1){
                     if (do_pos (e,filename)) print_tabuleiro (e,stdout);
                 }
-            /*else {
-                if (strlen(linha) == 4 && sscanf (linha, "jog%s",filename) != 0) i = do_jog (e);*/
+            else {
+                if (strlen(linha) == 4 && sscanf (linha, "jog%s",filename) != 0) i = do_jog (e,1);
             else  {
+                if (strlen(linha) == 5 && sscanf (linha, "jog2%s",filename) != 0) i = do_jog (e,2);
+                else {
             print_linha ();
             print_erro (1);
             }
             }
             }
-//            }
+            }
+            }
             }
             }
         }

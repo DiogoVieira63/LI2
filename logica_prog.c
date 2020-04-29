@@ -54,15 +54,17 @@ int isValid (ESTADO *e,COORDENADA c){
     return 1;
 }
 
-float distancia (COORDENADA c, int n){
-    int distancia = 0;
-    if (n == 1){
-        distancia = sqrt(pow(c.coluna-1,2)+pow(c.linha-8,2));
-    }
-    if (n == 2){
-        distancia = sqrt(pow(c.coluna-8,2)+pow(c.linha-1,2));
-    }
-    return distancia;
+
+
+double distancia (COORDENADA c, int n){
+    COORDENADA ponto;
+    if (n == 1) ponto = (COORDENADA) {1,8};
+    else ponto =(COORDENADA) {8,1};
+    double x1 =c.coluna, y1 =c.linha;
+    double x2 =ponto.coluna, y2 = ponto.linha;
+    double sum = pow(x2 - x1,2)+ pow(y2 - y1,2);
+    double value = sqrt(sum);
+    return value;
 }
 
 int conta_casas_livres (ESTADO *e, COORDENADA atual){
@@ -80,27 +82,6 @@ int conta_casas_livres (ESTADO *e, COORDENADA atual){
 return contagem;
 }
 
-/*
-COORDENADA melhor_casa (ESTADO *e, COORDENADA atual){
-    COORDENADA c_menor = {atual.coluna -1,atual.linha-1};
-    COORDENADA c;
-    int jog = obter_jogador_atual (e);
-    int menor = distancia (c,jog);
-    for (int linha = atual.linha-1;linha <= atual.linha+1;linha++)
-    {
-        for (int coluna = atual.coluna-1;coluna <= atual.coluna+1;coluna++)
-        {
-        COORDENADA c = {coluna,linha};
-        jog = obter_jogador_atual (e);
-        if (distancia(c,jog) < menor && isValid (e,c)){
-            c_menor = c;
-            menor= distancia (c,1);
-           } 
-    }
-    }
-return c_menor;
-}
-*/
 
 int jogar(ESTADO *e, COORDENADA c) {
     int m,n;

@@ -172,6 +172,7 @@ void init_estado (ESTADO *e);
 \brief Obtém o nr de vitõrias de um jogador
 @param e Apontador para o ESTADO
 @param n Int para indicar o jogador que se pretende: 1 / 2
+@returns o nr de vitorias
 */
 int obter_vitoria (ESTADO *e, int n);
 /**
@@ -180,7 +181,22 @@ int obter_vitoria (ESTADO *e, int n);
 @param n Int para indicar o nr da jogada que se pretende
 */
 void delete_jogada (ESTADO *e, int n);
+/**
+\brief Obter o nr max de jogadas
+@param e Apontador para o ESTADO
+@returns o nr max de jogadas
+*/
 int obter_max_jogadas (ESTADO *e);
+/**
+\brief Modificar o nr maximo de jogadas para um certo número
+@param e Apontador para o ESTADO
+@param n Int para indicar o nr para o qual se vai mudar
+*/
 void modificar_max_jogadas (ESTADO *e, int n);
+/**
+\brief Tabuleiro para o inicio do jogo
+@param e Apontador para o ESTADO
+
+*/
 void tab_inicial (ESTADO *e);
 #endif

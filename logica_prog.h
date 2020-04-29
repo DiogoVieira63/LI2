@@ -20,8 +20,31 @@ int jogar(ESTADO *e, COORDENADA c);
 @returns Devolve 1, caso o jogo tenha chegado ao fim, caso contrário, devolve 0.
 */
 int fim_do_jogo (ESTADO* e);
-//COORDENADA melhor_casa (ESTADO *e, COORDENADA c);
+/**
+\brief Verifica se uma coordenada é válida para se jogar
+@param e Apontador para o ESTADO
+@param c COORDDENADA a verificar
+@returns 1 se a COORDENADA for válida, 0 caso contrário
+*/
 int isValid (ESTADO *e,COORDENADA c);
-int distancia (COORDENADA c, int n);
+/**
+\brief Calcula a distância de uma COORDENADA até à casa vencedora
+@param c A COORDENADA ponto inicial
+@param n Um int correspondente à casa que se pretende saber, 1 ou 2
+@returns A distancia devidamente calculada
+*/
+double distancia (COORDENADA c, int n);
+/**
+\brief Conta as casas livrs de uma determindada COORDENADA
+@param e Apontador para o ESTADO
+@param atual A COORDENDADA escolhida
+@returns O nr de casas livres para aquela COORDENADA
+*/
 int conta_casas_livres (ESTADO *e, COORDENADA atual);
+/**
+\brief Insere um valor na cabeca da LISTA
+@param L A lista
+@param valor Apontador para o valor a ser inserido
+@returns A Lista devidamente modificada
+*/
 #endif
