@@ -15,5 +15,6 @@ A93193: Tomás Cardoso Francisco
   - [Guião 6](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o6.md)
   - [Guião 7](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o7.md)
   - [Guião 8](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o8.md)
+  - [Guião 9](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o9.md)
 
 - ### [EXTRAS](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/extras.md)
