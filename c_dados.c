@@ -69,6 +69,7 @@ void alterar_estado_casa (ESTADO *e,COORDENADA c){
     case PRETA:
         e->tab[col][lin] = PRETA;
         break;
+    default:;
     }
 }
 

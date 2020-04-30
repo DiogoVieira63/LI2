@@ -28,24 +28,25 @@ void print_tabuleiro(ESTADO *e,FILE *filename) {
 
 //Convesor de char em CASA, função auxiliar para a ler_tabuleiro
 CASA char_to_peca (char n){
+    CASA c = POS2;
     switch (n){
         case '#': 
-        return PRETA;
+        c = PRETA;
         break;
         case '*':
-        return BRANCA;
+        c = BRANCA;
         break;
         case '.': 
-        return VAZIO;
+        c = VAZIO;
         break;
         case '1':
-        return POS1;
+        c = POS1;
         break;
-        case '2':
-        return POS2;
-        break;
+        default:;
     }
+    return c;
 }
+
 int str_to_int (char* str ){
     int length = strlen (str), nr;
     if (length == 1) nr = str[0]- '1' + 1;
@@ -56,11 +57,11 @@ int str_to_int (char* str ){
 // ler as jogadas do ficheiro
 void ler_jogadas (FILE *fp, ESTADO *e,int n){
     int nr = (n+1)/2; //nr de linhas 
-    int i = 0; //para percorrer o nr de jogadas
+    int i; //para percorrer o nr de jogadas
     char str [11];
     init_jogadas (e);//para dar reset nas jogadas
     modificar_num_jogadas (e,0);
-    if (fgets(str,11, fp)== NULL);//para ignorar a primeira linha 
+    if (fgets(str,11, fp)== NULL) i = 0;//para ignorar a primeira linha 
     while (fgets(str,11, fp)!= NULL){ // para percorrer o ficheiro linha por linha até chegar a uma linha vazia
         int k =4; //posição da coordenada na string
         int f; // para saber quantas coordenadas tem na linha, 1 ou 2
@@ -84,7 +85,6 @@ int ler_tabuleiro (ESTADO *e,char *filename){
     int contagem = 0;
     FILE *fp;
     char str[8]; 
-    char peca;
     fp = fopen (filename, "r");
     if (fp == NULL) return 0;
     else{
@@ -158,6 +158,7 @@ void print_erro (int n){
     if (n == 2) printf ("Jogada Inválida \n");
     if (n == 3) printf ("Comando inválido\n"); 
     if (n == 4) printf ("Posição desconhecida\n");
+    if (n == 5) printf ("Nome inválido\n");
 }
 
 //Imprime uma mensagem no ecrã, conforme o int que recebe
@@ -185,10 +186,25 @@ void print_resultado (ESTADO *e, int n){
 }
 
 //Função que dado o nr do jogador, e uma string. Faz scanf do nome que o utilzador responder e coloca na string.
-char* nomes (int n,char nome []){
+char* nomes (int n,char* nome ){
+    int i = 0;
     if (n==1) printf(" Escolha o nome \n(max10 e sem espaços)\n");
+    while (i == 0){
+    char linha [BUF_SIZE];   
     printf(" Jogador %d:",n);
-    scanf("%10s",nome);
+    int j = scanf ("%s",linha);
+    if (!j || strlen (linha)>= 10) {
+        i = 0;
+        print_linha ();
+        print_erro (5);
+        print_linha ();
+    }
+    else {
+        i = 1;
+        strcpy(nome,linha);
+    }
+
+    }
     print_linha ();
     return nome;
 }
@@ -325,10 +341,10 @@ int do_jog (ESTADO *e,int n){
     l = posicoes_possiveis (e);
     COORDENADA c;
     if (n == 1){
-        c = melhor_jogada (l,e);
+        c = melhor_jogada (l,e,1);
     }
     else {
-        c = melhor_jogada2 (l,e);
+        c = melhor_jogada (l,e,2);
     }
     int i = do_jogada (e,c);
 

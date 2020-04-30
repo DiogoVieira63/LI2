@@ -7,7 +7,6 @@
 //Função auxiliar da (fim_do_jogo) que observa se todas as peças à volta estão ocupadas por PRETAS
 int ha_nao_casas_livres (ESTADO *e){
     COORDENADA atual = obter_ultima_jogada (e);
-    int contagem = 0;
     for (int linha = atual.linha-1;linha <= atual.linha+1;linha++)
     {
         for (int coluna = atual.coluna-1;coluna <= atual.coluna+1;coluna++)
@@ -36,7 +35,7 @@ if (atual == POS2) {
 }
 //QUANDO O JOGADOR GANHA POR DEIXAR O OUTRO ENCURRALADO
 int jog,j_atual = obter_jogador_atual (e);
-if (e->jogador_atual == 1)jog = 2;
+if (j_atual == 1)jog = 2;
 else jog = 1;
 if (ha_nao_casas_livres (e)) {
     display_gameover (jog,e);
@@ -75,7 +74,6 @@ int conta_casas_livres (ESTADO *e, COORDENADA atual){
         for (int coluna = atual.coluna-1;coluna <= atual.coluna+1;coluna++)
         {
         COORDENADA c = {coluna,linha};
-        CASA casa = obter_estado_casa (e,c);
         if (isValid (e,c) && !(linha == atual.linha && coluna == atual.coluna))contagem++;
         }
     }
@@ -88,7 +86,6 @@ int jogar(ESTADO *e, COORDENADA c) {
     COORDENADA ult = obter_ultima_jogada (e);
     m = ult.coluna;
     n = ult.linha; 
-    CASA peca_atual = obter_estado_casa (e,ult); 
     if ((abs (c.linha-n) <= 1) && (abs (c.coluna -m) <= 1) && !(c.linha == n && c.coluna == m)){
             CASA peca_destino = obter_estado_casa (e,c);
             if (peca_destino == VAZIO || peca_destino == POS1 || peca_destino == POS2) {

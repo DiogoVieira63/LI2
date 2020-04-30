@@ -8,60 +8,12 @@
 
 #define BUF_SIZE 1024
 
-
-//FAZER FUNÇÃO PARA REMOVER LISTA
-
-
-
-LISTA remove_coordenada (LISTA l,COORDENADA c){
-    LISTA l2;
-    DADOS d1 = l->valor;
-    if (d1->coord.linha == c.linha && d1->coord.coluna == c.coluna){
-      l = remove_cabeca (l);
-    }
-    else {
-    for (LISTA l1 = l; l1->proximo;l1=l1->proximo){
-        DADOS d = l1->proximo->valor;
-        if (d->coord.linha == c.linha && d->coord.coluna == c.coluna){
-            l1->proximo =remove_cabeca (l1->proximo);
-            break;
-        }
-    }
-    }
-    return l;
-}
-
-int length (LISTA l) {
-	LISTA l1;
-	int contagem;
-	for (l1=l;l1;proximo (l1)) contagem++;
-	return contagem;
-}
-
-DADOS criar_dados (COORDENADA c, int n,ESTADO *e){
-	DADOS d = malloc (sizeof (info));
-	double dist = distancia (c,n);
-	d->coord = c;
-	d->dist = dist;
-	d->casas_livres = conta_casas_livres (e,c);
-	return d;
-}
-
 LISTA criar_lista(){
   LISTA l;
   l = (NODO *)malloc (sizeof(NODO));
   l->valor = NULL;
   l->proximo = NULL;
   return l; 
-}
-
-
-void print_lista (LISTA l){
-	LISTA l1 = criar_lista ();
-	for (l1 = l; l1; l1= l1->proximo){
-		DADOS d = (DADOS) devolve_cabeca (l1);
-		printf ("COORDENADA %d%d = dist: %f e casas livres = %d\n",d->coord.coluna, d->coord.linha,d->dist,d->casas_livres);
-	}
 }
 
 LISTA insere_cabeca (LISTA l, void *valor){
@@ -78,6 +30,25 @@ LISTA insere_cabeca (LISTA l, void *valor){
   return l1;
 }
 
+void* devolve_cabeca(LISTA l){
+  return l->valor;
+}
+
+
+LISTA proximo(LISTA l){
+  return l->proximo;
+}
+
+LISTA remove_cabeca(LISTA l){
+  LISTA l1 = criar_lista ();
+  l1 = proximo (l);
+  free (l);
+  return l1;
+}
+
+void remover_lista (LISTA l){
+	while (l) l = remove_cabeca (l);	
+}
 
 // CRIAR UMA LISTA COM TODAS AS POSSIVEÍS CASAS PARA SE JOGAR
 LISTA posicoes_possiveis (ESTADO *e){
@@ -98,6 +69,54 @@ LISTA posicoes_possiveis (ESTADO *e){
 }
 return l;
 }
+
+LISTA remove_coordenada (LISTA l,COORDENADA c){
+    DADOS d1 = l->valor;
+    if (d1->coord.linha == c.linha && d1->coord.coluna == c.coluna){
+      l = remove_cabeca (l);
+    }
+    else {
+    for (LISTA l1 = l; l1->proximo;l1=l1->proximo){
+        DADOS d = l1->proximo->valor;
+        if (d->coord.linha == c.linha && d->coord.coluna == c.coluna){
+            l1->proximo =remove_cabeca (l1->proximo);
+            break;
+        }
+    }
+    }
+    return l;
+}
+/*
+int length (LISTA l) {
+	LISTA l1;
+	int contagem = 0;
+	for (l1=l;l1;proximo (l1)) contagem++;
+	return contagem;
+}
+*/
+
+DADOS criar_dados (COORDENADA c, int n,ESTADO *e){
+	DADOS d = malloc (sizeof (info));
+	double dist = distancia (c,n);
+	d->coord = c;
+	d->dist = dist;
+	d->casas_livres = conta_casas_livres (e,c);
+	return d;
+}
+
+
+/*
+void print_lista (LISTA l){
+	LISTA l1 = criar_lista ();
+	for (l1 = l; l1; l1= l1->proximo){
+		DADOS d = (DADOS) devolve_cabeca (l1);
+		printf ("COORDENADA %d%d = dist: %f e casas livres = %d\n",d->coord.coluna, d->coord.linha,d->dist,d->casas_livres);
+	}
+}
+*/
+
+
+
 
 //VER_PARIDADE
 
@@ -128,28 +147,6 @@ int can_I_win (DADOS dados,ESTADO *e){// n corresponde ao jogador atual
 	return i;
 }
 
-
-void* devolve_cabeca(LISTA l){
-  return l->valor;
-}
-
-
-LISTA proximo(LISTA l){
-  return l->proximo;
-}
-
-LISTA remove_cabeca(LISTA l){
-  LISTA l1 = criar_lista ();
-  l1 = proximo (l);
-  free (l);
-  return l1;
-}
-
-void remover_lista (LISTA l){
-	LISTA l1;
-	while (l) l = remove_cabeca (l);	
-}
-
 //char *str = (char *) devolve_cabeca(T);
 
 COORDENADA random_c (ESTADO *e){
@@ -157,7 +154,7 @@ COORDENADA random_c (ESTADO *e){
 	l = posicoes_possiveis (e);
 	DADOS d = l->valor;
 	COORDENADA c = d->coord;
-	free (l);
+	remover_lista (l);
 	return c;
 }
 
@@ -195,8 +192,8 @@ int one_way (ESTADO *e){
 	return contagem;
 }
 
-
-COORDENADA melhor_jogada (LISTA l, ESTADO *e){
+/*
+COORDENADA melhor_jogada (LISTA l, ESTADO *e,int n){
 	if (l== NULL) return random_c (e);
 	ESTADO *teste = (ESTADO *) malloc (sizeof (ESTADO));
 	DADOS atual = (DADOS)devolve_cabeca (l);
@@ -225,9 +222,10 @@ COORDENADA melhor_jogada (LISTA l, ESTADO *e){
 	free (teste);
 	return melhor;
 }
+*/
 
 
-COORDENADA melhor_jogada2 (LISTA l, ESTADO *e){
+COORDENADA melhor_jogada(LISTA l, ESTADO *e,int n){
 	if (l== NULL) return random_c (e);
 	ESTADO *teste = (ESTADO *) malloc (sizeof (ESTADO));
 	DADOS atual = (DADOS)devolve_cabeca (l);
@@ -245,13 +243,16 @@ COORDENADA melhor_jogada2 (LISTA l, ESTADO *e){
 				melhor = c;
 				menor_dist = atual->dist;
 			}
-		if (one_way (teste)%2!=0 && one_way (teste)) return c;
+		if (n == 2 && one_way (teste)%2!=0 && one_way (teste)) return c;
 		}
 	}
 	memcpy (teste,e,sizeof (ESTADO));
 	jogar (teste,melhor);
-	if (can_he_win(teste) || (one_way (teste)%2==0 && one_way (teste))){
-		melhor = melhor_jogada (remove_coordenada (l,melhor),e);//
+	if (can_he_win(teste) && n == 1){
+		melhor = melhor_jogada (remove_cabeca(l),e,1);//
+	}
+	if (n == 2 && (can_he_win(teste) || (one_way (teste)%2==0 && one_way (teste)))){
+		melhor = melhor_jogada (remove_coordenada (l,melhor),e,2);//
 	}
 	remover_lista (l);
 	free (teste);
@@ -259,13 +260,24 @@ COORDENADA melhor_jogada2 (LISTA l, ESTADO *e){
 }
 
 
+
 /*
+obter_jogada_atual.
+Verificar qual o lado para qual irá o jogo.
+se a soma das linhas for par, e o nr de casas livres das linhas for igual - NÃO JOGAR, de modo a ficar impar.
+Procurar que seja o adversário a quebrar a paridade.
+
+
+
+
 int verificar_paridade (ESTADO *e,COORDENADA){
 	int n = obter_jogador_atual (e);
 
 }
 */
 
+
+//Conta o nr de casas vazias por linha ou coluna
 int* count_lines (ESTADO *e,int *v, int n){ //n corresponde a linhas(1) ou colunas(0)
 	int i = 1;
 	while (i <= 8)

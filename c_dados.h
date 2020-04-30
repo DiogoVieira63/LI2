@@ -62,49 +62,25 @@ typedef struct {
     VITORIAS vitorias;
     } ESTADO;
 
+
+/**
+\brief Tabuleiro para o inicio do jogo
+@param e Apontador para o ESTADO
+
+*/
+void tab_inicial (ESTADO *e);
+/**
+\brief Dá reset nas jogadas
+@param e Apontador para o ESTADO
+*/
+void init_jogadas (ESTADO *e);
 /**
 \brief Inicializa o ESTADO
 @returns o ESTADO devidamente iniciado
 */
 ESTADO* inicializar_estado();
 /**
-\brief Muda o jogador atual
-@param e Apontador para o ESTADO
-*/
-void alterar_jogador_atual (ESTADO *e);
-/**
-\brief Muda o nr de jogadas
-@param e Apontador para o ESTADO
-*/
-void alterar_num_jogadas (ESTADO *e);
-/**
-\brief Muda o estado de uma CASA conforme a lógica do Jogo
-@param e Apontador para o ESTADO
-@param c A COORDENADA
-*/
-void alterar_estado_casa (ESTADO *e,COORDENADA c);
-/**
-\brief Guarda a coordenada na jogada
-@param e Apontador para o ESTADO
-@param c A COORDENADA
-*/
-void guardar_jogada (ESTADO *e,COORDENADA c);
-/**
-\brief Obtém o estado da casa
-@param e Apontador para o ESTADO
-@param c A COORDENADA
-@returns A CASA respetiva
-*/
-CASA obter_estado_casa (ESTADO *e, COORDENADA c);
-/**
-\brief Modifica uma casa para um determinado estado de CASA
-@param e Apontador para o ESTADO
-@param c A COORDENADA
-@param casa O estado da casa que quero na coordenada
-*/
-void modificar_casa (ESTADO *e,COORDENADA c,CASA casa);
-/**
-\brief Obtém o estado da casa
+\brief Obtém o nr de jogadas 
 @param e Apontador para o ESTADO
 @returns O nr de jogadas
 */
@@ -117,11 +93,47 @@ int obter_num_jogadas (ESTADO *e);
 */
 char* obter_nome_jogador (ESTADO *e,int n);
 /**
+\brief Obtém o estado da casa
+@param e Apontador para o ESTADO
+@param c A COORDENADA
+@returns A CASA respetiva
+*/
+CASA obter_estado_casa (ESTADO *e, COORDENADA c);
+/**
 \brief Obtém o nr do jogador atual 
 @param e Apontador para o ESTADO
 @returns Um int com nr do jogador atual
 */
 int obter_jogador_atual (ESTADO *e);
+/**
+\brief Muda o estado de uma CASA conforme a lógica do Jogo
+@param e Apontador para o ESTADO
+@param c A COORDENADA
+*/
+void alterar_estado_casa (ESTADO *e,COORDENADA c);
+/**
+\brief Modifica uma casa para um determinado estado de CASA
+@param e Apontador para o ESTADO
+@param c A COORDENADA
+@param casa O estado da casa que quero na coordenada
+*/
+void modificar_casa (ESTADO *e,COORDENADA c,CASA casa);
+/**
+\brief Muda o nr de jogadas
+@param e Apontador para o ESTADO
+*/
+void alterar_num_jogadas (ESTADO *e);
+/**
+\brief Muda o jogador atual
+@param e Apontador para o ESTADO
+*/
+void alterar_jogador_atual (ESTADO *e);
+/**
+\brief Guarda a coordenada na jogada
+@param e Apontador para o ESTADO
+@param c A COORDENADA
+*/
+void guardar_jogada (ESTADO *e,COORDENADA c);
 /**
 \brief Modifica uma casa para um determinado estado de CASA
 @param e Apontador para o ESTADO
@@ -153,11 +165,6 @@ void modificar_ultima_jogada (ESTADO *e,COORDENADA c);
 */
 COORDENADA obter_jogada (ESTADO *e,int n);
 /**
-\brief Dá reset nas jogadas
-@param e Apontador para o ESTADO
-*/
-void init_jogadas (ESTADO *e);
-/**
 \brief Muda o nº de vitórias
 @param e Apontador para o ESTADO
 @param n Int para indicar o jogador que ganhou
@@ -176,12 +183,6 @@ void init_estado (ESTADO *e);
 */
 int obter_vitoria (ESTADO *e, int n);
 /**
-\brief Apaga uma determinada jogada
-@param e Apontador para o ESTADO
-@param n Int para indicar o nr da jogada que se pretende
-*/
-void delete_jogada (ESTADO *e, int n);
-/**
 \brief Obter o nr max de jogadas
 @param e Apontador para o ESTADO
 @returns o nr max de jogadas
@@ -193,10 +194,4 @@ int obter_max_jogadas (ESTADO *e);
 @param n Int para indicar o nr para o qual se vai mudar
 */
 void modificar_max_jogadas (ESTADO *e, int n);
-/**
-\brief Tabuleiro para o inicio do jogo
-@param e Apontador para o ESTADO
-
-*/
-void tab_inicial (ESTADO *e);
 #endif

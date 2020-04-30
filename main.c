@@ -3,10 +3,10 @@
 #include "c_interface.h"
 #include "lista.h"
 #include <string.h>
-#include <math.h>
 //FUNÇÃO MAIN
 int main(){
-char nome1 [11],nome2 [11];
+char nome1[10];
+char nome2[10];
 int i = 1;
 ESTADO *e = inicializar_estado();
 while (i){
