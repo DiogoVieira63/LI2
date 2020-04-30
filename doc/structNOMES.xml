@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structNOMES" kind="struct" language="C++" prot="public">
+    <compoundname>NOMES</compoundname>
+    <includes refid="c__dados_8h" local="no">c_dados.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structNOMES_1a93bfad6638e69217ef0f337c77413278" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char NOMES::jogador1[11]</definition>
+        <argsstring>[11]</argsstring>
+        <name>jogador1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_dados.h" line="40" column="1" bodyfile="c_dados.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNOMES_1a0a6e4193561704bcb8039c77e7f4fcc2" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char NOMES::jogador2[11]</definition>
+        <argsstring>[11]</argsstring>
+        <name>jogador2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_dados.h" line="41" column="1" bodyfile="c_dados.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Tipo de dados para <ref refid="structNOMES" kindref="compound">NOMES</ref> </para>    </detaileddescription>
+    <location file="c_dados.h" line="39" column="1" bodyfile="c_dados.h" bodystart="39" bodyend="42"/>
+    <listofallmembers>
+      <member refid="structNOMES_1a93bfad6638e69217ef0f337c77413278" prot="public" virt="non-virtual"><scope>NOMES</scope><name>jogador1</name></member>
+      <member refid="structNOMES_1a0a6e4193561704bcb8039c77e7f4fcc2" prot="public" virt="non-virtual"><scope>NOMES</scope><name>jogador2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

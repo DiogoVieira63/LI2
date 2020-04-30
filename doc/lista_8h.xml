@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="lista_8h" kind="file" language="C++">
+    <compoundname>lista.h</compoundname>
+    <includedby refid="c__interface_8c" local="yes">c_interface.c</includedby>
+    <includedby refid="lista_8c" local="yes">lista.c</includedby>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <innerclass refid="structinfo" prot="public">info</innerclass>
+    <innerclass refid="structnodo" prot="public">nodo</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="lista_8h_1a893f3bb0a12f2ed4808df21a9ad125ed" prot="public" static="no">
+        <type>struct <ref refid="structinfo" kindref="compound">info</ref></type>
+        <definition>typedef struct info info</definition>
+        <argsstring></argsstring>
+        <name>info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="14" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lista_8h_1a2f307cb708a01b07ac7943601ed25b66" prot="public" static="no">
+        <type>struct <ref refid="structinfo" kindref="compound">info</ref> *</type>
+        <definition>typedef struct info * DADOS</definition>
+        <argsstring></argsstring>
+        <name>DADOS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="14" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lista_8h_1ab74c40cea97ab9b24f68471bb1ded1a2" prot="public" static="no">
+        <type>struct <ref refid="structnodo" kindref="compound">nodo</ref></type>
+        <definition>typedef struct nodo  NODO</definition>
+        <argsstring></argsstring>
+        <name>NODO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="lista_8h_1a2ed03b19209dd10718380b31b09a69f5" prot="public" static="no">
+        <type>struct <ref refid="structnodo" kindref="compound">nodo</ref> *</type>
+        <definition>typedef struct nodo * LISTA</definition>
+        <argsstring></argsstring>
+        <name>LISTA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="20" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="lista_8h_1ae3b99323b6f8f35d80bb69ff1a27985e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+        <definition>LISTA criar_lista</definition>
+        <argsstring>()</argsstring>
+        <name>criar_lista</name>
+        <briefdescription>
+<para>Criar uma lista. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A lista criada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="26" column="1" bodyfile="lista.c" bodystart="11" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+        <definition>LISTA insere_cabeca</definition>
+        <argsstring>(LISTA L, void *valor)</argsstring>
+        <name>insere_cabeca</name>
+        <param>
+          <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>valor</declname>
+        </param>
+        <briefdescription>
+<para>Insere um valor na cabeca da LISTA. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lista </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o valor a ser inserido </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A Lista devidamente modificada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="33" column="1" bodyfile="lista.c" bodystart="19" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1abfcb205f3eb670157be0d1221021714b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* devolve_cabeca</definition>
+        <argsstring>(LISTA L)</argsstring>
+        <name>devolve_cabeca</name>
+        <param>
+          <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Devolver o valor que se encontra na cabeça da lista. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lista </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>O apontador para o valor pretendido </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="39" column="1" bodyfile="lista.c" bodystart="33" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1ad9380152361127432c55c1c6067e05ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+        <definition>LISTA proximo</definition>
+        <argsstring>(LISTA L)</argsstring>
+        <name>proximo</name>
+        <param>
+          <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Passo o apontador da Lista para o proximo. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lista </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A Lista devidamente modificada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="45" column="1" bodyfile="lista.c" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1a9026a681a68322b5ec7f07137b864cbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+        <definition>LISTA remove_cabeca</definition>
+        <argsstring>(LISTA L)</argsstring>
+        <name>remove_cabeca</name>
+        <param>
+          <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Remove a cabeca da LISTA. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lista </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A Lista devidamente modificada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="51" column="1" bodyfile="lista.c" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1abba716cbae497c6ad6c2b850cb496b04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void remover_lista</definition>
+        <argsstring>(LISTA l)</argsstring>
+        <name>remover_lista</name>
+        <param>
+          <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>Remove uma LISTA, libertando a memória ocupada pela mesma. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lista </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="56" column="1" bodyfile="lista.c" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1a4d91cd788eb8b5c5f08b2c7dd49b8b99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+        <definition>LISTA posicoes_possiveis</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>posicoes_possiveis</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Dado um <ref refid="structESTADO" kindref="compound">ESTADO</ref>, cria uma lista com todas as coordenadas possíveis de jogar. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A Lista devidamente criada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="62" column="1" bodyfile="lista.c" bodystart="54" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1aa69adf05e5ac170cdab4d21a6a1807b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+        <definition>LISTA remove_coordenada</definition>
+        <argsstring>(LISTA l, COORDENADA c)</argsstring>
+        <name>remove_coordenada</name>
+        <param>
+          <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Remove o nodo que contenha a <ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref> dada como argumento. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A LISTA </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref> que vai ser removida </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A Lista devidamente alterada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="69" column="1" bodyfile="lista.c" bodystart="73" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1a94e27034d1183e0e35e5dde6ec0e76dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structinfo" kindref="compound">DADOS</ref></type>
+        <definition>DADOS criar_dados</definition>
+        <argsstring>(COORDENADA c, int n, ESTADO *e)</argsstring>
+        <name>criar_dados</name>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Cria os dados relativamente à COOORDENADA dada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referente ao jogador atual </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Os DADOS devidamente criados </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="77" column="1" bodyfile="lista.c" bodystart="98" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1a67b5911bca41f0a12cc3dff4020b4379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int can_he_win</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>can_he_win</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Função que deteta se o jogador adversário pode vencer dado um <ref refid="structESTADO" kindref="compound">ESTADO</ref> com a simulação da jogada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1, se o jogador adversário tiver oportunidade de vencer na próxima jogada, 0 caso contrário </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="83" column="1" bodyfile="lista.c" bodystart="125" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1af026f2bc6f4fba11d1b04a0b18252483" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int can_I_win</definition>
+        <argsstring>(DADOS dados, ESTADO *e)</argsstring>
+        <name>can_I_win</name>
+        <param>
+          <type><ref refid="structinfo" kindref="compound">DADOS</ref></type>
+          <declname>dados</declname>
+        </param>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Função que deteta se sou capaz de vencer relativamnete aos DADOS referidos. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dados</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Os dados a examinar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1, se der para vencer, 0 caso contrário </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="90" column="1" bodyfile="lista.c" bodystart="140" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1a3959af8f3899e2037b0ed30396a6e07e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA random_c</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>random_c</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Função que escolhe uma <ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref> válida, só é usada quando a unica opção é a derrota. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Uma <ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref> válida para se jogar </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="96" column="1" bodyfile="lista.c" bodystart="152" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1a6e96841e915698d817cda3477aafa7a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int one_way</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>one_way</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Deteta se irei ficar encurralado ou se posso encurralar o adversário. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0, se não encontrar um caminho sem saída, caso contrário devolve o nr de coordenadas do caminho sem saída </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="102" column="1" bodyfile="lista.c" bodystart="161" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="lista_8h_1ab1a26fcfa49e5e0e74680a909ca7a25b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA melhor_jogada</definition>
+        <argsstring>(LISTA l, ESTADO *e, int n)</argsstring>
+        <name>melhor_jogada</name>
+        <param>
+          <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Escolhe a melhor jogada para o jogador atual fazer. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lista </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A coordendada correspondente à melhor jogada </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="109" column="1" bodyfile="lista.c" bodystart="228" bodyend="260"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Funções que dizem respeito às funções relativamente a LISTAS </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#ifndef<sp/>___LISTAS_H___</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>___LISTAS_H___</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="structinfo" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structinfo" kindref="compound">info</ref>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>coord;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dist;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>casas_livres;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}<ref refid="structinfo" kindref="compound">info</ref>,<sp/>*<ref refid="structinfo" kindref="compound">DADOS</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="structnodo" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnodo" kindref="compound">nodo</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>valor;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnodo" kindref="compound">nodo</ref><sp/>*<ref refid="lista_8h_1ad9380152361127432c55c1c6067e05ae" kindref="member">proximo</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}<sp/><ref refid="structnodo" kindref="compound">NODO</ref>,<sp/>*<ref refid="structnodo" kindref="compound">LISTA</ref>;<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">LISTA<sp/><ref refid="lista_8h_1ae3b99323b6f8f35d80bb69ff1a27985e" kindref="member">criar_lista</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">LISTA<sp/><ref refid="lista_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" kindref="member">insere_cabeca</ref>(LISTA<sp/>L,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*valor);</highlight></codeline>
+<codeline lineno="39"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="lista_8h_1abfcb205f3eb670157be0d1221021714b" kindref="member">devolve_cabeca</ref>(LISTA<sp/>L);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">LISTA<sp/><ref refid="lista_8h_1ad9380152361127432c55c1c6067e05ae" kindref="member">proximo</ref>(LISTA<sp/>L);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">LISTA<sp/><ref refid="lista_8h_1a9026a681a68322b5ec7f07137b864cbd" kindref="member">remove_cabeca</ref>(LISTA<sp/>L);</highlight></codeline>
+<codeline lineno="56"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="lista_8h_1abba716cbae497c6ad6c2b850cb496b04" kindref="member">remover_lista</ref><sp/>(LISTA<sp/>l);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">LISTA<sp/><ref refid="lista_8h_1a4d91cd788eb8b5c5f08b2c7dd49b8b99" kindref="member">posicoes_possiveis</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">LISTA<sp/><ref refid="lista_8h_1aa69adf05e5ac170cdab4d21a6a1807b5" kindref="member">remove_coordenada</ref><sp/>(LISTA<sp/>l,<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">DADOS<sp/><ref refid="lista_8h_1a94e27034d1183e0e35e5dde6ec0e76dd" kindref="member">criar_dados</ref><sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="83"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="lista_8h_1a67b5911bca41f0a12cc3dff4020b4379" kindref="member">can_he_win</ref><sp/><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="90"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="lista_8h_1af026f2bc6f4fba11d1b04a0b18252483" kindref="member">can_I_win</ref><sp/>(DADOS<sp/>dados,<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/><ref refid="lista_8h_1a3959af8f3899e2037b0ed30396a6e07e" kindref="member">random_c</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="102"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="lista_8h_1a6e96841e915698d817cda3477aafa7a4" kindref="member">one_way</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/><ref refid="lista_8h_1ab1a26fcfa49e5e0e74680a909ca7a25b" kindref="member">melhor_jogada</ref><sp/>(LISTA<sp/>l,<sp/><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lista.h"/>
+  </compounddef>
+</doxygen>

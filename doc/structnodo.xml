@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structnodo" kind="struct" language="C++" prot="public">
+    <compoundname>nodo</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* nodo::valor</definition>
+        <argsstring></argsstring>
+        <name>valor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="18" column="1" bodyfile="lista.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnodo_1aaaabdcb6641ddcdac8990402242b154a" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnodo" kindref="compound">nodo</ref> *</type>
+        <definition>struct nodo* nodo::proximo</definition>
+        <argsstring></argsstring>
+        <name>proximo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="19" column="1" bodyfile="lista.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="11">
+        <label>nodo</label>
+        <link refid="structnodo"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>proximo</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lista.h" line="17" column="1" bodyfile="lista.h" bodystart="17" bodyend="20"/>
+    <listofallmembers>
+      <member refid="structnodo_1aaaabdcb6641ddcdac8990402242b154a" prot="public" virt="non-virtual"><scope>nodo</scope><name>proximo</name></member>
+      <member refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" prot="public" virt="non-virtual"><scope>nodo</scope><name>valor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

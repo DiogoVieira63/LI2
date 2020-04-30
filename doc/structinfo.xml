@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structinfo" kind="struct" language="C++" prot="public">
+    <compoundname>info</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structinfo_1aa8b287692b02ef1b940dea5c19498d29" prot="public" static="no" mutable="no">
+        <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA info::coord</definition>
+        <argsstring></argsstring>
+        <name>coord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="11" column="1" bodyfile="lista.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinfo_1a9ab44e4155302fa70d1e3f8f080d0545" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double info::dist</definition>
+        <argsstring></argsstring>
+        <name>dist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="12" column="1" bodyfile="lista.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structinfo_1aed524d57611501fc1e4622487361f2be" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int info::casas_livres</definition>
+        <argsstring></argsstring>
+        <name>casas_livres</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lista.h" line="13" column="1" bodyfile="lista.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="9">
+        <label>COORDENADA</label>
+        <link refid="structCOORDENADA"/>
+      </node>
+      <node id="8">
+        <label>info</label>
+        <link refid="structinfo"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>coord</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="lista.h" line="10" column="1" bodyfile="lista.h" bodystart="10" bodyend="14"/>
+    <listofallmembers>
+      <member refid="structinfo_1aed524d57611501fc1e4622487361f2be" prot="public" virt="non-virtual"><scope>info</scope><name>casas_livres</name></member>
+      <member refid="structinfo_1aa8b287692b02ef1b940dea5c19498d29" prot="public" virt="non-virtual"><scope>info</scope><name>coord</name></member>
+      <member refid="structinfo_1a9ab44e4155302fa70d1e3f8f080d0545" prot="public" virt="non-virtual"><scope>info</scope><name>dist</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

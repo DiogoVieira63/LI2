@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_README" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>LABORATÓRIOS DE INFORMÁTICA II -  MIEI</title>
+    <detaileddescription>
+<para>TURNO: <bold>PL3</bold></para><para>Nr do Grupo: <bold>2</bold></para><para>A93251: José Diogo Martins Vieira</para><para>A93312: António Luís de Macedo Fernandes</para><para>A93193: Tomás Cardoso Francisco</para><para><itemizedlist>
+<listitem><para>### RELATÓRIOS<itemizedlist>
+<listitem><para>https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relatC3B3rios/GuiC3A3o5.md &quot;Guião 5&quot;</para></listitem><listitem><para>https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relatC3B3rios/GuiC3A3o6.md &quot;Guião 6&quot;</para></listitem><listitem><para>https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relatC3B3rios/GuiC3A3o7.md &quot;Guião 7&quot;</para></listitem><listitem><para>https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relatC3B3rios/GuiC3A3o8.md &quot;Guião 8&quot;</para></listitem><listitem><para>https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relatC3B3rios/GuiC3A3o9.md &quot;Guião 9&quot;</para></listitem></itemizedlist>
+</para></listitem><listitem><para>### https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relatC3B3rios/extras.md &quot;EXTRAS&quot; </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

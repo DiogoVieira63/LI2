@@ -1,0 +1,838 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="c__interface_8h" kind="file" language="C++">
+    <compoundname>c_interface.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includedby refid="c__dados_8c" local="yes">c_dados.c</includedby>
+    <includedby refid="lista_8c" local="yes">lista.c</includedby>
+    <includedby refid="logica__prog_8c" local="yes">logica_prog.c</includedby>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <incdepgraph>
+      <node id="17">
+        <label>c_interface.h</label>
+        <link refid="c__interface_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="c__interface_8h_1adef0501cc31d178256e4c263279574f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_tabuleiro</definition>
+        <argsstring>(ESTADO *e, FILE *filename)</argsstring>
+        <name>print_tabuleiro</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Imprime o tabuleiro no ecrã ou num ficheiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o ficheiro </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="14" column="1" bodyfile="c_interface.c" bodystart="10" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a0517ffeda4d9e7233547c3e4284e0c92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="c__dados_8h_1aba91601f16d4c485b2d9b8c429f27039" kindref="member">CASA</ref></type>
+        <definition>CASA char_to_peca</definition>
+        <argsstring>(char n)</argsstring>
+        <name>char_to_peca</name>
+        <param>
+          <type>char</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Função que faz a conversão de char para CASA. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>O char para ser convertido </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A casa devidamente convertida </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="20" column="1" bodyfile="c_interface.c" bodystart="30" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a3b95728084a34bd81e453285c709203c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int str_to_int</definition>
+        <argsstring>(char *str)</argsstring>
+        <name>str_to_int</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Faz a conversão de string para um inteiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string para ser convertido </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>O inteiro devidamente convertido </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="26" column="1" bodyfile="c_interface.c" bodystart="50" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1aa7b0a7593a1e3e01e94682ec8dad8f6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ler_jogadas</definition>
+        <argsstring>(FILE *fp, ESTADO *e, int n)</argsstring>
+        <name>ler_jogadas</name>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Lê as jogadas de um ficheiro e guarda no <ref refid="structESTADO" kindref="compound">ESTADO</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>O apontador para o ficheiro </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>O apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>O nr de jogadas que terá de ler </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="33" column="1" bodyfile="c_interface.c" bodystart="58" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1ace058d3cb6a457f521a4aab3fe18af0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ler_tabuleiro</definition>
+        <argsstring>(ESTADO *e, char *filename)</argsstring>
+        <name>ler_tabuleiro</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Lê um tabuleiro de um ficheiro e muda o estdo consoante. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>O apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>O apontador para o ficheiro </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1, se a leitura for bem sucedida, 0 caso contrário </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="40" column="1" bodyfile="c_interface.c" bodystart="84" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a2ca5dc69a050b7281f0ae2c0949f3a6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_coordenada</definition>
+        <argsstring>(COORDENADA c, FILE *filename)</argsstring>
+        <name>print_coordenada</name>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Imprime uma coordenada num ficheiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A COORNDENADA a ser imprimida </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="46" column="1" bodyfile="c_interface.c" bodystart="121" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1adf77ac6e4b61f4cce6eaae785c0aa566" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_movs</definition>
+        <argsstring>(ESTADO *e, FILE *filename)</argsstring>
+        <name>print_movs</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>FILE *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Imprime os movimentos do jogo num ficheiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o Ficheiro </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="52" column="1" bodyfile="c_interface.c" bodystart="127" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a731e17e3ea2bb0d0e91b96c634225869" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_linha</definition>
+        <argsstring>()</argsstring>
+        <name>print_linha</name>
+        <briefdescription>
+<para>Imprime uma linha de &apos;-&apos; no ecrã, diz respeito à apresentação do jogo. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="56" column="1" bodyfile="c_interface.c" bodystart="142" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a4b67696b76794e3e5ead7034fad8c02a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void display_gameover</definition>
+        <argsstring>(int n, ESTADO *e)</argsstring>
+        <name>display_gameover</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Display da mensagem para o Vencedor no ecrã </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="61" column="1" bodyfile="c_interface.c" bodystart="147" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a95eec96ea7f833d147da8f1493835ecc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_erro</definition>
+        <argsstring>(int n)</argsstring>
+        <name>print_erro</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Imprime as mensagens de erro no ecrã </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int para selecionar qual mensagem mostrar </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="66" column="1" bodyfile="c_interface.c" bodystart="155" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a6fa2c048c731a9c9f6e63bc4751a660e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_mensagem</definition>
+        <argsstring>(int n, char *filename)</argsstring>
+        <name>print_mensagem</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Imprime uma mensagem num ficheiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int para selecionar qual mensagem mostrar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o ficheiro </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="72" column="1" bodyfile="c_interface.c" bodystart="165" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1adc882655de01f272e9fa161cded97822" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_resultado</definition>
+        <argsstring>(ESTADO *e, int n)</argsstring>
+        <name>print_resultado</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Imprime o resultado no ecrã </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Para saber se é o resultado final ou não </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="78" column="1" bodyfile="c_interface.c" bodystart="171" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a62300ae7bbb8aebf2460dea4de3f7486" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* nomes</definition>
+        <argsstring>(int n, char nome [])</argsstring>
+        <name>nomes</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>nome</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Função que faz corresponder os nomes introduzidos pelo Utilizador ao respetivo Jogador. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Int para selecionar qual jogador se trata </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nome</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array com o nome introduzido pelo Utilizador </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a33d09196f922a638847c19f3aca3fc3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prompt</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>prompt</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Imprime o prompt que contém a informação do nr total de jogadas, do nr de jogadas feitas por cada jogador e a informação relativamente ao jogador que irá jogar. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="89" column="1" bodyfile="c_interface.c" bodystart="212" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a05c4cccb6fac406f26e592e222793340" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void do_movs</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>do_movs</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Corresponde ao comando movs. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="94" column="1" bodyfile="c_interface.c" bodystart="222" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1aa2ad68cb84a95319d7623bb1e4c7d0c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void do_quit</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>do_quit</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Corresponde ao comando Q. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="99" column="1" bodyfile="c_interface.c" bodystart="232" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a62ff5327547cebf5ddb4da57d00c0045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void do_ler</definition>
+        <argsstring>(char *filename, ESTADO *e)</argsstring>
+        <name>do_ler</name>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Corresponde ao comando ler. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o ficheiro </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="105" column="1" bodyfile="c_interface.c" bodystart="241" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1ab40c7d5bce40c00320bf134d7cb282fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void do_gravar</definition>
+        <argsstring>(FILE *fp, char *filename, ESTADO *e)</argsstring>
+        <name>do_gravar</name>
+        <param>
+          <type>FILE *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Corresponde ao comando gr. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o ficheiro </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fulename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String com o nome do ficheiro onde se vai gravar </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="112" column="1" bodyfile="c_interface.c" bodystart="249" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a55910054c47938904d813e65b695c6aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int do_jogada</definition>
+        <argsstring>(ESTADO *e, COORDENADA c)</argsstring>
+        <name>do_jogada</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Função que efetua as jogadas. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref> onde se vai jogar  0 se o jogo tiver chegado ao fim, 1 caso contrário </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="119" column="1" bodyfile="c_interface.c" bodystart="259" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a17e8dac4c7dce9b4969ce6f2da642c97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int do_final</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>do_final</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Função que imprime as informações no final de cada jogo. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="124" column="1" bodyfile="c_interface.c" bodystart="266" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a516564ef05a31d66489102673e87f135" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void do_inicio</definition>
+        <argsstring>(ESTADO *e, int n)</argsstring>
+        <name>do_inicio</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Função que imprime as informações no inicio de cada jogo. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>O nr de jogos </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="130" column="1" bodyfile="c_interface.c" bodystart="289" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a8bfe42f01b14cc3a2a2d7c0d7c44af89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int do_pos</definition>
+        <argsstring>(ESTADO *e, char *s)</argsstring>
+        <name>do_pos</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Corresponde ao comando pos. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string que contém o nr para a posição que queremos </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0, se o nr da posição for maior do que o nr max de jogadas, 1 caso contrário </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="137" column="1" bodyfile="c_interface.c" bodystart="303" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a44abf136615754b00093a64fbe3e2f4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int do_jog</definition>
+        <argsstring>(ESTADO *e, int n)</argsstring>
+        <name>do_jog</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Corresponde ao comando jog e jog2. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pode ser 1 ou 2, que corresponde ao jog e ao jog 2, respetivamente  0 se o jogo tiver chegado ao fim, 1 caso contrário </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="144" column="1" bodyfile="c_interface.c" bodystart="339" bodyend="352"/>
+      </memberdef>
+      <memberdef kind="function" id="c__interface_8h_1a4a2d032762b67273818d60cf366535a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int interpretador</definition>
+        <argsstring>(ESTADO *e, int n)</argsstring>
+        <name>interpretador</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Interpretador dos inputs do utilizador. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o <ref refid="structESTADO" kindref="compound">ESTADO</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Um int caso seja executado devidamente ou não </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="c_interface.h" line="150" column="1" bodyfile="c_interface.c" bodystart="355" bodyend="413"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Definição das funções que imprimem no ecrã </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#ifndef<sp/>___INTERFACE_H___</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>___INTERFACE_H___</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline lineno="14"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1adef0501cc31d178256e4c263279574f2" kindref="member">print_tabuleiro</ref>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,FILE<sp/>*filename);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="c__dados_8h_1aba91601f16d4c485b2d9b8c429f27039" kindref="member">CASA</ref><sp/><ref refid="c__interface_8h_1a0517ffeda4d9e7233547c3e4284e0c92" kindref="member">char_to_peca</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="26"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a3b95728084a34bd81e453285c709203c" kindref="member">str_to_int</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>str<sp/>);</highlight></codeline>
+<codeline lineno="33"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1aa7b0a7593a1e3e01e94682ec8dad8f6b" kindref="member">ler_jogadas</ref><sp/>(FILE<sp/>*fp,<sp/><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="40"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1ace058d3cb6a457f521a4aab3fe18af0f" kindref="member">ler_tabuleiro</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="46"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a2ca5dc69a050b7281f0ae2c0949f3a6d" kindref="member">print_coordenada</ref><sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c,FILE<sp/>*filename);</highlight></codeline>
+<codeline lineno="52"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1adf77ac6e4b61f4cce6eaae785c0aa566" kindref="member">print_movs</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,FILE<sp/>*filename);</highlight></codeline>
+<codeline lineno="56"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a731e17e3ea2bb0d0e91b96c634225869" kindref="member">print_linha</ref><sp/>();</highlight></codeline>
+<codeline lineno="61"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a4b67696b76794e3e5ead7034fad8c02a" kindref="member">display_gameover</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="66"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a95eec96ea7f833d147da8f1493835ecc" kindref="member">print_erro</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="72"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a6fa2c048c731a9c9f6e63bc4751a660e" kindref="member">print_mensagem</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="78"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1adc882655de01f272e9fa161cded97822" kindref="member">print_resultado</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="84"><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="c__interface_8h_1a62300ae7bbb8aebf2460dea4de3f7486" kindref="member">nomes</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>nome<sp/>[]);</highlight></codeline>
+<codeline lineno="89"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a33d09196f922a638847c19f3aca3fc3c" kindref="member">prompt</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="94"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a05c4cccb6fac406f26e592e222793340" kindref="member">do_movs</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="99"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1aa2ad68cb84a95319d7623bb1e4c7d0c5" kindref="member">do_quit</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="105"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a62ff5327547cebf5ddb4da57d00c0045" kindref="member">do_ler</ref><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="112"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1ab40c7d5bce40c00320bf134d7cb282fb" kindref="member">do_gravar</ref><sp/>(FILE<sp/>*fp,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*filename,<sp/><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="119"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a55910054c47938904d813e65b695c6aa" kindref="member">do_jogada</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c);</highlight></codeline>
+<codeline lineno="124"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a17e8dac4c7dce9b4969ce6f2da642c97" kindref="member">do_final</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e);</highlight></codeline>
+<codeline lineno="130"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a516564ef05a31d66489102673e87f135" kindref="member">do_inicio</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="137"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a8bfe42f01b14cc3a2a2d7c0d7c44af89" kindref="member">do_pos</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s);</highlight></codeline>
+<codeline lineno="144"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a44abf136615754b00093a64fbe3e2f4e" kindref="member">do_jog</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="150"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="c__interface_8h_1a4a2d032762b67273818d60cf366535a1" kindref="member">interpretador</ref>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="c_interface.h"/>
+  </compounddef>
+</doxygen>

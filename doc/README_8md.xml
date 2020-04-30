@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>LABORATÓRIOS<sp/>DE<sp/>INFORMÁTICA<sp/>II<sp/>-<sp/><sp/>MIEI</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TURNO:<sp/>**PL3**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Nr<sp/>do<sp/>Grupo:<sp/>**2**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A93251:<sp/>José<sp/>Diogo<sp/>Martins<sp/>Vieira</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A93312:<sp/>António<sp/>Luís<sp/>de<sp/>Macedo<sp/>Fernandes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A93193:<sp/>Tomás<sp/>Cardoso<sp/>Francisco</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>###<sp/>RELATÓRIOS</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Guião<sp/>5](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o5.md)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Guião<sp/>6](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o6.md)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Guião<sp/>7](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o7.md)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Guião<sp/>8](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o8.md)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Guião<sp/>9](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o9.md)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>###<sp/>[EXTRAS](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/extras.md)</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>
