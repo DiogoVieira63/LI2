@@ -63,10 +63,16 @@ COORDENADA melhor_jogada (LISTA l, ESTADO *e);
 Esta função decide a COORDENADA em que jogar, passando por estes processos:
 
 - Se houver uma posição que me faça ganhar o jogo, essa é a posição escolhida.
-- Se na posição onde jogarmos, o adversário tiver hipótese de vencer. Essa posição é ignorada
-- Escolher a posição mais perto da casa vencedora.
-- O ponto de cima perde efeito, se a posição mais perto, ser uma posição que nos deixe num caminho sem saída, na qual o adversário ganhe
-- Tal como, evita caminhos sem saída em que o adversário sairia vencedor, também procura levar o adversário para esses caminhos.
+
+```c 
+int can_I_win (DADOS dados,ESTADO *e)
+```
+- Se na posição onde jogarmos, o adversário tiver hipótese de vencer. Essa posição é ignorada.
+```c
+int can_he_win  (ESTADO *e)
+```
+- Escolher a posição mais perto da casa vencedora (comparando as distancias guardadas em cada nodo dos DADOS).
+
 
 
 
