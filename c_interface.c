@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "lista.h"
+#include <ctype.h>
 
 #define BUF_SIZE 1024
 //Imprimir o tabuleiro no ecrã ou num ficheiro
@@ -185,6 +186,16 @@ void print_resultado (ESTADO *e, int n){
     print_linha ();
 }
 
+char* correct_name (char *s){
+    for (int i = 0; s[i];i++){
+        if (s[i] == ' ' || s[i] == '\n') {
+            s[i] = 0;
+            break;
+        }
+    }
+    return s;
+}
+
 //Função que dado o nr do jogador, e uma string. Faz scanf do nome que o utilzador responder e coloca na string.
 char* nomes (int n,char* nome ){
     int i = 0;
@@ -192,8 +203,8 @@ char* nomes (int n,char* nome ){
     while (i == 0){
     char linha [BUF_SIZE];   
     printf(" Jogador %d:",n);
-    int j = scanf ("%s",linha);
-    if (!j || strlen (linha)>= 10) {
+    if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
+    if (strlen (linha) >= 12 || strlen (linha) == 1) {
         i = 0;
         print_linha ();
         print_erro (5);
@@ -201,6 +212,7 @@ char* nomes (int n,char* nome ){
     }
     else {
         i = 1;
+        correct_name (linha);
         strcpy(nome,linha);
     }
 
@@ -358,9 +370,7 @@ int interpretador(ESTADO *e, int n) {
     fp = stdout;
     do_inicio (e,n);
     print_tabuleiro (e,fp);
-    char linha1[BUF_SIZE]; 
     char filename [BUF_SIZE];   
-    if (n==1)if(fgets(linha1, BUF_SIZE, stdin) == NULL)return 0; // necessário para que o input seja nulo ao entrar no while no 1º Jogo
     while (i){
         fp = stdout; // ecrã
         char linha[BUF_SIZE];
