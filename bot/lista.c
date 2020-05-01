@@ -98,6 +98,7 @@ DADOS criar_dados (COORDENADA c, int n,ESTADO *e){
 
 // VERIFICAR SE O ADVERSÁRIO GANHA NA JOGADA A SEGUIR
 int can_he_win  (ESTADO *e){ //estado correspondente à coordenada que decidimos jogar
+	int jog_atual = obter_jogador_atual (e);
 	int res = 0;
 	LISTA l = criar_lista ();
 	l = posicoes_possiveis (e);
@@ -105,6 +106,8 @@ int can_he_win  (ESTADO *e){ //estado correspondente à coordenada que decidimos
 	for (l1 = l;l1;l1 = proximo (l1)){
 		DADOS atual = (DADOS) devolve_cabeca (l1);
 		if (atual->casas_livres == 0) res = 1;
+		if (jog_atual == 1 && obter_estado_casa (e,atual->coord)==POS2) res = 1;
+		if (jog_atual == 2 && obter_estado_casa (e,atual->coord)==POS1) res = 1;
 	}
 	remover_lista (l);
 	remover_lista (l1);

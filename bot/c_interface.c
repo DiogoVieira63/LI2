@@ -132,9 +132,9 @@ void print_movs (ESTADO *e,FILE *filename){
         if (jogadas == nr_t_jogadas++) k = 0;
         else{
         if (nr_t_jogadas%2 != 0)fprintf (filename,"%02d: ",nr_linha++);
+        if (nr_t_jogadas%2 == 0) fputc (' ',filename);
         print_coordenada (c,filename);
-        if (nr_t_jogadas%2 != 0) fputc (' ',filename);
-        else fputc ('\n',filename);
+        if (nr_t_jogadas%2 == 0) fputc ('\n',filename);
         }
     }
     if (!k && nr_t_jogadas%2 == 0) fputc ('\n',filename);

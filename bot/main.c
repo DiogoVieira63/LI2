@@ -16,14 +16,14 @@ int main(int argc, char **argv){
             l = posicoes_possiveis (e);
             COORDENADA c;
             c = melhor_jogada (l,e,2);
-            jogar(e, c);
-            if (fim_do_jogo (e)) return 0;   
+            jogar(e, c);   
         }
         fp = fopen (guardar, "w+");
         print_tabuleiro (e,fp); 
         fputc ('\n',fp);
         print_movs (e,fp);
         fclose (fp);
+        if (fim_do_jogo (e)) return 0;
     }
     return 0;
 }

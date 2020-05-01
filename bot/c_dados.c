@@ -56,16 +56,13 @@ void alterar_estado_casa (ESTADO *e,COORDENADA c){
     int col = c.coluna, lin = c.linha;
     CASA atual = (e->tab[col][lin] );
     switch (atual){
-    case VAZIO:
-        e->tab[col][lin] = BRANCA;
-        break;
     case BRANCA:
         e->tab[col][lin] = PRETA;
         break;
     case PRETA:
         e->tab[col][lin] = PRETA;
         break;
-    default:;
+    default:e->tab[col][lin] = BRANCA;
     }
 }
 
