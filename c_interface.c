@@ -57,26 +57,26 @@ int str_to_int (char* str ){
 
 // ler as jogadas do ficheiro
 void ler_jogadas (FILE *fp, ESTADO *e,int n){
-    int nr = (n+1)/2; //nr de linhas 
+    int nr_linhas = (n+1)/2; //nr de linhas 
     int i; //para percorrer o nr de jogadas
     char str [11];
     init_jogadas (e);//para dar reset nas jogadas
     modificar_num_jogadas (e,0);
     if (fgets(str,11, fp)== NULL) i = 0;//para ignorar a primeira linha 
     while (fgets(str,11, fp)!= NULL){ // para percorrer o ficheiro linha por linha até chegar a uma linha vazia
-        int k =4; //posição da coordenada na string
-        int f; // para saber quantas coordenadas tem na linha, 1 ou 2
-        if (n - i> 1) f = 2;
-        else f = 1;
-        while (f){
-        COORDENADA c = {str[k]- 'a'+1,9-(str[k+1]-'1'+1)};
-        guardar_jogada (e,c); // para guardar a jogada no ESTADO
-        k+=3;
-        i++;
-        modificar_num_jogadas (e,i); // para modificar o nr de jogadas
-        f--;
+        int pos =4; //posição da coordenada na string
+        int elem_linha; // para saber quantas coordenadas tem na linha, 1 ou 2
+        if (n - i> 1) elem_linha = 2;
+        else elem_linha = 1;
+        while (elem_linha){
+            COORDENADA c = {str[pos]- 'a'+1,9-(str[pos+1]-'1'+1)};
+            guardar_jogada (e,c); // para guardar a jogada no ESTADO
+            pos+=3;
+            i++;
+            modificar_num_jogadas (e,i); // para modificar o nr de jogadas
+            elem_linha--;
         }
-        nr--;
+        nr_linhas--;
     }
 }
 
@@ -126,18 +126,18 @@ void print_coordenada (COORDENADA c,FILE *filename){
 }
 
 void print_movs (ESTADO *e,FILE *filename){
-    int i = 1, n = 0, k = 1, jogadas = obter_num_jogadas (e);
+    int nr_linha = 1, nr_t_jogadas = 0, k = 1, jogadas = obter_num_jogadas (e);
     while (k){
-        COORDENADA c = obter_jogada (e,n);
-        if (jogadas == n++) k = 0;
+        COORDENADA c = obter_jogada (e,nr_t_jogadas);
+        if (jogadas == nr_t_jogadas++) k = 0;
         else{
-        if (n%2 != 0)fprintf (filename,"%02d: ",i++);
+        if (nr_t_jogadas%2 != 0)fprintf (filename,"%02d: ",nr_linha++);
         print_coordenada (c,filename);
-        if (n%2 != 0) fputc (' ',filename);
+        if (nr_t_jogadas%2 != 0) fputc (' ',filename);
         else fputc ('\n',filename);
         }
     }
-    if (!k && n%2 == 0) fputc ('\n',filename);
+    if (!k && nr_t_jogadas%2 == 0) fputc ('\n',filename);
 }
 
 void print_linha (){
@@ -186,20 +186,24 @@ void print_resultado (ESTADO *e, int n){
     print_linha ();
 }
 
-char* correct_name (char *s){
-    for (int i = 0; s[i];i++){
-        if (s[i] == ' ' || s[i] == '\n') {
-            s[i] = 0;
-            break;
+void remove_index(char s[], int n) {
+    int j = n;
+    while (s[j]){
+        s[j]= s[j+1];
+        j++;
         }
     }
-    return s;
+
+void correct_name (char *s){
+    for (int i = 0; s[i];i++){
+        if (s[i] == '\n' || s[i] == '\t') remove_index (s,i--);
+    }
 }
 
 //Função que dado o nr do jogador, e uma string. Faz scanf do nome que o utilzador responder e coloca na string.
 char* nomes (int n,char* nome ){
     int i = 0;
-    if (n==1) printf(" Escolha o nome \n(max10 e sem espaços)\n");
+    if (n==1) printf(" Escolha o nome (max -> 10 caracteres)\n");
     while (i == 0){
     char linha [BUF_SIZE];   
     printf(" Jogador %d:",n);
@@ -400,12 +404,12 @@ int interpretador(ESTADO *e, int n) {
                  if (strlen(linha) == 5 && sscanf (linha, "movs%s",filename) != 0) do_movs (e); //comando para mostar os movimentos
             else {
                 if (sscanf (linha, "pos %s",filename) ==1){
-                    if (do_pos (e,filename)) print_tabuleiro (e,stdout);
+                    if (do_pos (e,filename)) print_tabuleiro (e,stdout); //comando para voltar atrás nas jogadas
                 }
             else {
-                if (strlen(linha) == 4 && sscanf (linha, "jog%s",filename) != 0) i = do_jog (e,1);
+                if (strlen(linha) == 4 && sscanf (linha, "jog%s",filename) != 0) i = do_jog (e,1); //comando para o bot fazer uma jogada
             else  {
-                if (strlen(linha) == 5 && sscanf (linha, "jog2%s",filename) != 0) i = do_jog (e,2);
+                if (strlen(linha) == 5 && sscanf (linha, "jog2%s",filename) != 0) i = do_jog (e,2); //comando para o bot fazer uma jogada
                 else {
             print_linha ();
             print_erro (1);
@@ -418,6 +422,6 @@ int interpretador(ESTADO *e, int n) {
             }
         }
         }
-        return (do_final (e));
-    return 1;
+        i = (do_final (e));
+    return i;
 }

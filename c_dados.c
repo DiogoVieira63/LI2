@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 void tab_inicial (ESTADO *e){
     for (int linha = 1;linha <= 8;linha++){
     int coluna = 1;
@@ -16,7 +15,6 @@ void tab_inicial (ESTADO *e){
     e->tab [1][8]= POS1;
     e->tab [8][1]= POS2;
 }
-
 void init_jogadas (ESTADO *e){
     int i = 0;
     COORDENADA c = {0,0};
@@ -26,17 +24,16 @@ void init_jogadas (ESTADO *e){
     }
 }
 
-//Esta função deverá criar um estado vazio (com o tabuleiro inicializado)
 ESTADO *inicializar_estado() {
-ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
-e->jogador_atual = 1;
-e->num_jogadas = 0;
-e->max_jogadas = 0;
-tab_inicial (e);
-init_jogadas (e);
-e->ultima_jogada.linha = 4;
-e->ultima_jogada.coluna = 5;
-return e;
+    ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
+    e->jogador_atual = 1;
+    e->num_jogadas = 0;
+    e->max_jogadas = 0;
+    tab_inicial (e);
+    init_jogadas (e);
+    e->ultima_jogada.linha = 4;
+    e->ultima_jogada.coluna = 5;
+    return e;
 }
 
 int obter_num_jogadas (ESTADO *e){
@@ -54,7 +51,6 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c){
 int obter_jogador_atual (ESTADO *e){
     return e->jogador_atual;
 }
-
 
 void alterar_estado_casa (ESTADO *e,COORDENADA c){
     int col = c.coluna, lin = c.linha;
@@ -77,11 +73,9 @@ void modificar_casa (ESTADO *e,COORDENADA c,CASA casa){
     int col = c.coluna, lin = c.linha;
     e->tab [col][lin] = casa;
 }
-
 void alterar_num_jogadas (ESTADO *e){
     e->num_jogadas++;
 }
-
 void alterar_jogador_atual (ESTADO *e){
     if (e->jogador_atual == 1)e->jogador_atual++;
     else e->jogador_atual--;
