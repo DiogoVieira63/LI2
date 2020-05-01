@@ -8,41 +8,41 @@
     <includes refid="lista_8h" local="yes">lista.h</includes>
     <includes local="no">string.h</includes>
     <incdepgraph>
-      <node id="45">
+      <node id="46">
         <label>lista.h</label>
         <link refid="lista_8h"/>
       </node>
-      <node id="43">
+      <node id="44">
         <label>c_interface.h</label>
         <link refid="c__interface_8h"/>
-        <childnode refid="44" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
       </node>
-      <node id="42">
+      <node id="43">
         <label>logica_prog.h</label>
         <link refid="logica__prog_8h"/>
       </node>
-      <node id="46">
+      <node id="47">
         <label>string.h</label>
       </node>
-      <node id="40">
+      <node id="41">
         <label>main.c</label>
         <link refid="main_8c"/>
-        <childnode refid="41" relation="include">
-        </childnode>
         <childnode refid="42" relation="include">
         </childnode>
         <childnode refid="43" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="46" relation="include">
         </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
       </node>
-      <node id="44">
+      <node id="45">
         <label>stdio.h</label>
       </node>
-      <node id="41">
+      <node id="42">
         <label>c_dados.h</label>
         <link refid="c__dados_8h"/>
       </node>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="main.c" line="7" column="1" bodyfile="main.c" bodystart="7" bodyend="27"/>
+        <location file="main.c" line="7" column="1" bodyfile="main.c" bodystart="7" bodyend="26"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -74,28 +74,27 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//FUNÇÃO<sp/>MAIN</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(){</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>nome1[10];</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>nome2[10];</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e<sp/>=<sp/><ref refid="c__dados_8h_1a7e0c7e26fb685d9ab501e19b05e6954f" kindref="member">inicializar_estado</ref>();</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i){</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><ref refid="c__dados_8h_1add7f3e857e0e15d644a7a81737d33109" kindref="member">init_estado</ref><sp/>(e);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>1){</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><ref refid="c__interface_8h_1a62300ae7bbb8aebf2460dea4de3f7486" kindref="member">nomes</ref><sp/>(1,nome1);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal">strcpy(e-&gt;<ref refid="structESTADO_1a445353c925d623eed51b78c202f4ea2d" kindref="member">nomes</ref>.jogador1<sp/>,<sp/>nome1);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><ref refid="c__interface_8h_1a62300ae7bbb8aebf2460dea4de3f7486" kindref="member">nomes</ref><sp/>(2,nome2);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal">strcpy(e-&gt;<ref refid="structESTADO_1a445353c925d623eed51b78c202f4ea2d" kindref="member">nomes</ref>.jogador2<sp/>,<sp/>nome2);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal">e-&gt;vitorias.j1=<sp/>0;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal">e-&gt;vitorias.j2=<sp/>0;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="c__interface_8h_1a4a2d032762b67273818d60cf366535a1" kindref="member">interpretador</ref>(e,i))i++;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>nome1[10];</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>nome2[10];</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e<sp/>=<sp/><ref refid="c__dados_8h_1a7e0c7e26fb685d9ab501e19b05e6954f" kindref="member">inicializar_estado</ref>();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i){</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__dados_8h_1add7f3e857e0e15d644a7a81737d33109" kindref="member">init_estado</ref><sp/>(e);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>1){</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__interface_8h_1a62300ae7bbb8aebf2460dea4de3f7486" kindref="member">nomes</ref><sp/>(1,nome1);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(e-&gt;<ref refid="structESTADO_1a445353c925d623eed51b78c202f4ea2d" kindref="member">nomes</ref>.jogador1<sp/>,<sp/>nome1);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="c__interface_8h_1a62300ae7bbb8aebf2460dea4de3f7486" kindref="member">nomes</ref><sp/>(2,nome2);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strcpy(e-&gt;<ref refid="structESTADO_1a445353c925d623eed51b78c202f4ea2d" kindref="member">nomes</ref>.jogador2<sp/>,<sp/>nome2);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;vitorias.j1=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;vitorias.j2=<sp/>0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="c__interface_8h_1a4a2d032762b67273818d60cf366535a1" kindref="member">interpretador</ref>(e,i))i++;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="main.c"/>
   </compounddef>

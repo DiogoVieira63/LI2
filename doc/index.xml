@@ -101,6 +101,8 @@
     <member refid="c__interface_8c_1a95eec96ea7f833d147da8f1493835ecc" kind="function"><name>print_erro</name></member>
     <member refid="c__interface_8c_1a6fa2c048c731a9c9f6e63bc4751a660e" kind="function"><name>print_mensagem</name></member>
     <member refid="c__interface_8c_1adc882655de01f272e9fa161cded97822" kind="function"><name>print_resultado</name></member>
+    <member refid="c__interface_8c_1ad0c1f118d1d5fd0a2c4cfb823c0b0fbc" kind="function"><name>remove_index</name></member>
+    <member refid="c__interface_8c_1a7a7b2549f3c2d9b8354a4b9fe2d64ac1" kind="function"><name>correct_name</name></member>
     <member refid="c__interface_8c_1ae1af6fc067aa61427a32e4b1c20e09c2" kind="function"><name>nomes</name></member>
     <member refid="c__interface_8c_1a33d09196f922a638847c19f3aca3fc3c" kind="function"><name>prompt</name></member>
     <member refid="c__interface_8c_1a05c4cccb6fac406f26e592e222793340" kind="function"><name>do_movs</name></member>
@@ -156,7 +158,6 @@
     <member refid="lista_8c_1a3959af8f3899e2037b0ed30396a6e07e" kind="function"><name>random_c</name></member>
     <member refid="lista_8c_1a6e96841e915698d817cda3477aafa7a4" kind="function"><name>one_way</name></member>
     <member refid="lista_8c_1ab1a26fcfa49e5e0e74680a909ca7a25b" kind="function"><name>melhor_jogada</name></member>
-    <member refid="lista_8c_1a24929b0edbc18e6595b7180cc885072e" kind="function"><name>count_lines</name></member>
   </compound>
   <compound refid="lista_8h" kind="file"><name>lista.h</name>
     <member refid="lista_8h_1a893f3bb0a12f2ed4808df21a9ad125ed" kind="typedef"><name>info</name></member>

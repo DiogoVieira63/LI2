@@ -8,13 +8,13 @@
     <includedby refid="logica__prog_8c" local="yes">logica_prog.c</includedby>
     <includedby refid="main_8c" local="yes">main.c</includedby>
     <incdepgraph>
-      <node id="17">
+      <node id="18">
         <label>c_interface.h</label>
         <link refid="c__interface_8h"/>
-        <childnode refid="18" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="19">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
@@ -53,7 +53,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="14" column="1" bodyfile="c_interface.c" bodystart="10" bodyend="27"/>
+        <location file="c_interface.h" line="14" column="1" bodyfile="c_interface.c" bodystart="11" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a0517ffeda4d9e7233547c3e4284e0c92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__dados_8h_1aba91601f16d4c485b2d9b8c429f27039" kindref="member">CASA</ref></type>
@@ -79,7 +79,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="20" column="1" bodyfile="c_interface.c" bodystart="30" bodyend="48"/>
+        <location file="c_interface.h" line="20" column="1" bodyfile="c_interface.c" bodystart="31" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a3b95728084a34bd81e453285c709203c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -105,7 +105,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="26" column="1" bodyfile="c_interface.c" bodystart="50" bodyend="55"/>
+        <location file="c_interface.h" line="26" column="1" bodyfile="c_interface.c" bodystart="51" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1aa7b0a7593a1e3e01e94682ec8dad8f6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -152,7 +152,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="33" column="1" bodyfile="c_interface.c" bodystart="58" bodyend="80"/>
+        <location file="c_interface.h" line="33" column="1" bodyfile="c_interface.c" bodystart="59" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1ace058d3cb6a457f521a4aab3fe18af0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -189,7 +189,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="40" column="1" bodyfile="c_interface.c" bodystart="84" bodyend="117"/>
+        <location file="c_interface.h" line="40" column="1" bodyfile="c_interface.c" bodystart="85" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a2ca5dc69a050b7281f0ae2c0949f3a6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -225,7 +225,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="46" column="1" bodyfile="c_interface.c" bodystart="121" bodyend="125"/>
+        <location file="c_interface.h" line="46" column="1" bodyfile="c_interface.c" bodystart="122" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1adf77ac6e4b61f4cce6eaae785c0aa566" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -261,7 +261,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="52" column="1" bodyfile="c_interface.c" bodystart="127" bodyend="140"/>
+        <location file="c_interface.h" line="52" column="1" bodyfile="c_interface.c" bodystart="128" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a731e17e3ea2bb0d0e91b96c634225869" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -274,7 +274,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="56" column="1" bodyfile="c_interface.c" bodystart="142" bodyend="144"/>
+        <location file="c_interface.h" line="56" column="1" bodyfile="c_interface.c" bodystart="143" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a4b67696b76794e3e5ead7034fad8c02a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -303,7 +303,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="61" column="1" bodyfile="c_interface.c" bodystart="147" bodyend="152"/>
+        <location file="c_interface.h" line="61" column="1" bodyfile="c_interface.c" bodystart="148" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a95eec96ea7f833d147da8f1493835ecc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -328,7 +328,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="66" column="1" bodyfile="c_interface.c" bodystart="155" bodyend="162"/>
+        <location file="c_interface.h" line="66" column="1" bodyfile="c_interface.c" bodystart="156" bodyend="163"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a6fa2c048c731a9c9f6e63bc4751a660e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -364,7 +364,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="72" column="1" bodyfile="c_interface.c" bodystart="165" bodyend="169"/>
+        <location file="c_interface.h" line="72" column="1" bodyfile="c_interface.c" bodystart="166" bodyend="170"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1adc882655de01f272e9fa161cded97822" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -400,7 +400,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="78" column="1" bodyfile="c_interface.c" bodystart="171" bodyend="186"/>
+        <location file="c_interface.h" line="78" column="1" bodyfile="c_interface.c" bodystart="172" bodyend="187"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a62300ae7bbb8aebf2460dea4de3f7486" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
@@ -462,7 +462,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="89" column="1" bodyfile="c_interface.c" bodystart="212" bodyend="219"/>
+        <location file="c_interface.h" line="89" column="1" bodyfile="c_interface.c" bodystart="228" bodyend="235"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a05c4cccb6fac406f26e592e222793340" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -487,7 +487,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="94" column="1" bodyfile="c_interface.c" bodystart="222" bodyend="230"/>
+        <location file="c_interface.h" line="94" column="1" bodyfile="c_interface.c" bodystart="238" bodyend="246"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1aa2ad68cb84a95319d7623bb1e4c7d0c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -512,7 +512,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="99" column="1" bodyfile="c_interface.c" bodystart="232" bodyend="239"/>
+        <location file="c_interface.h" line="99" column="1" bodyfile="c_interface.c" bodystart="248" bodyend="255"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a62ff5327547cebf5ddb4da57d00c0045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -548,7 +548,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="105" column="1" bodyfile="c_interface.c" bodystart="241" bodyend="247"/>
+        <location file="c_interface.h" line="105" column="1" bodyfile="c_interface.c" bodystart="257" bodyend="263"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1ab40c7d5bce40c00320bf134d7cb282fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -595,7 +595,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="112" column="1" bodyfile="c_interface.c" bodystart="249" bodyend="257"/>
+        <location file="c_interface.h" line="112" column="1" bodyfile="c_interface.c" bodystart="265" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a55910054c47938904d813e65b695c6aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -631,7 +631,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="119" column="1" bodyfile="c_interface.c" bodystart="259" bodyend="264"/>
+        <location file="c_interface.h" line="119" column="1" bodyfile="c_interface.c" bodystart="275" bodyend="280"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a17e8dac4c7dce9b4969ce6f2da642c97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -656,7 +656,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="124" column="1" bodyfile="c_interface.c" bodystart="266" bodyend="287"/>
+        <location file="c_interface.h" line="124" column="1" bodyfile="c_interface.c" bodystart="282" bodyend="303"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a516564ef05a31d66489102673e87f135" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -692,7 +692,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="130" column="1" bodyfile="c_interface.c" bodystart="289" bodyend="300"/>
+        <location file="c_interface.h" line="130" column="1" bodyfile="c_interface.c" bodystart="305" bodyend="316"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a8bfe42f01b14cc3a2a2d7c0d7c44af89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -729,7 +729,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="137" column="1" bodyfile="c_interface.c" bodystart="303" bodyend="337"/>
+        <location file="c_interface.h" line="137" column="1" bodyfile="c_interface.c" bodystart="319" bodyend="353"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a44abf136615754b00093a64fbe3e2f4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -765,7 +765,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="144" column="1" bodyfile="c_interface.c" bodystart="339" bodyend="352"/>
+        <location file="c_interface.h" line="144" column="1" bodyfile="c_interface.c" bodystart="355" bodyend="368"/>
       </memberdef>
       <memberdef kind="function" id="c__interface_8h_1a4a2d032762b67273818d60cf366535a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -795,7 +795,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_interface.h" line="150" column="1" bodyfile="c_interface.c" bodystart="355" bodyend="413"/>
+        <location file="c_interface.h" line="150" column="1" bodyfile="c_interface.c" bodystart="371" bodyend="427"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

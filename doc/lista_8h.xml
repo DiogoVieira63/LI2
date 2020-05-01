@@ -325,7 +325,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lista.h" line="77" column="1" bodyfile="lista.c" bodystart="98" bodyend="105"/>
+        <location file="lista.h" line="77" column="1" bodyfile="lista.c" bodystart="90" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="lista_8h_1a67b5911bca41f0a12cc3dff4020b4379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -351,7 +351,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lista.h" line="83" column="1" bodyfile="lista.c" bodystart="125" bodyend="137"/>
+        <location file="lista.h" line="83" column="1" bodyfile="lista.c" bodystart="100" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="lista_8h_1af026f2bc6f4fba11d1b04a0b18252483" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -388,7 +388,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lista.h" line="90" column="1" bodyfile="lista.c" bodystart="140" bodyend="148"/>
+        <location file="lista.h" line="90" column="1" bodyfile="lista.c" bodystart="114" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="lista_8h_1a3959af8f3899e2037b0ed30396a6e07e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
@@ -414,7 +414,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lista.h" line="96" column="1" bodyfile="lista.c" bodystart="152" bodyend="159"/>
+        <location file="lista.h" line="96" column="1" bodyfile="lista.c" bodystart="124" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="lista_8h_1a6e96841e915698d817cda3477aafa7a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -440,7 +440,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lista.h" line="102" column="1" bodyfile="lista.c" bodystart="161" bodyend="193"/>
+        <location file="lista.h" line="102" column="1" bodyfile="lista.c" bodystart="133" bodyend="165"/>
       </memberdef>
       <memberdef kind="function" id="lista_8h_1ab1a26fcfa49e5e0e74680a909ca7a25b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
@@ -481,7 +481,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="lista.h" line="109" column="1" bodyfile="lista.c" bodystart="228" bodyend="260"/>
+        <location file="lista.h" line="109" column="1" bodyfile="lista.c" bodystart="167" bodyend="199"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

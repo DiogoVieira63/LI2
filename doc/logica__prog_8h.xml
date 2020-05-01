@@ -93,7 +93,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="logica_prog.h" line="28" column="1" bodyfile="logica_prog.c" bodystart="48" bodyend="54"/>
+        <location file="logica_prog.h" line="28" column="1" bodyfile="logica_prog.c" bodystart="48" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="logica__prog_8h_1aa019b25ce3e7987b238c028262b102fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -130,7 +130,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="logica_prog.h" line="36" column="1" bodyfile="logica_prog.c" bodystart="58" bodyend="67"/>
+        <location file="logica_prog.h" line="36" column="1" bodyfile="logica_prog.c" bodystart="59" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="logica__prog_8h_1a5b4f65a4e37f28cac08d4bf70cf117f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -167,7 +167,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="logica_prog.h" line="43" column="1" bodyfile="logica_prog.c" bodystart="69" bodyend="81"/>
+        <location file="logica_prog.h" line="43" column="1" bodyfile="logica_prog.c" bodystart="70" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="logica__prog_8h_1ac313d7e553b1e2b5f266acb9bfff8141" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -203,7 +203,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="logica_prog.h" line="50" column="1" bodyfile="logica_prog.c" bodystart="84" bodyend="109"/>
+        <location file="logica_prog.h" line="50" column="1" bodyfile="logica_prog.c" bodystart="85" bodyend="110"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

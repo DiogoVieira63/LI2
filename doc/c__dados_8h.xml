@@ -102,7 +102,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="71" column="1" bodyfile="c_dados.c" bodystart="8" bodyend="18"/>
+        <location file="c_dados.h" line="71" column="1" bodyfile="c_dados.c" bodystart="7" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a3d13fe6899b4cffbd3f8ef84cad487eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -127,7 +127,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="76" column="1" bodyfile="c_dados.c" bodystart="20" bodyend="27"/>
+        <location file="c_dados.h" line="76" column="1" bodyfile="c_dados.c" bodystart="18" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a7e0c7e26fb685d9ab501e19b05e6954f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
@@ -141,7 +141,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="81" column="1" bodyfile="c_dados.c" bodystart="30" bodyend="40"/>
+        <location file="c_dados.h" line="81" column="1" bodyfile="c_dados.c" bodystart="27" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a5d3ec9f4ada69aa936ce6383d343e057" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -167,7 +167,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="87" column="1" bodyfile="c_dados.c" bodystart="42" bodyend="44"/>
+        <location file="c_dados.h" line="87" column="1" bodyfile="c_dados.c" bodystart="39" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a71d13052ff380cccf0ea797d82c7d153" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>char *</type>
@@ -204,7 +204,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="94" column="1" bodyfile="c_dados.c" bodystart="46" bodyend="49"/>
+        <location file="c_dados.h" line="94" column="1" bodyfile="c_dados.c" bodystart="43" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a6faa68373203923729ed38657aa0f768" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="c__dados_8h_1aba91601f16d4c485b2d9b8c429f27039" kindref="member">CASA</ref></type>
@@ -241,7 +241,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="101" column="1" bodyfile="c_dados.c" bodystart="51" bodyend="53"/>
+        <location file="c_dados.h" line="101" column="1" bodyfile="c_dados.c" bodystart="48" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1acc6c25533188a99cb69c12e7f2c406ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -267,7 +267,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="107" column="1" bodyfile="c_dados.c" bodystart="54" bodyend="56"/>
+        <location file="c_dados.h" line="107" column="1" bodyfile="c_dados.c" bodystart="51" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a34977ddd2b220934d4285a224b2aa408" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -303,7 +303,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="113" column="1" bodyfile="c_dados.c" bodystart="59" bodyend="74"/>
+        <location file="c_dados.h" line="113" column="1" bodyfile="c_dados.c" bodystart="55" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1af46a11f6ce3160c290dd587d609a2101" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -350,7 +350,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="120" column="1" bodyfile="c_dados.c" bodystart="76" bodyend="79"/>
+        <location file="c_dados.h" line="120" column="1" bodyfile="c_dados.c" bodystart="72" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1aa035768a1f6ddd02cccfdb8c4eb5f598" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -375,7 +375,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="125" column="1" bodyfile="c_dados.c" bodystart="81" bodyend="83"/>
+        <location file="c_dados.h" line="125" column="1" bodyfile="c_dados.c" bodystart="76" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1aee744bc7c773a2688c336d86edba138d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -400,7 +400,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="130" column="1" bodyfile="c_dados.c" bodystart="85" bodyend="88"/>
+        <location file="c_dados.h" line="130" column="1" bodyfile="c_dados.c" bodystart="79" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a624e13e58076df739b3bf1e72e907a1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -436,7 +436,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="136" column="1" bodyfile="c_dados.c" bodystart="90" bodyend="93"/>
+        <location file="c_dados.h" line="136" column="1" bodyfile="c_dados.c" bodystart="84" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1af320105dee3242a1f43395383401ff12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -472,7 +472,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="142" column="1" bodyfile="c_dados.c" bodystart="95" bodyend="97"/>
+        <location file="c_dados.h" line="142" column="1" bodyfile="c_dados.c" bodystart="89" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a2d754b0a42699190ad84b237768ac41d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -508,7 +508,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="148" column="1" bodyfile="c_dados.c" bodystart="99" bodyend="101"/>
+        <location file="c_dados.h" line="148" column="1" bodyfile="c_dados.c" bodystart="93" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a40555aff97afc67bd1866f2785111310" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
@@ -534,7 +534,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="154" column="1" bodyfile="c_dados.c" bodystart="103" bodyend="105"/>
+        <location file="c_dados.h" line="154" column="1" bodyfile="c_dados.c" bodystart="97" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1ab1234fcbfcf5a6f89fe4240459c30df2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -570,7 +570,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="160" column="1" bodyfile="c_dados.c" bodystart="107" bodyend="109"/>
+        <location file="c_dados.h" line="160" column="1" bodyfile="c_dados.c" bodystart="101" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a4a93e5db83da256e508ff79ba9746155" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
@@ -600,7 +600,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="166" column="1" bodyfile="c_dados.c" bodystart="111" bodyend="113"/>
+        <location file="c_dados.h" line="166" column="1" bodyfile="c_dados.c" bodystart="105" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a7ae1f03abfad603f5e43e136d2f822e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -636,7 +636,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="172" column="1" bodyfile="c_dados.c" bodystart="115" bodyend="118"/>
+        <location file="c_dados.h" line="172" column="1" bodyfile="c_dados.c" bodystart="109" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1add7f3e857e0e15d644a7a81737d33109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -661,7 +661,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="177" column="1" bodyfile="c_dados.c" bodystart="120" bodyend="127"/>
+        <location file="c_dados.h" line="177" column="1" bodyfile="c_dados.c" bodystart="114" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a3232adaf1d59a37bda24780feb9ae53b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -698,7 +698,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="184" column="1" bodyfile="c_dados.c" bodystart="129" bodyend="132"/>
+        <location file="c_dados.h" line="184" column="1" bodyfile="c_dados.c" bodystart="123" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a36f732bd055a941e9a651d4f5d702a30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -724,7 +724,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="190" column="1" bodyfile="c_dados.c" bodystart="134" bodyend="136"/>
+        <location file="c_dados.h" line="190" column="1" bodyfile="c_dados.c" bodystart="128" bodyend="130"/>
       </memberdef>
       <memberdef kind="function" id="c__dados_8h_1a2455998df9b8d0929905dae4e7e85968" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -760,7 +760,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="c_dados.h" line="196" column="1" bodyfile="c_dados.c" bodystart="138" bodyend="140"/>
+        <location file="c_dados.h" line="196" column="1" bodyfile="c_dados.c" bodystart="132" bodyend="134"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
