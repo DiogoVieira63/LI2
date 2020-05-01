@@ -20,37 +20,38 @@ return 1;
 }
 
 int fim_do_jogo (ESTADO* e){
-COORDENADA c = obter_ultima_jogada (e);
-CASA atual = obter_estado_casa (e,c);
-//QUANDO O JOGADOR GANHA POR CHEGAR À SUA CASA
-if (atual == POS1) {
-    display_gameover (1,e);
-    muda_vitorias(e,1);
-    return 1;
-}
-if (atual == POS2) {
-    display_gameover (2,e);
-    muda_vitorias(e,2);
-    return 1;
-}
-//QUANDO O JOGADOR GANHA POR DEIXAR O OUTRO ENCURRALADO
-int jog,j_atual = obter_jogador_atual (e);
-if (j_atual == 1)jog = 2;
-else jog = 1;
-if (ha_nao_casas_livres (e)) {
-    display_gameover (jog,e);
-    muda_vitorias(e,jog);
-    return 1;
-}
-return 0;
+    COORDENADA c = obter_ultima_jogada (e);
+    CASA atual = obter_estado_casa (e,c);
+    //QUANDO O JOGADOR GANHA POR CHEGAR À SUA CASA
+    if (atual == POS1) {
+        display_gameover (1,e);
+        muda_vitorias(e,1);
+        return 1;
+    }
+    if (atual == POS2) {
+        display_gameover (2,e);
+        muda_vitorias(e,2);
+        return 1;
+    }
+    //QUANDO O JOGADOR GANHA POR DEIXAR O OUTRO ENCURRALADO
+    int jog,j_atual = obter_jogador_atual (e);
+    if (j_atual == 1)jog = 2;
+    else jog = 1;
+    if (ha_nao_casas_livres (e)) {
+        display_gameover (jog,e);
+        muda_vitorias(e,jog);
+        return 1;
+    }
+    return 0;
 }
 
 int isValid (ESTADO *e,COORDENADA c){
+    int i = 1;
     CASA casa = obter_estado_casa (e,c);
-    if (casa != VAZIO && casa != POS1 && casa != POS2) return 0;
-    if (c.coluna > 8 || c.coluna < 1) return 0;
-    if (c.linha > 8 || c.linha < 1) return 0;
-    return 1;
+    if (casa != VAZIO && casa != POS1 && casa != POS2) i = 0;
+    if (c.coluna > 8 || c.coluna < 1) i = 0;
+    if (c.linha > 8 || c.linha < 1) i = 0;
+    return i;
 }
 
 
