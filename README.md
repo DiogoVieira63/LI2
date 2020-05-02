@@ -4,11 +4,17 @@ TURNO: **PL3**
 
 Nr do Grupo: **2**
 
-A93251: José Diogo Martins Vieira
+**A93251: José Diogo Martins Vieira**
 
-A93312: António Luís de Macedo Fernandes
+![diogo](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/imagens/diogo.jpeg)
 
-A93193: Tomás Cardoso Francisco
+**A93312: António Luís de Macedo Fernandes**
+
+![antonio](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/imagens/to2.jpeg)
+
+**A93193: Tomás Cardoso Francisco**
+
+![tomas](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/imagens/tomas.jpeg)
 
 - ### [RELATÓRIOS](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/tree/master/relat%C3%B3rios)
   - [Guião 5](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/relat%C3%B3rios/Gui%C3%A3o5.md)
