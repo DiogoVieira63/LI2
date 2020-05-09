@@ -2,7 +2,7 @@
 
 Para este guião, tivemos de criar os módulos para o projeto. Dividimos os módulos em 3 partes:
 
-- ## [CAMADA DE DADOS](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/c_dados.c)
+- ## [CAMADA DE DADOS](https://github.com/JoseDiogoMartinsVieira/LI2PL3G02/blob/master/projeto/c_dados.c)
 
 Este módulo contém a função que inicializa o estado:
 ```c
@@ -68,7 +68,7 @@ void modificar_num_jogadas (ESTADO *e, int n)
 void modificar_ultima_jogada (ESTADO *e,COORDENADA c)
 ```
 
-- ## [LÓGICA DO PROGRAMA](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/logica_prog.c)
+- ## [LÓGICA DO PROGRAMA](https://github.com/JoseDiogoMartinsVieira/LI2PL3G02/blob/master/projeto/logica_prog.c)
 
 Neste módulo está tudo aquilo relacionado com a lógica do jogo,faz parte a função:
 ```c
@@ -76,7 +76,7 @@ int jogar (ESTADO *e, COORDENADA c)
 ```
 
 
-- ## [CAMADA DE INTERFACE](https://github.com/JoseDiogoMartinsVieira/LI2PL3G2/blob/master/c_interface.c)
+- ## [CAMADA DE INTERFACE](https://github.com/JoseDiogoMartinsVieira/LI2PL3G02/blob/master/projeto/c_interface.c)
 
 Neste módulo, encontra-se a função que permite a interação com o utilizador:
 ### O Interpretador
